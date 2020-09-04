@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eZi-2f-QXP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nsI-hE-EcC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,42 +7,97 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SHomeViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wu1-FO-9MQ">
+                                <rect key="frame" x="147" y="384" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="AAe-Ic-Hy2"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="AAe-Ic-Hy2"/>
                     <navigationItem key="navigationItem" id="hNR-Lu-8Mf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="-689"/>
+            <point key="canvasLocation" x="880" y="836"/>
         </scene>
-        <!--Item-->
+        <!--Notice-->
         <scene sceneID="FsC-n8-CDF">
             <objects>
-                <viewController id="C61-xd-TIz" customClass="NoticeViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C61-xd-TIz" customClass="SNoticeViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Htf-9g-WoL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller Notice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfX-im-20O">
+                                <rect key="frame" x="176" y="383" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="52w-U5-N7r"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Sjo-lk-kia"/>
+                    <tabBarItem key="tabBarItem" title="Notice" id="Sjo-lk-kia"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihe-dV-TOI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="-26"/>
+            <point key="canvasLocation" x="1509" y="836"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="u9V-gh-Rda">
+            <objects>
+                <viewController id="nsI-hE-EcC" customClass="LoginViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XA3-Os-6HD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDK-pX-c3X">
+                                <rect key="frame" x="188" y="424" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="btnLogin:" destination="nsI-hE-EcC" eventType="touchUpInside" id="KxU-Yo-sJD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71y-fF-tCj">
+                                <rect key="frame" x="175" y="294" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="1SI-D3-eud"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblId" destination="71y-fF-tCj" id="BMa-xQ-ycz"/>
+                        <segue destination="L0H-ib-c7E" kind="presentation" identifier="sgBuyer" modalPresentationStyle="fullScreen" id="vWr-jv-zKY"/>
+                        <segue destination="eZi-2f-QXP" kind="presentation" identifier="sgSeller" modalPresentationStyle="fullScreen" id="WwY-Rx-AiO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhH-Nk-yFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1449" y="-235"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kcq-R2-yXo">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a80-yY-DvA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eZi-2f-QXP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y55-Rx-57u">
@@ -54,7 +109,6 @@
                         <segue destination="ayI-nC-pRI" kind="relationship" relationship="rootViewController" id="cQL-6B-ZbZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a80-yY-DvA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="97.767857142857139"/>
         </scene>
@@ -80,37 +134,199 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="97.767857142857139"/>
         </scene>
-        <!--Item-->
+        <!--Like-->
         <scene sceneID="eHo-bI-mny">
             <objects>
-                <viewController id="vcG-f2-q5u" customClass="InterestViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vcG-f2-q5u" customClass="SInterestViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7b0-Xm-Wkh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG7-22-L0K">
+                                <rect key="frame" x="179" y="370" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ybq-O6-jnj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9b9-1T-enx"/>
+                    <tabBarItem key="tabBarItem" title="Like" id="9b9-1T-enx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYd-79-Rsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="647"/>
+            <point key="canvasLocation" x="2183" y="836"/>
         </scene>
-        <!--Item-->
+        <!--MyInfo-->
         <scene sceneID="4nF-1V-jrf">
             <objects>
-                <viewController id="5Qx-nH-r5x" sceneMemberID="viewController">
+                <viewController id="5Qx-nH-r5x" customClass="SMyinfoViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zbR-Il-jQ7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjh-i9-qdd">
+                                <rect key="frame" x="158" y="372" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uK4-Yg-x41"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="6YM-ul-viT"/>
+                    <tabBarItem key="tabBarItem" title="MyInfo" id="6YM-ul-viT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkz-7c-04q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1874" y="1352"/>
+            <point key="canvasLocation" x="2846" y="836"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="XWd-HT-fz7">
+            <objects>
+                <viewController id="TkL-Zg-bdm" customClass="BHomeViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNC-Cm-Wvi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buyer Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXB-SP-s3B">
+                                <rect key="frame" x="142" y="413" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EtB-21-vXK"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="pay-KI-hEV"/>
+                    <navigationItem key="navigationItem" id="I9Y-cF-1pY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36a-c6-qde" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="-1284"/>
+        </scene>
+        <!--Notice-->
+        <scene sceneID="sIM-gh-6F1">
+            <objects>
+                <viewController id="4OM-of-xaB" customClass="BNoticeViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8C7-qu-656">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buyer Notice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8S-pW-WYj">
+                                <rect key="frame" x="160" y="405" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rb2-qc-zoD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notice" id="jV6-qS-cSp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hpv-2H-OsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755" y="-1284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l1G-37-jLU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QY2-Ah-Lzf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L0H-ib-c7E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2A3-RT-jHh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cfG-LO-vbT" kind="relationship" relationship="rootViewController" id="MkB-EY-WPh"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="141" y="-583"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="YA0-ro-PUj">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cfG-LO-vbT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5Eg-sc-d04"/>
+                    <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y4m-jQ-D96">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TkL-Zg-bdm" kind="relationship" relationship="viewControllers" id="3zu-Mb-bfG"/>
+                        <segue destination="4OM-of-xaB" kind="relationship" relationship="viewControllers" id="DvX-y9-H8y"/>
+                        <segue destination="gKf-9o-99q" kind="relationship" relationship="viewControllers" id="osY-Uo-3qv"/>
+                        <segue destination="sal-0D-2U6" kind="relationship" relationship="viewControllers" id="je8-ac-3s9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rhW-4n-6IN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="-583"/>
+        </scene>
+        <!--Like-->
+        <scene sceneID="3HC-3Q-lqh">
+            <objects>
+                <viewController id="gKf-9o-99q" customClass="BInterestViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kka-sL-rus">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buyer Like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEH-mJ-GeG">
+                                <rect key="frame" x="149" y="393" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fh3-2K-CTI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Like" id="JXd-KD-2yu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAL-kF-Svu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2622" y="-1284"/>
+        </scene>
+        <!--MyInfo-->
+        <scene sceneID="OsD-FU-utc">
+            <objects>
+                <viewController id="sal-0D-2U6" customClass="BMyinfoViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2BZ-IE-QTb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Buyer Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1P-mu-XaH">
+                                <rect key="frame" x="179" y="402" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Yn2-Rf-Wyn"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="MyInfo" id="QGO-LY-jDf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNy-m5-Q6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3522" y="-1284"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="110"/>
+    </resources>
 </document>
