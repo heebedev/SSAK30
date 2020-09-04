@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MyinfoViewController.swift
 //  SSAK30
 //
 //  Created by taeheum on 2020/09/04.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SMyinfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
