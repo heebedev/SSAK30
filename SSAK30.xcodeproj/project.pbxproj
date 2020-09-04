@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0B250207FD0037AB3B /* AppDelegate.swift */; };
 		30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0D250207FD0037AB3B /* SceneDelegate.swift */; };
-		30628B10250207FD0037AB3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0F250207FD0037AB3B /* ViewController.swift */; };
 		30628B13250207FD0037AB3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30628B11250207FD0037AB3B /* Main.storyboard */; };
 		30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */; };
 		30628B18250208000037AB3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30628B17250208000037AB3B /* Assets.xcassets */; };
 		30628B1B250208000037AB3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30628B19250208000037AB3B /* LaunchScreen.storyboard */; };
+		4ED5E447250218650016EFD8 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED5E446250218650016EFD8 /* playstore.png */; };
+		EC1E3BA62502167200F4ABDB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA52502167200F4ABDB /* HomeViewController.swift */; };
+		EC1E3BA82502169A00F4ABDB /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA72502169A00F4ABDB /* NoticeViewController.swift */; };
+		EC1E3BAA250216AF00F4ABDB /* InterestViwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA9250216AF00F4ABDB /* InterestViewController.swift */; };
+		EC1E3BAC250216C000F4ABDB /* MyinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BAB250216C000F4ABDB /* MyinfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30628B08250207FD0037AB3B /* SSAK30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSAK30.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30628B0B250207FD0037AB3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30628B0D250207FD0037AB3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		30628B0F250207FD0037AB3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		30628B12250207FD0037AB3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30628B15250207FD0037AB3B /* SSAK30.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SSAK30.xcdatamodel; sourceTree = "<group>"; };
 		30628B17250208000037AB3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30628B1A250208000037AB3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30628B1C250208000037AB3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED5E446250218650016EFD8 /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
+		EC1E3BA52502167200F4ABDB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EC1E3BA72502169A00F4ABDB /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		EC1E3BA9250216AF00F4ABDB /* InterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
+		EC1E3BAB250216C000F4ABDB /* MyinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyinfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,14 @@
 		30628B0A250207FD0037AB3B /* SSAK30 */ = {
 			isa = PBXGroup;
 			children = (
+				4ED5E446250218650016EFD8 /* playstore.png */,
 				30628B0B250207FD0037AB3B /* AppDelegate.swift */,
 				30628B0D250207FD0037AB3B /* SceneDelegate.swift */,
-				30628B0F250207FD0037AB3B /* ViewController.swift */,
 				30628B11250207FD0037AB3B /* Main.storyboard */,
+				EC1E3BA52502167200F4ABDB /* HomeViewController.swift */,
+				EC1E3BA72502169A00F4ABDB /* NoticeViewController.swift */,
+				EC1E3BA9250216AF00F4ABDB /* InterestViewController.swift */,
+				EC1E3BAB250216C000F4ABDB /* MyinfoViewController.swift */,
 				30628B17250208000037AB3B /* Assets.xcassets */,
 				30628B19250208000037AB3B /* LaunchScreen.storyboard */,
 				30628B1C250208000037AB3B /* Info.plist */,
@@ -131,6 +143,7 @@
 				30628B1B250208000037AB3B /* LaunchScreen.storyboard in Resources */,
 				30628B18250208000037AB3B /* Assets.xcassets in Resources */,
 				30628B13250207FD0037AB3B /* Main.storyboard in Resources */,
+				4ED5E447250218650016EFD8 /* playstore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC1E3BAA250216AF00F4ABDB /* InterestViewController.swift in Sources */,
 				30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */,
-				30628B10250207FD0037AB3B /* ViewController.swift in Sources */,
 				30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */,
+				EC1E3BAC250216C000F4ABDB /* MyinfoViewController.swift in Sources */,
 				30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */,
+				EC1E3BA62502167200F4ABDB /* HomeViewController.swift in Sources */,
+				EC1E3BA82502169A00F4ABDB /* NoticeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
