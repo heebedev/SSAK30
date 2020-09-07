@@ -61,7 +61,6 @@
         <!--Login View Controller-->
         <scene sceneID="u9V-gh-Rda">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IhH-Nk-yFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="nsI-hE-EcC" customClass="LoginViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XA3-Os-6HD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -121,10 +120,12 @@
                     <connections>
                         <outlet property="kakaobutton" destination="RfM-KR-GsL" id="rtW-il-aMV"/>
                         <outlet property="naverbutton" destination="gq3-sv-IF1" id="36f-Ll-Rp2"/>
+                        <outlet property="tfId" destination="fCY-rc-AUW" id="CZR-gC-GDX"/>
                         <segue destination="L0H-ib-c7E" kind="presentation" identifier="sgBuyer" modalPresentationStyle="fullScreen" id="vWr-jv-zKY"/>
                         <segue destination="eZi-2f-QXP" kind="presentation" identifier="sgSeller" modalPresentationStyle="fullScreen" id="WwY-Rx-AiO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhH-Nk-yFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1448" y="-252"/>
         </scene>
