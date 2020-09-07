@@ -24,6 +24,7 @@
 		EC1E3BA82502169A00F4ABDB /* SNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */; };
 		EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */; };
 		EC1E3BAC250216C000F4ABDB /* SMyinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */; };
+		EC1E3BAE2506244C00F4ABDB /* BDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNoticeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestViewController.swift; sourceTree = "<group>"; };
 		EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyinfoViewController.swift; sourceTree = "<group>"; };
+		EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				30628B1C250208000037AB3B /* Info.plist */,
 				30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */,
 				300F98D92506055300411288 /* BSearchViewController.swift */,
+				EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				308D362B25024ECE00B363B9 /* BMyinfoViewController.swift in Sources */,
 				30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */,
 				EC1E3BAC250216C000F4ABDB /* SMyinfoViewController.swift in Sources */,
+				EC1E3BAE2506244C00F4ABDB /* BDetailViewController.swift in Sources */,
 				30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */,
 				EC1E3BA62502167200F4ABDB /* SHomeViewController.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
