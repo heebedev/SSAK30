@@ -1,22 +1,35 @@
 //
-//  MyinfoViewController.swift
+//  SignUpViewController.swift
 //  SSAK30
 //
-//  Created by taeheum on 2020/09/04.
+//  Created by sookjeon on 2020/09/07.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import UIKit
 
-class MyinfoViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
+    
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var tfChkPassword: UITextField!
+    @IBOutlet weak var tfName: UITextField!
+    @IBOutlet weak var tfBirth: UITextField!
+    @IBOutlet weak var tfPhone: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnChkEmail(_ sender: UIButton) {
+    }
+    
+    @IBAction func btnSignUp(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +39,7 @@ class MyinfoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
