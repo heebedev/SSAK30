@@ -9,7 +9,6 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
     
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -28,7 +27,9 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func btnSignUp(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
+
     
     /*
     // MARK: - Navigation

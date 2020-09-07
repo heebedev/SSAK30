@@ -1,5 +1,5 @@
 //
-//  BuySellChkViewController.swift
+//  FindIdPwViewController.swift
 //  SSAK30
 //
 //  Created by sookjeon on 2020/09/07.
@@ -8,8 +8,13 @@
 
 import UIKit
 
-class BuySellChkViewController: UIViewController {
-    var buySellNo = 0
+class FindIdPwViewController: UIViewController {
+
+    @IBOutlet weak var tfFindIdName: UITextField!
+    @IBOutlet weak var tfFindIdBirth: UITextField!
+    @IBOutlet weak var tfFindPwId: UITextField!
+    @IBOutlet weak var tfFindPwName: UITextField!
+    @IBOutlet weak var tfFindPwBirth: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +22,10 @@ class BuySellChkViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func btnBuy(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+    @IBAction func btnFindId(_ sender: UIButton) {
     }
     
-    
-    @IBAction func btnSell(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-        buySellNo = 1
+    @IBAction func btnChangePw(_ sender: UIButton) {
     }
     /*
     // MARK: - Navigation
