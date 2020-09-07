@@ -88,6 +88,10 @@
 				30628B0B250207FD0037AB3B /* AppDelegate.swift */,
 				30628B0D250207FD0037AB3B /* SceneDelegate.swift */,
 				30628B11250207FD0037AB3B /* Main.storyboard */,
+				9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */,
+				9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */,
+				300F98D92506055300411288 /* BSearchViewController.swift */,
+				9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */,
 				308D362C25024F6000B363B9 /* LoginViewController.swift */,
 				308D362425024EAB00B363B9 /* BHomeViewController.swift */,
 				308D362625024EB600B363B9 /* BNoticeViewController.swift */,
@@ -101,10 +105,6 @@
 				30628B19250208000037AB3B /* LaunchScreen.storyboard */,
 				30628B1C250208000037AB3B /* Info.plist */,
 				30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */,
-				9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */,
-				9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */,
-				300F98D92506055300411288 /* BSearchViewController.swift */,
-				9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
