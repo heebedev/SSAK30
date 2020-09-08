@@ -25,13 +25,12 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-<<<<<<< HEAD
-=======
 *.xcworkspace
 !default.xcworkspace
-xcuserdata
+xcuserdata/
+*.xcuserstate
 .DS_Store
->>>>>>> badddab8d33329320e0801a4ab4db235298f9955
+
 
 ## Gcc Patch
 /*.gcno
@@ -40,10 +39,8 @@ xcuserdata
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
-<<<<<<< HEAD
-=======
+ *.xcodeproj/xcuserdata/
 !*.xcodeproj/project.xcworkspace/xcuserdata/
->>>>>>> badddab8d33329320e0801a4ab4db235298f9955
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
