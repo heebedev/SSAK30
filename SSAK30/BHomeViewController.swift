@@ -32,8 +32,6 @@ class BHomeViewController: UIViewController {
             interestRecommendListViewController.viewModel.fetchItems()
         }
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +39,6 @@ class BHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -53,3 +50,4 @@ class BHomeViewController: UIViewController {
     */
 
 }
+ 

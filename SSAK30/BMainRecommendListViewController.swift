@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BMainRecommendListViewController: UIViewController {
+class BMainRecommendListViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet weak var lblrecentSellProduct: UILabel!
     let viewModel = RecommentListViewModel()
@@ -25,13 +25,23 @@ class BMainRecommendListViewController: UIViewController {
     func updateUI() {
         lblrecentSellProduct.text = viewModel.type.title
     }
-}
+    
+    // UICollectionViewDelegate
+    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 연결해야함!! //////////
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
+    }
+}//---
 
+
+// UICollectionViewDataSource
 extension BMainRecommendListViewController: UICollectionViewDataSource {
+    // 몇개 보여줄까요?
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numOfItems
     }
     
+    //셀은 어떻게 표현할거야?
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCell", for: indexPath) as? RecommendCell else {
             return UICollectionViewCell()
@@ -43,12 +53,6 @@ extension BMainRecommendListViewController: UICollectionViewDataSource {
     }
 }
 
-
-extension BMainRecommendListViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 160)
-    }
-}
 
 class RecommentListViewModel {
     enum RecommendingType {
