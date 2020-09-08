@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var kakaobutton: UIButton!
     @IBOutlet weak var naverbutton: UIButton!
     @IBOutlet weak var lblId: UITextField!
+    @IBOutlet weak var tfPw: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,14 +1,14 @@
 //
-//  BMyinfoViewController.swift
+//  BSearchViewController.swift
 //  SSAK30
 //
-//  Created by 김승희 on 2020/09/04.
+//  Created by 김승희 on 2020/09/07.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import UIKit
 
-class BMyinfoViewController: UIViewController {
+class BSearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,5 +27,4 @@ class BMyinfoViewController: UIViewController {
     }
     */
 
-    
-}//------
+}
