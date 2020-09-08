@@ -27,7 +27,11 @@ DerivedData/
 !default.perspectivev3
 *.xcworkspace
 !default.xcworkspace
+<<<<<<< HEAD
 xcuserdata/
+=======
+xcuserdata
+>>>>>>> 2fdb920d58398cce574fcfb893c443b16a55125d
 *.xcuserstate
 .DS_Store
 

@@ -10,8 +10,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+
     @IBOutlet weak var kakaobutton: UIButton!
     @IBOutlet weak var naverbutton: UIButton!
+
     @IBOutlet weak var lblId: UITextField!
     @IBOutlet weak var tfPw: UITextField!
     
@@ -19,7 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
         // 버튼 모양
         kakaobutton.layer.cornerRadius = 20
         naverbutton.layer.cornerRadius = 20

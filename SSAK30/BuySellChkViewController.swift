@@ -1,22 +1,32 @@
 //
-//  BMyinfoViewController.swift
+//  BuySellChkViewController.swift
 //  SSAK30
 //
-//  Created by 김승희 on 2020/09/04.
+//  Created by sookjeon on 2020/09/07.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import UIKit
 
-class BMyinfoViewController: UIViewController {
-
+class BuySellChkViewController: UIViewController {
+    var buySellNo = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func btnBuy(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func btnSell(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+        buySellNo = 1
+    }
     /*
     // MARK: - Navigation
 
@@ -27,6 +37,4 @@ class BMyinfoViewController: UIViewController {
     }
     */
 
-
-    
-}//------
+}
