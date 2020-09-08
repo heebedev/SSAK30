@@ -9,6 +9,31 @@
 import UIKit
 
 class BHomeViewController: UIViewController {
+    
+    var recentRecommendListViewController: BMainRecommendListViewController!
+    var hotRecommendListViewController: BMainRecommendListViewController!
+    var interestRecommendListViewController: BMainRecommendListViewController!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "recent" {
+            let destinationVC = segue.destination as? BMainRecommendListViewController
+            recentRecommendListViewController = destinationVC
+            recentRecommendListViewController.viewModel.updateType(.recent)
+            recentRecommendListViewController.viewModel.fetchItems()
+        } else if segue.identifier == "hot" {
+            let destinationVC = segue.destination as? BMainRecommendListViewController
+            hotRecommendListViewController = destinationVC
+            hotRecommendListViewController.viewModel.updateType(.hot)
+            hotRecommendListViewController.viewModel.fetchItems()
+        } else if segue.identifier == "interest" {
+            let destinationVC = segue.destination as? BMainRecommendListViewController
+            interestRecommendListViewController = destinationVC
+            interestRecommendListViewController.viewModel.updateType(.interest)
+            interestRecommendListViewController.viewModel.fetchItems()
+        }
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
