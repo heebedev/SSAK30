@@ -14,6 +14,8 @@
 		30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */; };
 		30628B18250208000037AB3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30628B17250208000037AB3B /* Assets.xcassets */; };
 		30628B1B250208000037AB3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30628B19250208000037AB3B /* LaunchScreen.storyboard */; };
+		306561EF2508C11B004DA1E2 /* popStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */; };
+		306561F12508CD85004DA1E2 /* AfterSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */; };
 		308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D362425024EAB00B363B9 /* BHomeViewController.swift */; };
 		308D362725024EB600B363B9 /* BNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D362625024EB600B363B9 /* BNoticeViewController.swift */; };
 		308D362925024EC100B363B9 /* BInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D362825024EC100B363B9 /* BInterestViewController.swift */; };
@@ -40,6 +42,8 @@
 		30628B17250208000037AB3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30628B1A250208000037AB3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30628B1C250208000037AB3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popStoreTableViewCell.swift; sourceTree = "<group>"; };
+		306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchTableViewController.swift; sourceTree = "<group>"; };
 		308D362425024EAB00B363B9 /* BHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeViewController.swift; sourceTree = "<group>"; };
 		308D362625024EB600B363B9 /* BNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNoticeViewController.swift; sourceTree = "<group>"; };
 		308D362825024EC100B363B9 /* BInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BInterestViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +96,6 @@
 				30628B11250207FD0037AB3B /* Main.storyboard */,
 				9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */,
 				9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */,
-				300F98D92506055300411288 /* BSearchViewController.swift */,
 				9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */,
 				308D362C25024F6000B363B9 /* LoginViewController.swift */,
 				308D362425024EAB00B363B9 /* BHomeViewController.swift */,
@@ -103,12 +106,14 @@
 				EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */,
 				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
 				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
+				300F98D92506055300411288 /* BSearchViewController.swift */,
+				EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */,
+				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
+				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
 				30628B17250208000037AB3B /* Assets.xcassets */,
 				30628B19250208000037AB3B /* LaunchScreen.storyboard */,
 				30628B1C250208000037AB3B /* Info.plist */,
 				30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */,
-				300F98D92506055300411288 /* BSearchViewController.swift */,
-				EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -201,7 +206,9 @@
 				300F98DA2506055300411288 /* BSearchViewController.swift in Sources */,
 				308D362725024EB600B363B9 /* BNoticeViewController.swift in Sources */,
 				9DCDB80F2506252800A6F940 /* FindIdPwViewController.swift in Sources */,
+				306561EF2508C11B004DA1E2 /* popStoreTableViewCell.swift in Sources */,
 				EC1E3BA82502169A00F4ABDB /* SNoticeViewController.swift in Sources */,
+				306561F12508CD85004DA1E2 /* AfterSearchTableViewController.swift in Sources */,
 				308D362925024EC100B363B9 /* BInterestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
