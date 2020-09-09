@@ -32,15 +32,11 @@ class SignUpViewController: UIViewController {
     //중복확인
     @IBAction func btnChkEmail(_ sender: UIButton) {
         let email = tfEmail.text!
-//
+        
 //        let emailchk = EmailChkModel()
 //        let result = emailchk.EmailChkloadItems(uEmail: email!)
         
-//        if validateEmail() {
-//            print("email  12")
-//        }else{
-//            print("email  443")
-//        }
+
         if isValidEmail(emailStr: email){
             print("성공")
         }else{
@@ -77,18 +73,20 @@ class SignUpViewController: UIViewController {
             let  onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {Action in
                 // 전화면으로 넘어가기위한것
                 self.navigationController?.popViewController(animated: true)
+                
+                let singupModel = SignUpModel()
+                let result = singupModel.SignUpInsertloadItems(uEmail: email!, uPassword: password!, uName: name!, uBirth: birth!, uPhone: phone!, uBuySell: "1")
+                
+                if result {
+                    print("성공")
+                }else{
+                    print("실패")
+                }
             })
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)
             
-            let singupModel = SignUpModel()
-            let result = singupModel.SignUpInsertloadItems(uEmail: email!, uPassword: password!, uName: name!, uBirth: birth!, uPhone: phone!, uBuySell: "1")
             
-            if result {
-                print("성공")
-            }else{
-                print("실패")
-            }
             
         }else{
             let resultAlert = UIAlertController(title: "실패", message: "비밀번호가 일치하지 않습니다.", preferredStyle: UIAlertController.Style.alert)
@@ -152,7 +150,7 @@ class SignUpViewController: UIViewController {
         present(resultAlert, animated: true, completion: nil)
     }
 
-    
+    // 이메일
     func isValidEmail(emailStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
@@ -160,13 +158,7 @@ class SignUpViewController: UIViewController {
         return emailPred.evaluate(with: emailStr)
     }
     
-//    // 이메일 정규식
-//    func validateEmail() -> Bool {
-//        let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
-//
-//        let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-//        return predicate.evaluate(with: self.tfEmail)
-//    }
+
     
     // 패스워드
     func validatePassword(password:String) -> Bool {
