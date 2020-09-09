@@ -219,7 +219,6 @@
                                 <state key="normal" title="가입하기"/>
                                 <connections>
                                     <action selector="btnSignUp:" destination="VrD-98-TzN" eventType="touchUpInside" id="Pkd-ln-SDq"/>
-                                    <segue destination="nsI-hE-EcC" kind="show" id="wTH-uH-XKD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -313,7 +312,6 @@
                         <outlet property="kakaobutton" destination="RfM-KR-GsL" id="rtW-il-aMV"/>
                         <outlet property="lblId" destination="fCY-rc-AUW" id="YhI-P8-DLJ"/>
                         <outlet property="naverbutton" destination="gq3-sv-IF1" id="36f-Ll-Rp2"/>
-                        <outlet property="tfId" destination="fCY-rc-AUW" id="CZR-gC-GDX"/>
                         <outlet property="tfPw" destination="IBK-p3-mfs" id="H2c-fI-pSJ"/>
                         <segue destination="L0H-ib-c7E" kind="presentation" identifier="sgBuyer" modalPresentationStyle="fullScreen" id="vWr-jv-zKY"/>
                         <segue destination="eZi-2f-QXP" kind="presentation" identifier="sgSeller" modalPresentationStyle="fullScreen" id="WwY-Rx-AiO"/>
@@ -1455,8 +1453,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U3w-gZ-2ta"/>
-        <segue reference="kvd-FK-cPG"/>
+        <segue reference="1tP-Ax-I66"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>

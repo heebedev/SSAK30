@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D2D1A8250726DE00085E16 /* SignUpDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */; };
+		21D2D1AA250728B300085E16 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A9250728B300085E16 /* SignUpModel.swift */; };
+		21D2D1AC2507535B00085E16 /* readmeD.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 21D2D1AB2507535B00085E16 /* readmeD.rtf */; };
+		21D2D1AE25075E0600085E16 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1AD25075E0600085E16 /* extension.swift */; };
+		21D2D1B02508698600085E16 /* EmailChkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1AF2508698600085E16 /* EmailChkModel.swift */; };
 		300F98DA2506055300411288 /* BSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F98D92506055300411288 /* BSearchViewController.swift */; };
 		30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0B250207FD0037AB3B /* AppDelegate.swift */; };
 		30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0D250207FD0037AB3B /* SceneDelegate.swift */; };
@@ -30,6 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDBModel.swift; sourceTree = "<group>"; };
+		21D2D1A9250728B300085E16 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		21D2D1AB2507535B00085E16 /* readmeD.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readmeD.rtf; sourceTree = "<group>"; };
+		21D2D1AD25075E0600085E16 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		21D2D1AF2508698600085E16 /* EmailChkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChkModel.swift; sourceTree = "<group>"; };
 		300F98D92506055300411288 /* BSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSearchViewController.swift; sourceTree = "<group>"; };
 		30628B08250207FD0037AB3B /* SSAK30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSAK30.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30628B0B250207FD0037AB3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +115,11 @@
 				30628B19250208000037AB3B /* LaunchScreen.storyboard */,
 				30628B1C250208000037AB3B /* Info.plist */,
 				30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */,
+				21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */,
+				21D2D1A9250728B300085E16 /* SignUpModel.swift */,
+				21D2D1AF2508698600085E16 /* EmailChkModel.swift */,
+				21D2D1AB2507535B00085E16 /* readmeD.rtf */,
+				21D2D1AD25075E0600085E16 /* extension.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -169,6 +184,7 @@
 			files = (
 				30628B1B250208000037AB3B /* LaunchScreen.storyboard in Resources */,
 				30628B18250208000037AB3B /* Assets.xcassets in Resources */,
+				21D2D1AC2507535B00085E16 /* readmeD.rtf in Resources */,
 				30628B13250207FD0037AB3B /* Main.storyboard in Resources */,
 				4ED5E447250218650016EFD8 /* playstore.png in Resources */,
 			);
@@ -183,7 +199,9 @@
 			files = (
 				308D362D25024F6000B363B9 /* LoginViewController.swift in Sources */,
 				EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */,
+				21D2D1B02508698600085E16 /* EmailChkModel.swift in Sources */,
 				30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */,
+				21D2D1AE25075E0600085E16 /* extension.swift in Sources */,
 				308D362B25024ECE00B363B9 /* BMyinfoViewController.swift in Sources */,
 				30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */,
 				EC1E3BAC250216C000F4ABDB /* SMyinfoViewController.swift in Sources */,
@@ -191,7 +209,9 @@
 				EC1E3BA62502167200F4ABDB /* SHomeViewController.swift in Sources */,
 				9DCDB80D2506080D00A6F940 /* SignUpViewController.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
+				21D2D1A8250726DE00085E16 /* SignUpDBModel.swift in Sources */,
 				9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */,
+				21D2D1AA250728B300085E16 /* SignUpModel.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
 				300F98DA2506055300411288 /* BSearchViewController.swift in Sources */,
 				308D362725024EB600B363B9 /* BNoticeViewController.swift in Sources */,
