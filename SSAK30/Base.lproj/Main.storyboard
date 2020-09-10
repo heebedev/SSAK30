@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Vn-AL-5sM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Vn-AL-5sM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wu1-FO-9MQ">
-                                <rect key="frame" x="147" y="384" width="93" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3j-gS-E7b">
+                                <rect key="frame" x="161" y="438" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="774" y="1740"/>
+            <point key="canvasLocation" x="879.71014492753625" y="835.71428571428567"/>
         </scene>
         <!--Notice-->
         <scene sceneID="FsC-n8-CDF">
@@ -129,7 +129,7 @@
             <objects>
                 <viewController id="3Ig-GZ-hP1" customClass="BuySellChkViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gMO-aV-g4W">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playstore.png" translatesAutoresizingMaskIntoConstraints="NO" id="pb1-Rf-YaD">
@@ -178,7 +178,7 @@
             <objects>
                 <viewController id="VrD-98-TzN" customClass="SignUpViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EC1-K9-19w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이메일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yej-A3-FR2">
@@ -277,7 +277,6 @@
                                 <state key="normal" title="가입하기"/>
                                 <connections>
                                     <action selector="btnSignUp:" destination="VrD-98-TzN" eventType="touchUpInside" id="Pkd-ln-SDq"/>
-                                    <segue destination="nsI-hE-EcC" kind="show" id="wTH-uH-XKD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -303,7 +302,7 @@
             <objects>
                 <viewController id="nsI-hE-EcC" customClass="LoginViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XA3-Os-6HD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playstore.png" translatesAutoresizingMaskIntoConstraints="NO" id="nfH-D5-RI5">
@@ -388,7 +387,7 @@
             <objects>
                 <viewController id="6BK-Y2-aBm" customClass="FindIdPwViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WRA-EG-ESE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playstore.png" translatesAutoresizingMaskIntoConstraints="NO" id="vsT-F7-geZ">
@@ -1076,6 +1075,59 @@
             </objects>
             <point key="canvasLocation" x="3425" y="1771"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="8Pe-S5-DUa">
+            <objects>
+                <viewController id="6SR-GM-NVV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3FC-zn-8lW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cVd-8p-cyw">
+                                <rect key="frame" x="0.0" y="544" width="414" height="232"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="복숭아 싱싱해요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaW-66-Bq2">
+                                <rect key="frame" x="20" y="90" width="374" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGf-V4-ED2">
+                                <rect key="frame" x="20" y="144" width="374" height="249"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수량 : 12 / 36 분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aru-Wu-m6E">
+                                <rect key="frame" x="20" y="401" width="181" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="남은 시간 : 36분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wom-hN-8yI">
+                                <rect key="frame" x="20" y="455" width="369" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,200 원 / 개" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8h-mC-qHK">
+                                <rect key="frame" x="208" y="401" width="181" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5D5-bW-jCD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l7H-AQ-oNm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2789.8550724637685" y="1789.2857142857142"/>
+        </scene>
         <!--Sell-->
         <scene sceneID="Zxl-yL-jHX">
             <objects>
@@ -1256,18 +1308,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8P-Z0-5Ef">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="playstore.png" translatesAutoresizingMaskIntoConstraints="NO" id="Emm-DZ-GuT">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playstore.png" translatesAutoresizingMaskIntoConstraints="NO" id="Emm-DZ-GuT">
                                                 <rect key="frame" x="16" y="20" width="382" height="300"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="UcH-w7-tSc"/>
                                                 </constraints>
                                             </imageView>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cv4-2l-eK1">
+                                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cv4-2l-eK1">
                                                 <rect key="frame" x="23" y="266" width="367" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </pageControl>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vob-Hf-jfY">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vob-Hf-jfY">
                                                 <rect key="frame" x="16" y="336" width="382" height="250"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE9-ag-Jxz">
@@ -1284,10 +1335,12 @@
                                                     <constraint firstAttribute="height" constant="250" id="JPn-4V-ZfM"/>
                                                 </constraints>
                                             </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pcB-bp-7mx">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pcB-bp-7mx">
                                                 <rect key="frame" x="0.0" y="663" width="414" height="546"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="546" id="lQb-7h-3bO"/>
+                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bHomeCell" rowHeight="250" id="4bv-6Y-tjx" customClass="BHomeTableViewCell" customModule="SSAK30" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="250"/>
@@ -1324,9 +1377,8 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="최근 등록된 떠리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wO6-Bs-jc0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="최근 등록된 떠리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wO6-Bs-jc0">
                                                 <rect key="frame" x="16" y="623" width="311" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1334,11 +1386,22 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="cv4-2l-eK1" firstAttribute="leading" secondItem="b8P-Z0-5Ef" secondAttribute="leading" constant="23" id="1na-8Y-a63"/>
+                                            <constraint firstItem="pcB-bp-7mx" firstAttribute="top" secondItem="wO6-Bs-jc0" secondAttribute="bottom" constant="8" id="3PE-cG-bjA"/>
                                             <constraint firstItem="Vob-Hf-jfY" firstAttribute="top" secondItem="Emm-DZ-GuT" secondAttribute="bottom" constant="16" id="7l3-8G-3v7"/>
+                                            <constraint firstItem="Vob-Hf-jfY" firstAttribute="centerX" secondItem="pcB-bp-7mx" secondAttribute="centerX" id="FCb-p6-dZW"/>
+                                            <constraint firstItem="Vob-Hf-jfY" firstAttribute="top" secondItem="cv4-2l-eK1" secondAttribute="bottom" constant="33" id="Gsh-VA-xwH"/>
+                                            <constraint firstItem="Emm-DZ-GuT" firstAttribute="top" secondItem="b8P-Z0-5Ef" secondAttribute="top" constant="20" id="IWY-F3-7va"/>
+                                            <constraint firstItem="pcB-bp-7mx" firstAttribute="top" secondItem="b8P-Z0-5Ef" secondAttribute="top" constant="663" id="KvZ-Tf-xAK"/>
+                                            <constraint firstItem="wO6-Bs-jc0" firstAttribute="top" secondItem="Vob-Hf-jfY" secondAttribute="bottom" constant="37" id="QbI-H2-N0F"/>
                                             <constraint firstItem="Emm-DZ-GuT" firstAttribute="leading" secondItem="b8P-Z0-5Ef" secondAttribute="leading" constant="16" id="YrD-fP-zxN"/>
+                                            <constraint firstItem="Vob-Hf-jfY" firstAttribute="leading" secondItem="wO6-Bs-jc0" secondAttribute="leading" id="cgG-tU-9by"/>
+                                            <constraint firstItem="Emm-DZ-GuT" firstAttribute="centerX" secondItem="cv4-2l-eK1" secondAttribute="centerX" id="jSP-aZ-ts0"/>
                                             <constraint firstItem="Vob-Hf-jfY" firstAttribute="leading" secondItem="b8P-Z0-5Ef" secondAttribute="leading" constant="16" id="r1k-E3-sE1"/>
                                             <constraint firstAttribute="trailing" secondItem="Vob-Hf-jfY" secondAttribute="trailing" constant="16" id="ssy-aH-B84"/>
                                             <constraint firstAttribute="trailing" secondItem="Emm-DZ-GuT" secondAttribute="trailing" constant="16" id="uZB-jP-b8o"/>
+                                            <constraint firstItem="Emm-DZ-GuT" firstAttribute="centerX" secondItem="pcB-bp-7mx" secondAttribute="centerX" id="vFj-ZI-eyO"/>
+                                            <constraint firstItem="pcB-bp-7mx" firstAttribute="leading" secondItem="b8P-Z0-5Ef" secondAttribute="leading" id="wO8-BG-IP0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1370,7 +1433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36a-c6-qde" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-481.15942028985512" y="-1673.4375"/>
+            <point key="canvasLocation" x="-477" y="-1789"/>
         </scene>
         <!--Notice-->
         <scene sceneID="sIM-gh-6F1">
@@ -2345,12 +2408,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j4C-cC-dGF"/>
-        <segue reference="504-92-z1f"/>
         <segue reference="Cjz-ej-RMZ"/>
         <segue reference="OqO-TL-hNZ"/>
-        <segue reference="wTH-uH-XKD"/>
-        <segue reference="kvd-FK-cPG"/>
+        <segue reference="1tP-Ax-I66"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>

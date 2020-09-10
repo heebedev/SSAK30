@@ -30,6 +30,9 @@ DerivedData/
 *.xcworkspace
 !default.xcworkspace
 
+
+xcuserdata/
+xcuserdata
 *.xcuserstate
 .DS_Store
 
