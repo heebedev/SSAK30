@@ -95,8 +95,6 @@ class SignUpViewController: UIViewController {
             present(resultAlert, animated: true, completion: nil)
         }
         
-        
-        
     }
 
 

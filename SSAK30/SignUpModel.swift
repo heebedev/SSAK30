@@ -20,7 +20,6 @@ class SignUpModel: NSObject {
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
-        
         let url: URL = URL(string: urlPath)!
         let defaultSesstion = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSesstion.dataTask(with: url){(data, response, error) in

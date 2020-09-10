@@ -18,11 +18,7 @@ class EmailChkModel: NSObject {
         let urlAdd = "?uEmail=\(uEmail)"
         urlPath += urlAdd
         
-        print(urlAdd)
-        print(uEmail)
-        
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
         
         let url: URL = URL(string: urlPath)!
         let defaultSesstion = Foundation.URLSession(configuration: URLSessionConfiguration.default)
