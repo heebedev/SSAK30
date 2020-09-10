@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginViewController: UIViewController {
 
@@ -45,5 +47,18 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "sgBuyer", sender: nil)
         }
         
+    }
+    @IBAction func btnKakaoLogin(_ sender: UIButton) {
+        AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoAccount() success.")
+
+                //do something
+                let _ = oauthToken
+            }
+        }
     }
 }

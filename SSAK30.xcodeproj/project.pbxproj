@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24BCEC0F2665896B85AD06B8 /* Pods_SSAK30.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1584B15B579549D07F61806 /* Pods_SSAK30.framework */; };
 		300F98DA2506055300411288 /* BSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F98D92506055300411288 /* BSearchViewController.swift */; };
 		30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0B250207FD0037AB3B /* AppDelegate.swift */; };
 		30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0D250207FD0037AB3B /* SceneDelegate.swift */; };
@@ -21,6 +22,9 @@
 		308D362925024EC100B363B9 /* BInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D362825024EC100B363B9 /* BInterestViewController.swift */; };
 		308D362B25024ECE00B363B9 /* BMyinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D362A25024ECE00B363B9 /* BMyinfoViewController.swift */; };
 		308D362D25024F6000B363B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D362C25024F6000B363B9 /* LoginViewController.swift */; };
+		30D5B0B4250A0959002B66EB /* MarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B0B3250A0959002B66EB /* MarketModel.swift */; };
+		30D5B0B6250A0A76002B66EB /* NearStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B0B5250A0A76002B66EB /* NearStoreModel.swift */; };
+		30D5B0B8250A0C5D002B66EB /* StoreMarketQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B0B7250A0C5D002B66EB /* StoreMarketQueryModel.swift */; };
 		4ED5E447250218650016EFD8 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED5E446250218650016EFD8 /* playstore.png */; };
 		6B895EC82508CD18008E4D3D /* BHomeDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */; };
 		6B895ECA2508CD31008E4D3D /* BHomeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */; };
@@ -60,10 +64,15 @@
 		308D362825024EC100B363B9 /* BInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BInterestViewController.swift; sourceTree = "<group>"; };
 		308D362A25024ECE00B363B9 /* BMyinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMyinfoViewController.swift; sourceTree = "<group>"; };
 		308D362C25024F6000B363B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		30D5B0B3250A0959002B66EB /* MarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketModel.swift; sourceTree = "<group>"; };
+		30D5B0B5250A0A76002B66EB /* NearStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearStoreModel.swift; sourceTree = "<group>"; };
+		30D5B0B7250A0C5D002B66EB /* StoreMarketQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMarketQueryModel.swift; sourceTree = "<group>"; };
 		4ED5E446250218650016EFD8 /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
 		6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeDBModel.swift; sourceTree = "<group>"; };
 		6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeQueryModel.swift; sourceTree = "<group>"; };
 		6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeTableViewCell.swift; sourceTree = "<group>"; };
+		91314102745C2E0925DC839E /* Pods-SSAK30.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.debug.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.debug.xcconfig"; sourceTree = "<group>"; };
+		985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.release.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.release.xcconfig"; sourceTree = "<group>"; };
 		9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellChkViewController.swift; sourceTree = "<group>"; };
 		9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +82,7 @@
 		9DCDB81A25087C1800A6F940 /* SMyInfoDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoDBModel.swift; sourceTree = "<group>"; };
 		9DCDB81C2508B84000A6F940 /* SMyInfoQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB81E2508C17600A6F940 /* SMyInfoReviewQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoReviewQueryModel.swift; sourceTree = "<group>"; };
+		D1584B15B579549D07F61806 /* Pods_SSAK30.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAK30.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHomeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNoticeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestViewController.swift; sourceTree = "<group>"; };
@@ -87,17 +97,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24BCEC0F2665896B85AD06B8 /* Pods_SSAK30.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D537C20426AE6243A414A29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1584B15B579549D07F61806 /* Pods_SSAK30.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B1E86B9EB0A6509E07FCA03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91314102745C2E0925DC839E /* Pods-SSAK30.debug.xcconfig */,
+				985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		30628AFF250207FD0037AB3B = {
 			isa = PBXGroup;
 			children = (
 				30628B0A250207FD0037AB3B /* SSAK30 */,
 				30628B09250207FD0037AB3B /* Products */,
+				2B1E86B9EB0A6509E07FCA03 /* Pods */,
+				1D537C20426AE6243A414A29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,8 +161,6 @@
 				EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */,
 				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
 				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
-				300F98D92506055300411288 /* BSearchViewController.swift */,
-				EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */,
 				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
 				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
 				9DCDB81A25087C1800A6F940 /* SMyInfoDBModel.swift */,
@@ -149,6 +177,9 @@
 				6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */,
 				6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */,
 				6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */,
+				30D5B0B3250A0959002B66EB /* MarketModel.swift */,
+				30D5B0B5250A0A76002B66EB /* NearStoreModel.swift */,
+				30D5B0B7250A0C5D002B66EB /* StoreMarketQueryModel.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -160,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30628B1F250208000037AB3B /* Build configuration list for PBXNativeTarget "SSAK30" */;
 			buildPhases = (
+				014CDF7774E8DB178772DC7B /* [CP] Check Pods Manifest.lock */,
 				30628B04250207FD0037AB3B /* Sources */,
 				30628B05250207FD0037AB3B /* Frameworks */,
 				30628B06250207FD0037AB3B /* Resources */,
+				D77278DFA6F8B13B6ACBEF49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +253,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		014CDF7774E8DB178772DC7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SSAK30-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D77278DFA6F8B13B6ACBEF49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSAK30/Pods-SSAK30-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSAK30/Pods-SSAK30-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSAK30/Pods-SSAK30-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30628B04250207FD0037AB3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -227,9 +302,11 @@
 			files = (
 				308D362D25024F6000B363B9 /* LoginViewController.swift in Sources */,
 				EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */,
+				30D5B0B8250A0C5D002B66EB /* StoreMarketQueryModel.swift in Sources */,
 				30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */,
 				308D362B25024ECE00B363B9 /* BMyinfoViewController.swift in Sources */,
 				30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */,
+				30D5B0B4250A0959002B66EB /* MarketModel.swift in Sources */,
 				EC1E3BAC250216C000F4ABDB /* SMyinfoViewController.swift in Sources */,
 				EC1E3BAE2506244C00F4ABDB /* BDetailViewController.swift in Sources */,
 				30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */,
@@ -247,6 +324,7 @@
 				9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */,
 				9DCDB817250779D400A6F940 /* BMyInfoBuyListQueryModel.swift in Sources */,
 				9DCDB81D2508B84000A6F940 /* SMyInfoQueryModel.swift in Sources */,
+				30D5B0B6250A0A76002B66EB /* NearStoreModel.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
 				300F98DA2506055300411288 /* BSearchViewController.swift in Sources */,
 				EC1E3BB02507513900F4ABDB /* SProductAddViewController.swift in Sources */,
@@ -400,6 +478,7 @@
 		};
 		30628B20250208000037AB3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91314102745C2E0925DC839E /* Pods-SSAK30.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -417,6 +496,7 @@
 		};
 		30628B21250208000037AB3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
