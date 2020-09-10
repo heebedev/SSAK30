@@ -12,6 +12,9 @@ class BMyInfoDBModel:NSObject {
     
     var uImage: String?
     var uName: String?
+    var uPassword:String?
+    var uPhone:String?
+    var uEmail:String?
     var totalCash: String?
     var sellSeqno: String?
     var sellImage: String?
@@ -25,10 +28,13 @@ class BMyInfoDBModel:NSObject {
             
     }
     
-    init(uImage: String, uName: String, totalCash:String) {
+    init(uImage: String, uName: String, totalCash:String, uPassword:String, uPhone:String, uEmail:String) {
         self.uImage = uImage
         self.uName = uName
         self.totalCash = totalCash
+        self.uPassword = uPassword
+        self.uPhone = uPhone
+        self.uEmail = uEmail
     }
 
     init(sellSeqno: String?, sellImage: String, sellTitle: String, priceEA: String){

@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to Location&amp;apos;s Info for Using Beacon when In Use.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Used to Location&amp;apos;s Info always for Using Beacon.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Used to Location&amp;apos;s Info always for Using Beacon.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -46,6 +52,8 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Album Image to App</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
