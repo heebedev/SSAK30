@@ -25,10 +25,11 @@ class BHomeInterestQueryModel: NSObject{
             if error != nil { // 에러코드가 없을 때 실행
                 print("Failed to download data")
             }else{
-                print("Data is downloaded")
+                print("Interest Data is downloaded")
                 
                 //parse JSON
                 self.parseJSON(data!)
+                
             }
         }
         task.resume()
@@ -73,6 +74,7 @@ class BHomeInterestQueryModel: NSObject{
                 query.openDate = openDate
                 query.closeDate = closeDate
                 query.sellRegistDate = sellRegistDate
+                
                 
             }
             

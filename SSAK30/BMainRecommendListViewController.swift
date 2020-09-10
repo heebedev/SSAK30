@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BMainRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QueryModelProtocol {
+class BMainRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BHomeInterestQueryModelProtocol {
     
     @IBOutlet weak var listCollectionView: UICollectionView!
     @IBOutlet weak var lblrecentSellProduct: UILabel!
@@ -25,7 +25,7 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         self.listCollectionView?.delegate = self
         self.listCollectionView?.dataSource = self
         
-        let queryModel = BHomeQueryModel()
+        let queryModel = BHomeInterestQueryModel()
         queryModel.delegate = self
         queryModel.downloadItems()
     }
@@ -38,7 +38,7 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let queryModel = BHomeQueryModel()
+        let queryModel = BHomeInterestQueryModel()
         queryModel.delegate = self
         queryModel.downloadItems()
     }
