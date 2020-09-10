@@ -1,21 +1,21 @@
 //
-//  MainQueryModel.swift
+//  BHomeInterstQueryModel.swift
 //  SSAK30
 //
-//  Created by Songhee Choi on 2020/09/08.
+//  Created by Songhee Choi on 2020/09/10.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import Foundation
 
-protocol QueryModelProtocol: class{
+protocol BHomeInterestQueryModelProtocol: class{
     func itemDownloaded(items:NSArray)
 }
 
-class BHomeQueryModel: NSObject{
+class BHomeInterestQueryModel: NSObject{
     
-    var delegate: QueryModelProtocol!
-    let urlPath = "http://localhost:8080/ssak30/bHomeQuery_recent_ios.jsp"
+    var delegate: BHomeInterestQueryModelProtocol!
+    let urlPath = "http://localhost:8080/ssak30/bHomeInterestQuery_ios.jsp"
     
     func downloadItems(){
         let url: URL = URL(string: urlPath)!

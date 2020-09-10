@@ -13,9 +13,13 @@ class BHomeViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     @IBOutlet weak var listTableView: UITableView!
-    
 
     var feedItem: NSArray = NSArray()
+    
+    //collection view
+    var recentRecommendListViewController: BMainRecommendListViewController!
+   var hotRecommendListViewController: BMainRecommendListViewController!
+   var interestRecommendListViewController: BMainRecommendListViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +61,10 @@ class BHomeViewController: UIViewController, UITableViewDataSource, UITableViewD
         let item: BHomeDBModel = feedItem[indexPath.row] as! BHomeDBModel //feedItem 있는 것 하나씩 가져와서 구성함
         // set custom text
         
-        cell.sellTitle?.text = "\(item.sellTitle!)"
+        cell.sellTitle?.text = "\(item.sbTitle!)"
         cell.sellPrice?.text = "\(item.priceEA!)"
         
-        let url = URL(string: "http://192.168.0.5:8080/ftp/\(item.sellImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
+        let url = URL(string: "http://192.168.0.5:8080/ftp/\(item.sbImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url){(data, response, error) in
@@ -121,8 +125,25 @@ class BHomeViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     */
 
-    
-    
+    // collectionview
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "recent" {
+            let destinationVC = segue.destination as? BMainRecommendListViewController
+            recentRecommendListViewController = destinationVC
+            //recentRecommendListViewController.viewModel.updateType(.recent)
+            //recentRecommendListViewController.viewModel.fetchItems()
+        } else if segue.identifier == "hot" {
+            let destinationVC = segue.destination as? BMainRecommendListViewController
+            hotRecommendListViewController = destinationVC
+            //hotRecommendListViewController.viewModel.updateType(.hot)
+            //hotRecommendListViewController.viewModel.fetchItems()
+        } else if segue.identifier == "interest" {
+            let destinationVC = segue.destination as? BMainRecommendListViewController
+            interestRecommendListViewController = destinationVC
+            //interestRecommendListViewController.viewModel.updateType(.interest)
+            //interestRecommendListViewController.viewModel.fetchItems()
+        }
+    }
     
     
 }
