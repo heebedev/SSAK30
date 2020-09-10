@@ -24,9 +24,7 @@ class SMyInfoQueryModel: NSObject{
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{
-                print("Failed to download data")
             }else{
-                print("Data is downloaded")
                 self.parseJAON(data!)
             }
         }
@@ -63,6 +61,7 @@ class SMyInfoQueryModel: NSObject{
                 query.sPhone = sPhone
                 query.sAddress = sAddress
                 query.sServiceTime = sServiceTime
+                print(sSeqno, sName, sImage, sBusinessNo, sPhone, sAddress, sServiceTime)
             }
             
             locations.add(query)

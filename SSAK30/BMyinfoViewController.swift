@@ -14,19 +14,23 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
     var feedItem: NSArray = NSArray()
     var feedItem2: NSArray = NSArray()
     var uSeqno: String?
+    var thiryCash:String?
+    var myCash:Int = 0
     
     @IBOutlet weak var imgUserImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblCash: UILabel!
     @IBOutlet weak var tvMyBuyList: UITableView!
-    @IBOutlet weak var tvMyReviewList: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.reloadInputViews()
         // 다 내가(tableViewController) 할거다 선언.
         self.tvMyBuyList.delegate = self
         self.tvMyBuyList.dataSource = self
+        self.tvMyBuyList.rowHeight = 115
         
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
@@ -41,11 +45,11 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         feedItem = items
         let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
         lblName.text = item.uName
-        print(item.uImage as Any)
         lblCash.text = item.totalCash
     }
     func buyListitemDownloaded(items: NSArray) {
         feedItem2 = items
+    
         self.tvMyBuyList.reloadData()
         }
     
@@ -67,21 +71,70 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "buyCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "buyCell", for: indexPath) as! BMyInfoTableViewCell
         // Configure the cell...
         let item: BMyInfoDBModel = feedItem2[indexPath.row] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
-        cell.textLabel?.text = (item.sellTitle!)
-        cell.detailTextLabel?.text = (item.priceEA!)
+        cell.lblTitle.text = (item.sellTitle)
+        cell.lblPrice.text = (item.priceEA!)
         return cell
     }
     
     @IBAction func btnUpdateMyInfo(_ sender: UIButton) {
+        let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel
+        let checkAlert = UIAlertController(title: "알림", message: "비밀번호를 입력하세요.", preferredStyle: UIAlertController.Style.alert)
+        let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
+            let insertPW = checkAlert.textFields![0].text
+            let password = item.uPassword
+            if(insertPW == password){
+                self.navigationController?.popViewController(animated: true)
+            }else{
+                let checkAlert = UIAlertController(title: "알림", message: "비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+                let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                checkAlert.addAction(onAction)
+            }
+        })
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+        checkAlert.addAction(onAction)
+        checkAlert.addAction(cancelAction)
+        checkAlert.addTextField()
+        present(checkAlert, animated: true, completion: nil)
         
     }
     
     @IBAction func btnChargeCash(_ sender: UIButton) {
-        
+        let resultAlert = UIAlertController(title: "충전", message: "충전하실 금액을 입력하세요.", preferredStyle: UIAlertController.Style.alert)
+        let onAction = UIAlertAction(title: "충전하기", style: UIAlertAction.Style.default, handler: {ACTION in
+            self.myCash = Int(self.lblCash.text!)!
+            self.myCash = self.myCash + Int(resultAlert.textFields![0].text!)!
+            self.lblCash.text = String(self.myCash)
+            let queryModel = BChargeCashQueryModel()
+            queryModel.updateItem(uSeqno: self.uSeqno ?? "1", thiryCash: String(self.myCash))
+            })
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+        resultAlert.addAction(onAction)
+        resultAlert.addAction(cancelAction)
+        resultAlert.addTextField()
+        present(resultAlert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+            if segue.identifier == "sgUpdate"{
+                
+                let detailView = segue.destination as! BUpdateInfoViewController
+                
+                let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel
+
+                let uName = String(item.uName!)
+                let uImage = String(item.uImage!)
+                let uPassword = String(item.uPassword!)
+                let uPhone = String(item.uPhone!)
+                let uEmail = String(item.uEmail!)
+                
+                detailView.receiveItems(uSeqno ?? "1", uName, uImage, uPassword, uPhone, uEmail)
+            }
+        }
     
     /*
     // MARK: - Navigation

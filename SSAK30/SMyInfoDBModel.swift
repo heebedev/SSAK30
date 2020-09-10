@@ -21,10 +21,10 @@ class SMyInfoDBModel: NSObject{
     var reviewCount: String?
     var likeCount: String?
     var sellCount: String?
-    var sellSeq: String?
-    var sellImage: String?
-    var sellTitle: String?
-    var PriceEA: String?
+    var sellSeqno: String?
+    var sbImage: String?
+    var sbTitle: String?
+    var priceEA: String?
     
     override init() {
     
@@ -45,11 +45,11 @@ class SMyInfoDBModel: NSObject{
         self.reviewCount = reviewCount
     }
     
-    init(sellSeq: String, sellImage: String, sellTitle:String, PriceEA:String, sellCount:String){
-        self.sellSeq = sellSeq
-        self.sellImage = sellImage
-        self.sellTitle = sellTitle
-        self.PriceEA = PriceEA
+    init(sellSeqno: String, sbImage: String, sbTitle:String, priceEA:String, sellCount:String){
+        self.sellSeqno = sellSeqno
+        self.sbImage = sbImage
+        self.sbTitle = sbTitle
+        self.priceEA = priceEA
         self.sellCount = sellCount
     }
 }

@@ -1,23 +1,23 @@
 //
-//  BMyInfoBuyListQueryModel.swift
+//  SMyInfoSellListQueryModel.swift
 //  SSAK30
 //
-//  Created by sookjeon on 2020/09/08.
+//  Created by sookjeon on 2020/09/10.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import Foundation
 
-protocol BMyInfoBuyListQueryModelProtocol: class {
-    func buyListitemDownloaded(items:NSArray)
+protocol SMyInfoSellListQueryModelProtocol: class {
+    func sellListItemDownloaded(items:NSArray)
 }
 
-class BMyInfoBuyListQueryModel: NSObject{
+class SMyInfoSellListQueryModel: NSObject{
     
-    var delegate: BMyInfoBuyListQueryModelProtocol!
-    var urlPath = "http://localhost:8080/test/ssak30_myInfo_buylist_query.jsp"
+    var delegate: SMyInfoSellListQueryModelProtocol!
+    var urlPath = "http://localhost:8080/test/ssak30_storeInfo_selllist_query.jsp"
     
-    func downloadItems(uSeqno:String){
+    func downloadItems(uSeqno: String){
         let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         urlPath += urlAdd
         let url: URL = URL(string: urlPath)!
@@ -30,6 +30,7 @@ class BMyInfoBuyListQueryModel: NSObject{
         }
         task.resume()
     }
+    
     func parseJAON(_ data: Data){
         var jsonResult = NSArray()
         
@@ -43,25 +44,23 @@ class BMyInfoBuyListQueryModel: NSObject{
         
         for i in 0..<jsonResult.count{
             jsonElement = jsonResult[i] as! NSDictionary
-            let query = BMyInfoDBModel()
-            
+            let query = SMyInfoDBModel()
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
             if let sellSeqno = jsonElement["sellSeqno"] as? String,
-               let sellTitle = jsonElement["sellTitle"] as? String,
-               let sellImage = jsonElement["sellImage"] as? String,
-               let priceEA = jsonElement["priceEA"] as? String{
-               
+                let sbTitle = jsonElement["sbTitle"] as? String,
+                let sbImage = jsonElement["sbImage"] as? String,
+                let priceEA = jsonElement["priceEA"] as? String{
+            
                 query.sellSeqno = sellSeqno
-                query.sellTitle = sellTitle
-                query.sellImage = sellImage
+                query.sbTitle = sbTitle
+                query.sbImage = sbImage
                 query.priceEA = priceEA
-                
             }
             
             locations.add(query)
         }
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.buyListitemDownloaded(items: locations)
+            self.delegate.sellListItemDownloaded(items: locations)
         })
     }
-}// ------------
+}

@@ -42,6 +42,15 @@
 		9DCDB81B25087C1800A6F940 /* SMyInfoDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB81A25087C1800A6F940 /* SMyInfoDBModel.swift */; };
 		9DCDB81D2508B84000A6F940 /* SMyInfoQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB81C2508B84000A6F940 /* SMyInfoQueryModel.swift */; };
 		9DCDB81F2508C17600A6F940 /* SMyInfoReviewQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB81E2508C17600A6F940 /* SMyInfoReviewQueryModel.swift */; };
+		9DCDB8212509CDC200A6F940 /* SMyInfoLikeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB8202509CDC200A6F940 /* SMyInfoLikeQueryModel.swift */; };
+		9DCDB8232509D27200A6F940 /* SMyInfoSellQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB8222509D27200A6F940 /* SMyInfoSellQueryModel.swift */; };
+		9DCDB8252509D44B00A6F940 /* SMyInfoSellListQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB8242509D44B00A6F940 /* SMyInfoSellListQueryModel.swift */; };
+		9DCDB8292509E8E300A6F940 /* BMyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB8282509E8E300A6F940 /* BMyInfoTableViewCell.swift */; };
+		9DCDB82B250A134400A6F940 /* BChargeCashQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB82A250A134400A6F940 /* BChargeCashQueryModel.swift */; };
+		9DCDB82D250A223800A6F940 /* BUpdateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB82C250A223800A6F940 /* BUpdateInfoViewController.swift */; };
+		9DCDB82F250A29BD00A6F940 /* BUpdateQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB82E250A29BD00A6F940 /* BUpdateQueryModel.swift */; };
+		9DCDB831250A3E7900A6F940 /* SUpdateQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB830250A3E7900A6F940 /* SUpdateQueryModel.swift */; };
+		9DCDB833250A3FBA00A6F940 /* SUpdateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB832250A3FBA00A6F940 /* SUpdateInfoViewController.swift */; };
 		EC1E3BA62502167200F4ABDB /* SHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */; };
 		EC1E3BA82502169A00F4ABDB /* SNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */; };
 		EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */; };
@@ -91,6 +100,15 @@
 		9DCDB81C2508B84000A6F940 /* SMyInfoQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB81E2508C17600A6F940 /* SMyInfoReviewQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoReviewQueryModel.swift; sourceTree = "<group>"; };
 		D1584B15B579549D07F61806 /* Pods_SSAK30.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAK30.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCDB8202509CDC200A6F940 /* SMyInfoLikeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoLikeQueryModel.swift; sourceTree = "<group>"; };
+		9DCDB8222509D27200A6F940 /* SMyInfoSellQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoSellQueryModel.swift; sourceTree = "<group>"; };
+		9DCDB8242509D44B00A6F940 /* SMyInfoSellListQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoSellListQueryModel.swift; sourceTree = "<group>"; };
+		9DCDB8282509E8E300A6F940 /* BMyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		9DCDB82A250A134400A6F940 /* BChargeCashQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BChargeCashQueryModel.swift; sourceTree = "<group>"; };
+		9DCDB82C250A223800A6F940 /* BUpdateInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BUpdateInfoViewController.swift; sourceTree = "<group>"; };
+		9DCDB82E250A29BD00A6F940 /* BUpdateQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BUpdateQueryModel.swift; sourceTree = "<group>"; };
+		9DCDB830250A3E7900A6F940 /* SUpdateQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUpdateQueryModel.swift; sourceTree = "<group>"; };
+		9DCDB832250A3FBA00A6F940 /* SUpdateInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUpdateInfoViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHomeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNoticeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestViewController.swift; sourceTree = "<group>"; };
@@ -163,9 +181,13 @@
 				308D362625024EB600B363B9 /* BNoticeViewController.swift */,
 				308D362825024EC100B363B9 /* BInterestViewController.swift */,
 				308D362A25024ECE00B363B9 /* BMyinfoViewController.swift */,
+				9DCDB82C250A223800A6F940 /* BUpdateInfoViewController.swift */,
 				9DCDB8102507485000A6F940 /* BMyInfoDBModel.swift */,
 				9DCDB816250779D400A6F940 /* BMyInfoBuyListQueryModel.swift */,
 				9DCDB8122507594B00A6F940 /* BMyInfoQueryModel.swift */,
+				9DCDB82A250A134400A6F940 /* BChargeCashQueryModel.swift */,
+				9DCDB82E250A29BD00A6F940 /* BUpdateQueryModel.swift */,
+				9DCDB8282509E8E300A6F940 /* BMyInfoTableViewCell.swift */,
 				EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */,
 				6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */,
 				EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */,
@@ -173,9 +195,15 @@
 				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
 				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
 				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
+				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
+				9DCDB832250A3FBA00A6F940 /* SUpdateInfoViewController.swift */,
 				9DCDB81A25087C1800A6F940 /* SMyInfoDBModel.swift */,
 				9DCDB81C2508B84000A6F940 /* SMyInfoQueryModel.swift */,
 				9DCDB81E2508C17600A6F940 /* SMyInfoReviewQueryModel.swift */,
+				9DCDB8202509CDC200A6F940 /* SMyInfoLikeQueryModel.swift */,
+				9DCDB8222509D27200A6F940 /* SMyInfoSellQueryModel.swift */,
+				9DCDB8242509D44B00A6F940 /* SMyInfoSellListQueryModel.swift */,
+				9DCDB830250A3E7900A6F940 /* SUpdateQueryModel.swift */,
 				30628B17250208000037AB3B /* Assets.xcassets */,
 				30628B19250208000037AB3B /* LaunchScreen.storyboard */,
 				30628B1C250208000037AB3B /* Info.plist */,
@@ -315,15 +343,19 @@
 				308D362D25024F6000B363B9 /* LoginViewController.swift in Sources */,
 				EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */,
 				30D5B0B8250A0C5D002B66EB /* StoreMarketQueryModel.swift in Sources */,
+				9DCDB8292509E8E300A6F940 /* BMyInfoTableViewCell.swift in Sources */,
 				30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */,
 				308D362B25024ECE00B363B9 /* BMyinfoViewController.swift in Sources */,
 				30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */,
 				30D5B0B4250A0959002B66EB /* MarketModel.swift in Sources */,
 				EC1E3BAC250216C000F4ABDB /* SMyinfoViewController.swift in Sources */,
+				9DCDB8212509CDC200A6F940 /* SMyInfoLikeQueryModel.swift in Sources */,
 				EC1E3BAE2506244C00F4ABDB /* BDetailViewController.swift in Sources */,
 				30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */,
 				6BE3EE082509DB8900323294 /* BMainRecommendListViewController.swift in Sources */,
 				6B895EC82508CD18008E4D3D /* BHomeDBModel.swift in Sources */,
+				9DCDB82F250A29BD00A6F940 /* BUpdateQueryModel.swift in Sources */,
+				9DCDB82B250A134400A6F940 /* BChargeCashQueryModel.swift in Sources */,
 				EC1E3BA62502167200F4ABDB /* SHomeViewController.swift in Sources */,
 				9DCDB80D2506080D00A6F940 /* SignUpViewController.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
@@ -331,12 +363,17 @@
 				9DCDB81F2508C17600A6F940 /* SMyInfoReviewQueryModel.swift in Sources */,
 				6BE3EE0E250A1A6200323294 /* SMainRecommendListViewController.swift in Sources */,
 				9DCDB81B25087C1800A6F940 /* SMyInfoDBModel.swift in Sources */,
+				9DCDB82D250A223800A6F940 /* BUpdateInfoViewController.swift in Sources */,
 				EC1E3BA62502167200F4ABDB /* SHomeViewController.swift in Sources */,
 				9DCDB80D2506080D00A6F940 /* SignUpViewController.swift in Sources */,
+				9DCDB8232509D27200A6F940 /* SMyInfoSellQueryModel.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
 				6BE3EE10250A21D000323294 /* SHomeQueryModel.swift in Sources */,
 				9DCDB8132507594B00A6F940 /* BMyInfoQueryModel.swift in Sources */,
 				9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */,
+				9DCDB833250A3FBA00A6F940 /* SUpdateInfoViewController.swift in Sources */,
+				9DCDB8252509D44B00A6F940 /* SMyInfoSellListQueryModel.swift in Sources */,
+				9DCDB831250A3E7900A6F940 /* SUpdateQueryModel.swift in Sources */,
 				9DCDB817250779D400A6F940 /* BMyInfoBuyListQueryModel.swift in Sources */,
 				6BE3EE0A2509F34900323294 /* BHomeInterstQueryModel.swift in Sources */,
 				9DCDB81D2508B84000A6F940 /* SMyInfoQueryModel.swift in Sources */,
@@ -503,6 +540,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.SSAK30;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -521,6 +559,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.SSAK30;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

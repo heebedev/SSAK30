@@ -24,9 +24,7 @@ class BMyInfoQueryModel: NSObject{
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{
-                print("Failed to download data")
             }else{
-                print("Data is downloaded")
                 self.parseJAON(data!)
             }
         }
@@ -50,11 +48,17 @@ class BMyInfoQueryModel: NSObject{
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
             if let uName = jsonElement["uName"] as? String,
                let uImage = jsonElement["uImage"] as? String,
+               let uEmail = jsonElement["uEmail"] as? String,
+               let uPassword = jsonElement["uPassword"] as? String,
+               let uPhone = jsonElement["uPhone"] as? String,
                let totalCash = jsonElement["totalCash"] as? String{
-               
+                
                 query.uName = uName
                 query.uImage = uImage
                 query.totalCash = totalCash
+                query.uEmail = uEmail
+                query.uPassword = uPassword
+                query.uPhone = uPhone
             }
             
             locations.add(query)
