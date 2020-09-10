@@ -7,17 +7,35 @@
 //
 
 import UIKit
-import MapKit
 
 class SHomeViewController: UIViewController {
 
+    
+    //collection view
+    var sellingRecommendListViewController: SMainSellingRecommendListViewController!
+    var doneSellRecommendListViewController: SMainDoneSellRecommendListViewController!
+//    var DoneSellRecommendListViewController: SMainDoneSellRecommendListViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    // collectionview
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selling" {
+            let destinationVC = segue.destination as? SMainSellingRecommendListViewController
+            sellingRecommendListViewController = destinationVC
+            
+        }else if segue.identifier == "doneSell" {
+        let destinationVC = segue.destination as? SMainDoneSellRecommendListViewController
+        doneSellRecommendListViewController = destinationVC
+        
+        }
+        
+        
+    }
     /*
     // MARK: - Navigation
 
