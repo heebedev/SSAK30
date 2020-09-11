@@ -80,24 +80,26 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
     }
     
     @IBAction func btnUpdateMyInfo(_ sender: UIButton) {
-        let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel
-        let checkAlert = UIAlertController(title: "알림", message: "비밀번호를 입력하세요.", preferredStyle: UIAlertController.Style.alert)
-        let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
-            let insertPW = checkAlert.textFields![0].text
-            let password = item.uPassword
-            if(insertPW == password){
-                self.navigationController?.popViewController(animated: true)
-            }else{
-                let checkAlert = UIAlertController(title: "알림", message: "비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
-                let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                checkAlert.addAction(onAction)
-            }
-        })
-        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
-        checkAlert.addAction(onAction)
-        checkAlert.addAction(cancelAction)
-        checkAlert.addTextField()
-        present(checkAlert, animated: true, completion: nil)
+//        let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel
+//        let checkAlert = UIAlertController(title: "알림", message: "비밀번호를 입력하세요.", preferredStyle: UIAlertController.Style.alert)
+//        let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
+//            let insertPW = checkAlert.textFields![0].text
+//            let password = item.uPassword
+//            if(insertPW == password){
+//                print("OK")
+////                self.navigationController?.popViewController(animated: true)
+//            }else{
+//                print("FAIL")
+//                let checkAlert = UIAlertController(title: "알림", message: "비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+//                let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                checkAlert.addAction(onAction)
+//            }
+//        })
+//        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+//        checkAlert.addAction(onAction)
+//        checkAlert.addAction(cancelAction)
+//        checkAlert.addTextField()
+//        present(checkAlert, animated: true, completion: nil)
         
     }
     

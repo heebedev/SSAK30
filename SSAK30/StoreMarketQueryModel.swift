@@ -20,9 +20,9 @@ class StoreMarketQueryModel: NSObject{
     func downloadItems(purpose:String, latitude:Double, longitude:Double) {
         switch purpose {
         case "nearStore":
-            urlPath = "http://localhost:8080/Test/nearStore_query_ios.jsp?latitude=\(latitude)&longitude=\(longitude)"
+            urlPath = "http://localhost:8080/test/nearStore_query_ios.jsp?latitude=\(latitude)&longitude=\(longitude)"
         case "nearMarket":
-            urlPath = "http://localhost:8080/Test/nearMarket_query_ios.jsp?latitude=\(latitude)&longitude=\(longitude)"
+            urlPath = "http://localhost:8080/test/nearMarket_query_ios.jsp?latitude=\(latitude)&longitude=\(longitude)"
         default: break
         }
         let url: URL = URL(string: urlPath)!

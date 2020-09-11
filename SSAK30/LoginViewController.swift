@@ -10,6 +10,7 @@ import UIKit
 import KakaoAdSDK
 import KakaoSDKCommon
 import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginViewController: UIViewController {
 
@@ -28,6 +29,7 @@ class LoginViewController: UIViewController {
         // 버튼 모양
         kakaobutton.layer.cornerRadius = 20
         naverbutton.layer.cornerRadius = 20
+        self.reloadInputViews()
     }
     
 
@@ -60,6 +62,8 @@ class LoginViewController: UIViewController {
                 //do something
                 let _ = oauthToken
             }
+
         }
     }
+
 }

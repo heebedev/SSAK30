@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		24BCEC0F2665896B85AD06B8 /* Pods_SSAK30.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1584B15B579549D07F61806 /* Pods_SSAK30.framework */; };
 		21D2D1A8250726DE00085E16 /* SignUpDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */; };
 		21D2D1AA250728B300085E16 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A9250728B300085E16 /* SignUpModel.swift */; };
 		21D2D1AC2507535B00085E16 /* readmeD.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 21D2D1AB2507535B00085E16 /* readmeD.rtf */; };
 		21D2D1B02508698600085E16 /* EmailChkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1AF2508698600085E16 /* EmailChkModel.swift */; };
+		24BCEC0F2665896B85AD06B8 /* Pods_SSAK30.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1584B15B579549D07F61806 /* Pods_SSAK30.framework */; };
 		300F98DA2506055300411288 /* BSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F98D92506055300411288 /* BSearchViewController.swift */; };
 		30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0B250207FD0037AB3B /* AppDelegate.swift */; };
 		30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0D250207FD0037AB3B /* SceneDelegate.swift */; };
@@ -38,6 +37,8 @@
 		6BE3EE0A2509F34900323294 /* BHomeInterstQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */; };
 		6BE3EE0E250A1A6200323294 /* SMainRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */; };
 		6BE3EE10250A21D000323294 /* SHomeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3EE0F250A21D000323294 /* SHomeQueryModel.swift */; };
+		9D55203D250B53CF004DE325 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D55203C250B53CF004DE325 /* KakaoOpenSDK.framework */; };
+		9D55203E250B53CF004DE325 /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D55203C250B53CF004DE325 /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */; };
 		9DCDB80D2506080D00A6F940 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */; };
 		9DCDB80F2506252800A6F940 /* FindIdPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */; };
@@ -64,6 +65,20 @@
 		EC1E3BB02507513900F4ABDB /* SProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */; };
 		EC1E3BB22507613700F4ABDB /* ProductInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9D55203F250B53CF004DE325 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9D55203E250B53CF004DE325 /* KakaoOpenSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDBModel.swift; sourceTree = "<group>"; };
@@ -93,12 +108,14 @@
 		6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeDBModel.swift; sourceTree = "<group>"; };
 		6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeQueryModel.swift; sourceTree = "<group>"; };
 		6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeTableViewCell.swift; sourceTree = "<group>"; };
-		91314102745C2E0925DC839E /* Pods-SSAK30.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.debug.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.debug.xcconfig"; sourceTree = "<group>"; };
-		985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.release.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.release.xcconfig"; sourceTree = "<group>"; };
 		6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMainRecommendListViewController.swift; sourceTree = "<group>"; };
 		6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeInterstQueryModel.swift; sourceTree = "<group>"; };
 		6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMainRecommendListViewController.swift; sourceTree = "<group>"; };
 		6BE3EE0F250A21D000323294 /* SHomeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHomeQueryModel.swift; sourceTree = "<group>"; };
+		91314102745C2E0925DC839E /* Pods-SSAK30.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.debug.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.debug.xcconfig"; sourceTree = "<group>"; };
+		985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.release.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.release.xcconfig"; sourceTree = "<group>"; };
+		9D552039250B52A3004DE325 /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D55203C250B53CF004DE325 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Pods/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellChkViewController.swift; sourceTree = "<group>"; };
 		9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +125,6 @@
 		9DCDB81A25087C1800A6F940 /* SMyInfoDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoDBModel.swift; sourceTree = "<group>"; };
 		9DCDB81C2508B84000A6F940 /* SMyInfoQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB81E2508C17600A6F940 /* SMyInfoReviewQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoReviewQueryModel.swift; sourceTree = "<group>"; };
-		D1584B15B579549D07F61806 /* Pods_SSAK30.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAK30.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCDB8202509CDC200A6F940 /* SMyInfoLikeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoLikeQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB8222509D27200A6F940 /* SMyInfoSellQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoSellQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB8242509D44B00A6F940 /* SMyInfoSellListQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoSellListQueryModel.swift; sourceTree = "<group>"; };
@@ -118,6 +134,7 @@
 		9DCDB82E250A29BD00A6F940 /* BUpdateQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BUpdateQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB830250A3E7900A6F940 /* SUpdateQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUpdateQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB832250A3FBA00A6F940 /* SUpdateInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUpdateInfoViewController.swift; sourceTree = "<group>"; };
+		D1584B15B579549D07F61806 /* Pods_SSAK30.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAK30.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHomeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNoticeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24BCEC0F2665896B85AD06B8 /* Pods_SSAK30.framework in Frameworks */,
+				9D55203D250B53CF004DE325 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +160,7 @@
 		1D537C20426AE6243A414A29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D55203C250B53CF004DE325 /* KakaoOpenSDK.framework */,
 				D1584B15B579549D07F61806 /* Pods_SSAK30.framework */,
 			);
 			name = Frameworks;
@@ -159,6 +178,7 @@
 		30628AFF250207FD0037AB3B = {
 			isa = PBXGroup;
 			children = (
+				9D552039250B52A3004DE325 /* KakaoOpenSDK-Bridging-Header.h */,
 				30628B0A250207FD0037AB3B /* SSAK30 */,
 				30628B09250207FD0037AB3B /* Products */,
 				2B1E86B9EB0A6509E07FCA03 /* Pods */,
@@ -201,7 +221,6 @@
 				6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */,
 				EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */,
 				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
-				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
 				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
 				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
 				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
@@ -249,6 +268,7 @@
 				30628B05250207FD0037AB3B /* Frameworks */,
 				30628B06250207FD0037AB3B /* Resources */,
 				D77278DFA6F8B13B6ACBEF49 /* [CP] Embed Pods Frameworks */,
+				9D55203F250B53CF004DE325 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -553,14 +573,39 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = SSAK30/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"KakaoAdSDK\"",
+					"-framework",
+					"\"KakaoSDKAuth\"",
+					"-framework",
+					"\"KakaoSDKCommon\"",
+					"-framework",
+					"\"KakaoSDKTalk\"",
+					"-framework",
+					"\"KakaoSDKTemplate\"",
+					"-framework",
+					"\"KakaoSDKUser\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.SSAK30;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -572,6 +617,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods",
+				);
 				INFOPLIST_FILE = SSAK30/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,8 +628,29 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"KakaoAdSDK\"",
+					"-framework",
+					"\"KakaoSDKAuth\"",
+					"-framework",
+					"\"KakaoSDKCommon\"",
+					"-framework",
+					"\"KakaoSDKTalk\"",
+					"-framework",
+					"\"KakaoSDKTemplate\"",
+					"-framework",
+					"\"KakaoSDKUser\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sh.SSAK30;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KakaoOpenSDK-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
