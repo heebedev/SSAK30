@@ -8,9 +8,10 @@
 
 import UIKit
 
+// 판매 중
 class SMainSellingRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SHomeSellingQueryModelProtocol {
     
-    // 판매 중
+    
     @IBOutlet weak var sellingListCollectionView: UICollectionView!
     @IBOutlet weak var lblSellingProduct: UILabel!
     
