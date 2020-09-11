@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var tfBirth: UITextField!
     @IBOutlet weak var tfPhone: UITextField!
     
+    var receiveSeq = 0
     
     
     override func viewDidLoad() {
@@ -28,21 +29,36 @@ class SignUpViewController: UIViewController {
         
     }
     
+//    func receiveItems(_ uSeqno: Int){
+//        receiveSeq = uSeqno
+//    }
     
     //중복확인
     @IBAction func btnChkEmail(_ sender: UIButton) {
         let email = tfEmail.text!
         
-//        let emailchk = EmailChkModel()
-//        let result = emailchk.EmailChkloadItems(uEmail: email!)
         
-
-        if isValidEmail(emailStr: email){
-            print("성공")
+        
+        let emailchk = EmailChkModel()
+        let result = emailchk.EmailChkloadItems(uSeqno: receiveSeq, uEmail: email)
+        
+        
+        
+        if result {
+//            if receiveSeq >= 1{
+//                print("중복")
+//                //얼러트..중복된 이메일입니다
+//                //            print(useqno, "1")
+//            }else{
+//                print("가능")
+//                //            print(useqno, "2")
+//                //사용가능한 이메일입니다
+//            }
         }else{
-            myAlert(alertTitle: "실패", alertMessage: "이메일 형식으로 입력해주세요.", actionTitle: "OK", handler: nil)
-            print("실패")
+            
+            
         }
+        
         
     }
     //가입하기
@@ -52,20 +68,31 @@ class SignUpViewController: UIViewController {
         let name = tfName.text
         let birth = tfBirth.text
         let phone = tfPhone.text
+        let buysell = BuySellChkViewController()
+        let buy = buysell.buySellNo
+        
+        
         
         Check()
+        
         if isValidEmail(emailStr: email!){
-            print("성공")
+//            print("성공")
         }else{
             myAlert(alertTitle: "실패", alertMessage: "이메일 형식으로 입력해주세요.", actionTitle: "OK", handler: nil)
-            print("실패")
+
         }
         
         if validatePassword(password: password!){
-            print("성공")
+//            print("성공")
         }else{
-            myAlert(alertTitle: "실패", alertMessage: "최소 8글자이상, 대문자, 소문자, 숫자 조합으로 입력해주새요.", actionTitle: "OK", handler: nil)
-            print("실패")
+            myAlert(alertTitle: "실패", alertMessage: "비밀번호를 최소 8글자이상, 대문자, 소문자, 숫자 조합으로 입력해주새요.", actionTitle: "OK", handler: nil)
+            
+        }
+        
+        if isPhone(candidate: phone!){
+            
+        }else{
+            myAlert(alertTitle: "실패", alertMessage: "전화번호를 확인해주세요.", actionTitle: "OK", handler: nil)
         }
         
         if tfChkPassword.text == tfPassword.text{
@@ -75,12 +102,15 @@ class SignUpViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
                 
                 let singupModel = SignUpModel()
-                let result = singupModel.SignUpInsertloadItems(uEmail: email!, uPassword: password!, uName: name!, uBirth: birth!, uPhone: phone!, uBuySell: "1")
+                let result = singupModel.SignUpInsertloadItems(uEmail: email!, uPassword: password!, uName: name!, uBirth: birth!, uPhone: phone!, uBuySell: "\(buy)")
+                
+                
+                
                 
                 if result {
-                    print("성공")
+//                    print("성공")
                 }else{
-                    print("실패")
+//                    print("실패")
                 }
             })
             resultAlert.addAction(onAction)
@@ -156,8 +186,6 @@ class SignUpViewController: UIViewController {
         return emailPred.evaluate(with: emailStr)
     }
     
-
-    
     // 패스워드
     func validatePassword(password:String) -> Bool {
         let passwordRegEx = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,24}$"
@@ -165,6 +193,14 @@ class SignUpViewController: UIViewController {
         let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return predicate.evaluate(with: password)
     }
+
+    // 전화번호
+    func isPhone(candidate: String) -> Bool {
+            let regex = "^01([0|1|6|7|8|9]?)([0-9]{3,4})([0-9]{4})$"
+
+            return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: candidate)
+    }
+    
 
     /*
     // MARK: - Navigation

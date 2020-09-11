@@ -1,15 +1,14 @@
 //
-//  HomeViewController.swift
+//  BDetailViewController.swift
 //  SSAK30
 //
-//  Created by taeheum on 2020/09/04.
+//  Created by taeheum on 2020/09/07.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class SHomeViewController: UIViewController {
+class BDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -20,12 +20,14 @@ class BuySellChkViewController: UIViewController {
     
     @IBAction func btnBuy(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+        print(buySellNo, "btnBuy")
     }
     
     
     @IBAction func btnSell(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
         buySellNo = 1
+        print(buySellNo, "btnsell")
     }
     /*
     // MARK: - Navigation

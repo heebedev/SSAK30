@@ -8,6 +8,8 @@
 
 ## User settings
 xcuserdata/
+xcuserdata/*.xcuserdatad/
+xcuserdata
 
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
@@ -28,13 +30,16 @@ DerivedData/
 *.xcworkspace
 !default.xcworkspace
 <<<<<<< HEAD
+<<<<<<< HEAD
 xcuserdata/
 =======
 xcuserdata
 >>>>>>> 2fdb920d58398cce574fcfb893c443b16a55125d
+=======
+
+>>>>>>> 87315683257d3ed338496c49059b270c508622b0
 *.xcuserstate
 .DS_Store
-
 
 ## Gcc Patch
 /*.gcno
@@ -48,4 +53,9 @@ xcuserdata
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/xcode
+=======
+
+# End of https://www.toptal.com/developers/gitignore/api/xcode
+>>>>>>> 87315683257d3ed338496c49059b270c508622b0

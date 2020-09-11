@@ -45,5 +45,31 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "sgBuyer", sender: nil)
         }
         
+        let email = lblId.text
+        let password = tfPw.text
+//        let seq = 0
+        
+        let singupModel = SignUpModel()
+        let result = singupModel.downloadItems(uEmail: email!, uPassword: password!)
+        
+        
+        if result {
+            //                    print("성공")
+        }else{
+            //                    print("실패")
+        }
+        
+
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

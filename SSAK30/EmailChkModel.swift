@@ -12,12 +12,15 @@ import Foundation
 class EmailChkModel: NSObject {
     
     var urlPath = "http://localhost:8080/SSAK30/EmailChk_ios.jsp"
-    func EmailChkloadItems(uEmail: String) -> Bool{
+    func EmailChkloadItems(uSeqno: Int, uEmail: String) -> Bool{
         var result: Bool = true
         
         let urlAdd = "?uEmail=\(uEmail)"
         urlPath += urlAdd
-        
+        print(urlAdd)
+
+        print(uSeqno, "Email")
+
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
         let url: URL = URL(string: urlPath)!
@@ -27,12 +30,16 @@ class EmailChkModel: NSObject {
                 print("Failed to insert data")
                 result = false
             }else{
-                print("Data is inserted")
+                print("Data is selected")
                 result = true
             }
         }
+        
+        
         task.resume()
         
         return result
     }
+    
+    
 }//-------------------------
