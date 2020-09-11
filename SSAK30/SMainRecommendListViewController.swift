@@ -87,7 +87,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
                             let filename = self.getDecumentDirectory().appendingPathComponent("selling.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
                             try? data.write(to: filename)
                             print("Data is writed")
-                            print(self.getDecumentDirectory()) // 저장 위치 확인
+                            
                         }
                     }
                     
@@ -97,7 +97,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
                             let filename = self.getDecumentDirectory().appendingPathComponent("selling.jpg") // // 다운받을때 이미지이름
                             try? data.write(to: filename)
                             print("Data is writed")
-                            print(self.getDecumentDirectory()) // 저장 위치
+                           
                             
                         }
                     }
