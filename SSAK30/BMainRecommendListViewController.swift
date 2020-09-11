@@ -48,7 +48,9 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
     // UICollectionViewDelegate
     // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 연결해야함!! //////////
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
+        let board = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = board.instantiateViewController(withIdentifier: "BDetailViewController")
+        self.present(vc, animated: true, completion: nil)
     }
     
     // UICollectionViewDataSource
@@ -156,7 +158,6 @@ class BMainRecentRecommendListViewController: UIViewController, UICollectionView
     
    
     @IBOutlet weak var listCollectionView: UICollectionView!
-    
     @IBOutlet weak var lblrecentSellProduct: UILabel!
     
     //let viewModel = RecentRecommentListViewModel()
@@ -192,7 +193,9 @@ class BMainRecentRecommendListViewController: UIViewController, UICollectionView
     // UICollectionViewDelegate
     // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 연결해야함!! //////////
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
+        let board = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = board.instantiateViewController(withIdentifier: "BDetailViewController")
+        self.present(vc, animated: true, completion: nil)
     }
     
     // UICollectionViewDataSource
