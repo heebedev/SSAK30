@@ -31,13 +31,20 @@ DerivedData/
 !default.xcworkspace
 <<<<<<< HEAD
 <<<<<<< HEAD
-xcuserdata/
+<<<<<<< HEAD
 =======
+
+
+>>>>>>> 95a8ea4a52c9e95f5b9fb78fc97bef9305c3c26b
+xcuserdata/
 xcuserdata
+<<<<<<< HEAD
 >>>>>>> 2fdb920d58398cce574fcfb893c443b16a55125d
 =======
 
 >>>>>>> 87315683257d3ed338496c49059b270c508622b0
+=======
+>>>>>>> 95a8ea4a52c9e95f5b9fb78fc97bef9305c3c26b
 *.xcuserstate
 .DS_Store
 
@@ -54,8 +61,13 @@ xcuserdata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/xcode
 =======
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode
 >>>>>>> 87315683257d3ed338496c49059b270c508622b0
+=======
+
+# End of https://www.toptal.com/developers/gitignore/api/xcode
+>>>>>>> 95a8ea4a52c9e95f5b9fb78fc97bef9305c3c26b

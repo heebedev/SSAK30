@@ -7,14 +7,16 @@
 //
 
 import UIKit
-
-class BuySellChkViewController: UIViewController {
     var buySellNo = 0
+class BuySellChkViewController: UIViewController {
     
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        buySellNo = 0
     }
     
     

@@ -51,28 +51,29 @@ class BHomeQueryModel: NSObject{
             let query = BHomeDBModel()
             
             if  let sellSeqno = jsonElement["sellSeqno"] as? String,
-                let sSeqno = jsonElement["sSeqno"] as? String,
-                let sellTitle = jsonElement["sellTitle"] as? String,
-                let sellContext = jsonElement["sellContext"] as? String,
+                let sSeqno = jsonElement["storeinfo_sSeqno"] as? String,
+                let sbTitle = jsonElement["sbTitle"] as? String,
+                let sbContext = jsonElement["sbContent"] as? String,
+                let sbImage = jsonElement["sbImage"] as? String,
                 let tatalEA = jsonElement["tatalEA"] as? String,
                 let minimumEA = jsonElement["minimumEA"] as? String,
                 let priceEA = jsonElement["priceEA"] as? String,
                 let openDate = jsonElement["openDate"] as? String,
                 let closeDate = jsonElement["closeDate"] as? String,
-                let sellRegistDate = jsonElement["sellRegistDate"] as? String,
-                let sellImage = jsonElement["sellImage"] as? String{
+                let sellRegistDate = jsonElement["sellRegistDate"] as? String{
                 
                 query.sellSeqno = sellSeqno
                 query.sSeqno = sSeqno
-                query.sellTitle = sellTitle
-                query.sellContext = sellContext
+                query.sbTitle = sbTitle
+                query.sbContext = sbContext
+                query.sbImage = sbImage
                 query.tatalEA = tatalEA
                 query.minimumEA = minimumEA
                 query.priceEA = priceEA
                 query.openDate = openDate
                 query.closeDate = closeDate
                 query.sellRegistDate = sellRegistDate
-                query.sellImage = sellImage
+                
             }
             
             // 배열에 넣어줌

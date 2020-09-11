@@ -24,9 +24,7 @@ class BMyInfoBuyListQueryModel: NSObject{
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{
-                print("Failed to download data")
             }else{
-                print("Data is downloaded")
                 self.parseJAON(data!)
             }
         }
