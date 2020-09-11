@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		24BCEC0F2665896B85AD06B8 /* Pods_SSAK30.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1584B15B579549D07F61806 /* Pods_SSAK30.framework */; };
 		21D2D1A8250726DE00085E16 /* SignUpDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */; };
 		21D2D1AA250728B300085E16 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A9250728B300085E16 /* SignUpModel.swift */; };
 		21D2D1AC2507535B00085E16 /* readmeD.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 21D2D1AB2507535B00085E16 /* readmeD.rtf */; };
 		21D2D1B02508698600085E16 /* EmailChkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1AF2508698600085E16 /* EmailChkModel.swift */; };
+		24BCEC0F2665896B85AD06B8 /* Pods_SSAK30.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1584B15B579549D07F61806 /* Pods_SSAK30.framework */; };
 		300F98DA2506055300411288 /* BSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300F98D92506055300411288 /* BSearchViewController.swift */; };
 		30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0B250207FD0037AB3B /* AppDelegate.swift */; };
 		30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30628B0D250207FD0037AB3B /* SceneDelegate.swift */; };
@@ -63,6 +62,10 @@
 		EC1E3BAE2506244C00F4ABDB /* BDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */; };
 		EC1E3BB02507513900F4ABDB /* SProductAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */; };
 		EC1E3BB22507613700F4ABDB /* ProductInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */; };
+		EC1E3BD4250B2AA400F4ABDB /* StoreInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD1250B2AA300F4ABDB /* StoreInsertModel.swift */; };
+		EC1E3BD5250B2AA400F4ABDB /* BInterestDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */; };
+		EC1E3BD6250B2AA400F4ABDB /* BInterestStoreQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */; };
+		EC1E3BD8250B3E3F00F4ABDB /* InsertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,12 +96,12 @@
 		6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeDBModel.swift; sourceTree = "<group>"; };
 		6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeQueryModel.swift; sourceTree = "<group>"; };
 		6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeTableViewCell.swift; sourceTree = "<group>"; };
-		91314102745C2E0925DC839E /* Pods-SSAK30.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.debug.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.debug.xcconfig"; sourceTree = "<group>"; };
-		985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.release.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.release.xcconfig"; sourceTree = "<group>"; };
 		6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMainRecommendListViewController.swift; sourceTree = "<group>"; };
 		6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeInterstQueryModel.swift; sourceTree = "<group>"; };
 		6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMainRecommendListViewController.swift; sourceTree = "<group>"; };
 		6BE3EE0F250A21D000323294 /* SHomeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHomeQueryModel.swift; sourceTree = "<group>"; };
+		91314102745C2E0925DC839E /* Pods-SSAK30.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.debug.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.debug.xcconfig"; sourceTree = "<group>"; };
+		985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.release.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.release.xcconfig"; sourceTree = "<group>"; };
 		9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellChkViewController.swift; sourceTree = "<group>"; };
 		9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		9DCDB81A25087C1800A6F940 /* SMyInfoDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoDBModel.swift; sourceTree = "<group>"; };
 		9DCDB81C2508B84000A6F940 /* SMyInfoQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB81E2508C17600A6F940 /* SMyInfoReviewQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoReviewQueryModel.swift; sourceTree = "<group>"; };
-		D1584B15B579549D07F61806 /* Pods_SSAK30.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAK30.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCDB8202509CDC200A6F940 /* SMyInfoLikeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoLikeQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB8222509D27200A6F940 /* SMyInfoSellQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoSellQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB8242509D44B00A6F940 /* SMyInfoSellListQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMyInfoSellListQueryModel.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		9DCDB82E250A29BD00A6F940 /* BUpdateQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BUpdateQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB830250A3E7900A6F940 /* SUpdateQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUpdateQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB832250A3FBA00A6F940 /* SUpdateInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUpdateInfoViewController.swift; sourceTree = "<group>"; };
+		D1584B15B579549D07F61806 /* Pods_SSAK30.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAK30.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHomeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNoticeViewController.swift; sourceTree = "<group>"; };
 		EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +128,10 @@
 		EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDetailViewController.swift; sourceTree = "<group>"; };
 		EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SProductAddViewController.swift; sourceTree = "<group>"; };
 		EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInsertModel.swift; sourceTree = "<group>"; };
+		EC1E3BD1250B2AA300F4ABDB /* StoreInsertModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreInsertModel.swift; sourceTree = "<group>"; };
+		EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BInterestDBModel.swift; sourceTree = "<group>"; };
+		EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BInterestStoreQueryModel.swift; sourceTree = "<group>"; };
+		EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertStoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +196,10 @@
 				6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */,
 				308D362625024EB600B363B9 /* BNoticeViewController.swift */,
 				308D362825024EC100B363B9 /* BInterestViewController.swift */,
+				EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */,
+				EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */,
+				EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */,
+				EC1E3BD1250B2AA300F4ABDB /* StoreInsertModel.swift */,
 				308D362A25024ECE00B363B9 /* BMyinfoViewController.swift */,
 				9DCDB82C250A223800A6F940 /* BUpdateInfoViewController.swift */,
 				9DCDB8102507485000A6F940 /* BMyInfoDBModel.swift */,
@@ -201,7 +212,6 @@
 				6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */,
 				EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */,
 				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
-				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
 				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
 				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
 				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
@@ -362,7 +372,9 @@
 				30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */,
 				308D362B25024ECE00B363B9 /* BMyinfoViewController.swift in Sources */,
 				30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */,
+				EC1E3BD5250B2AA400F4ABDB /* BInterestDBModel.swift in Sources */,
 				30D5B0B4250A0959002B66EB /* MarketModel.swift in Sources */,
+				EC1E3BD6250B2AA400F4ABDB /* BInterestStoreQueryModel.swift in Sources */,
 				EC1E3BAC250216C000F4ABDB /* SMyinfoViewController.swift in Sources */,
 				9DCDB8212509CDC200A6F940 /* SMyInfoLikeQueryModel.swift in Sources */,
 				EC1E3BAE2506244C00F4ABDB /* BDetailViewController.swift in Sources */,
@@ -387,6 +399,7 @@
 				9DCDB8132507594B00A6F940 /* BMyInfoQueryModel.swift in Sources */,
 				9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */,
 				9DCDB833250A3FBA00A6F940 /* SUpdateInfoViewController.swift in Sources */,
+				EC1E3BD4250B2AA400F4ABDB /* StoreInsertModel.swift in Sources */,
 				9DCDB8252509D44B00A6F940 /* SMyInfoSellListQueryModel.swift in Sources */,
 				9DCDB831250A3E7900A6F940 /* SUpdateQueryModel.swift in Sources */,
 				9DCDB817250779D400A6F940 /* BMyInfoBuyListQueryModel.swift in Sources */,
@@ -400,6 +413,7 @@
 				300F98DA2506055300411288 /* BSearchViewController.swift in Sources */,
 				EC1E3BB02507513900F4ABDB /* SProductAddViewController.swift in Sources */,
 				9DCDB8112507485000A6F940 /* BMyInfoDBModel.swift in Sources */,
+				EC1E3BD8250B3E3F00F4ABDB /* InsertStoreViewController.swift in Sources */,
 				308D362725024EB600B363B9 /* BNoticeViewController.swift in Sources */,
 				9DCDB80F2506252800A6F940 /* FindIdPwViewController.swift in Sources */,
 				306561EF2508C11B004DA1E2 /* popStoreTableViewCell.swift in Sources */,
