@@ -699,8 +699,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ga-63-kB1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1312"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzt-TK-8gg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1346"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzt-TK-8gg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wn-Wm-zxl">
                                                 <rect key="frame" x="35" y="25" width="82" height="81"/>
@@ -940,7 +940,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Uzt-TK-8gg" firstAttribute="height" secondItem="zbR-Il-jQ7" secondAttribute="height" priority="250" id="AHb-g6-E9l"/>
+                            <constraint firstItem="Uzt-TK-8gg" firstAttribute="height" secondItem="zbR-Il-jQ7" secondAttribute="height" constant="1100" id="AHb-g6-E9l"/>
                             <constraint firstItem="8Ga-63-kB1" firstAttribute="top" secondItem="uK4-Yg-x41" secondAttribute="top" id="U9e-zA-aAa"/>
                             <constraint firstItem="uK4-Yg-x41" firstAttribute="trailing" secondItem="8Ga-63-kB1" secondAttribute="trailing" id="WzW-Ds-EYM"/>
                             <constraint firstItem="Uzt-TK-8gg" firstAttribute="width" secondItem="zbR-Il-jQ7" secondAttribute="width" id="p6D-yE-frx"/>
@@ -1615,14 +1615,14 @@
             <objects>
                 <viewController storyboardIdentifier="BMyinfoViewController" id="sal-0D-2U6" customClass="BMyinfoViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2BZ-IE-QTb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1046"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1446"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32O-rj-oyv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1012"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1412"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="332-2v-jaN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1046"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="332-2v-jaN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y9v-lw-ItJ">
                                                 <rect key="frame" x="27" y="23" width="82" height="81"/>
@@ -1757,7 +1757,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="MyInfo" id="QGO-LY-jDf"/>
                     <navigationItem key="navigationItem" id="9pp-l5-y6k"/>
-                    <size key="freeformSize" width="414" height="1100"/>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="imgUserImage" destination="Y9v-lw-ItJ" id="giT-O6-ETJ"/>
                         <outlet property="lblCash" destination="dDl-1b-rMm" id="Zfu-6V-keG"/>
@@ -2409,6 +2409,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="504-92-z1f"/>
+        <segue reference="gcq-O4-f4Z"/>
         <segue reference="Cjz-ej-RMZ"/>
         <segue reference="OqO-TL-hNZ"/>
         <segue reference="1tP-Ax-I66"/>
