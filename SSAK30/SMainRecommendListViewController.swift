@@ -8,13 +8,15 @@
 
 import UIKit
 
+var uSeqno: String? = "4" // uSeqno test //
+
+// 판매 중
 class SMainSellingRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SHomeSellingQueryModelProtocol {
     
-    // 판매 중
+    
     @IBOutlet weak var sellingListCollectionView: UICollectionView!
     @IBOutlet weak var lblSellingProduct: UILabel!
     
-    //let viewModel = SellingRecommentListViewModel()
     var feedItem: NSArray = NSArray()
 
     override func viewDidLoad() {
@@ -29,7 +31,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
         
         let queryModel = SHomeSellingQueryModel() // 프로토콜
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
 
     }
     
@@ -43,7 +45,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
         super.viewWillAppear(animated)
         let queryModel = SHomeSellingQueryModel() // 프로토콜 
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
         
     }
 
@@ -86,7 +88,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
                             let filename = self.getDecumentDirectory().appendingPathComponent("selling.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
                             try? data.write(to: filename)
                             print("Data is writed")
-                            print(self.getDecumentDirectory()) // 저장 위치 확인
+                            
                         }
                     }
                     
@@ -96,7 +98,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
                             let filename = self.getDecumentDirectory().appendingPathComponent("selling.jpg") // // 다운받을때 이미지이름
                             try? data.write(to: filename)
                             print("Data is writed")
-                            print(self.getDecumentDirectory()) // 저장 위치
+                           
                             
                         }
                     }
@@ -171,12 +173,12 @@ class SMainDoneSellRecommendListViewController: UIViewController, UICollectionVi
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-            self.doneSellListCollectionView?.delegate = self
+        self.doneSellListCollectionView?.delegate = self
         self.doneSellListCollectionView?.dataSource = self
         
         let queryModel = SHomeDoneSellQueryModel() // 프로토콜
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
 
         
     }
@@ -192,7 +194,7 @@ class SMainDoneSellRecommendListViewController: UIViewController, UICollectionVi
         
         let queryModel = SHomeDoneSellQueryModel() // 프로토콜
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
     }
 
     // UICollectionViewDelegate
