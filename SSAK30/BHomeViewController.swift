@@ -24,6 +24,8 @@ class BHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarItem.image = UIImage(named: "home.png")
+        
         //pageControl 환경//
         // 총 몇 페이지인지 알려줘야함
         bHomePageControl.numberOfPages = bannerImages.count

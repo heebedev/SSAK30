@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInfoBuyListQueryModelProtocol, UITableViewDataSource, UITableViewDelegate{
 
@@ -26,11 +27,15 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarItem.image = UIImage(named: "person.png")
+        
         self.reloadInputViews()
         // 다 내가(tableViewController) 할거다 선언.
         self.tvMyBuyList.delegate = self
         self.tvMyBuyList.dataSource = self
         self.tvMyBuyList.rowHeight = 115
+        
+        imgUserImage.image = UIImage(named: "emptyImage.png")
         
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
@@ -44,6 +49,24 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
     func itemDownloaded(items: NSArray) {
         feedItem = items
         let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        
+        if item.sellImage!.isEmpty {
+            self.imgUserImage.image = UIImage(named: "emptyImage.png")
+        } else {
+            //Firbase 이미지 불러오기
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let imgRef = storageRef.child("uImage").child(item.sellImage!)
+            
+            imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+                if error != nil {
+                    self.imgUserImage.image = UIImage(named: "emptyImage.png")
+                } else {
+                    self.imgUserImage.image = UIImage(data: data!)
+                }
+            }
+        }
+        
         lblName.text = item.uName
         lblCash.text = item.totalCash
     }
@@ -74,6 +97,21 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         let cell = tableView.dequeueReusableCell(withIdentifier: "buyCell", for: indexPath) as! BMyInfoTableViewCell
         // Configure the cell...
         let item: BMyInfoDBModel = feedItem2[indexPath.row] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("uImage").child(item.sellImage!)
+        
+        if !item.sellImage!.isEmpty {
+            imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+                if error != nil {
+                    cell.imgImage.image = UIImage(named: "emptyImage.png")
+                } else {
+                    cell.imgImage.image = UIImage(data: data!)
+                }
+            }
+        } else {
+            cell.imgImage.image = UIImage(named: "emptyImage.png")
+        }
         cell.lblTitle.text = (item.sellTitle)
         cell.lblPrice.text = (item.priceEA!)
         return cell
