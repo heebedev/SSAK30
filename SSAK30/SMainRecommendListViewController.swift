@@ -8,6 +8,8 @@
 
 import UIKit
 
+var uSeqno: String? = "4" // uSeqno test //
+
 // 판매 중
 class SMainSellingRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SHomeSellingQueryModelProtocol {
     
@@ -15,7 +17,6 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
     @IBOutlet weak var sellingListCollectionView: UICollectionView!
     @IBOutlet weak var lblSellingProduct: UILabel!
     
-    //let viewModel = SellingRecommentListViewModel()
     var feedItem: NSArray = NSArray()
 
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
         
         let queryModel = SHomeSellingQueryModel() // 프로토콜
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
 
     }
     
@@ -44,7 +45,7 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
         super.viewWillAppear(animated)
         let queryModel = SHomeSellingQueryModel() // 프로토콜 
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
         
     }
 
@@ -172,12 +173,12 @@ class SMainDoneSellRecommendListViewController: UIViewController, UICollectionVi
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-            self.doneSellListCollectionView?.delegate = self
+        self.doneSellListCollectionView?.delegate = self
         self.doneSellListCollectionView?.dataSource = self
         
         let queryModel = SHomeDoneSellQueryModel() // 프로토콜
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
 
         
     }
@@ -193,7 +194,7 @@ class SMainDoneSellRecommendListViewController: UIViewController, UICollectionVi
         
         let queryModel = SHomeDoneSellQueryModel() // 프로토콜
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
     }
 
     // UICollectionViewDelegate

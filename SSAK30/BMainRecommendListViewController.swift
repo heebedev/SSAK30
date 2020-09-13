@@ -17,6 +17,7 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
     
     let viewModel = RecommentListViewModel()
     var feedItem: NSArray = NSArray()
+    var uSeqno: String? = "1" // test /////////////////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         
         let queryModel = BHomeInterestQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
     }
     
     
@@ -42,15 +43,24 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         super.viewWillAppear(animated)
         let queryModel = BHomeInterestQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems()
+        queryModel.downloadItems(uSeqno: uSeqno!)
     }
     
     // UICollectionViewDelegate
-    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 연결해야함!! //////////
+    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 sellSeqno 넘겨줌
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let board = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = board.instantiateViewController(withIdentifier: "BDetailViewController")
-        self.present(vc, animated: true, completion: nil)
+        guard let detailVC = board.instantiateViewController(withIdentifier: "BDetailViewController") as? BDetailViewController else {return}
+        
+        let item: BHomeDBModel = feedItem[(indexPath as NSIndexPath).item] as! BHomeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
+        // sellSeqno 넘겨줌
+        let sellSeqno = String(item.sellSeqno!)
+        // 디테일뷰에 넣어줌
+        detailVC.receiveItems(sellSeqno)
+        // 이동
+        self.present(detailVC, animated: true, completion: nil)
+        
+        
     }
     
     // UICollectionViewDataSource
