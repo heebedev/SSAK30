@@ -8,109 +8,101 @@
 
 import UIKit
 
-class BHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, QueryModelProtocol {
+class BHomeViewController: UIViewController {
     
+    @IBOutlet weak var bhomeBanner: UIImageView!
+    @IBOutlet weak var bHomePageControl: UIPageControl!
     
-    
-    @IBOutlet weak var listTableView: UITableView!
-
-    var feedItem: NSArray = NSArray()
+    // 이미지 등록
+    var bannerImages = ["playstore.png", "chicken.jpeg", "meat.jpeg"]
     
     //collection view
-    var recentRecommendListViewController: BMainRecommendListViewController!
-   var hotRecommendListViewController: BMainRecommendListViewController!
-   var interestRecommendListViewController: BMainRecommendListViewController!
+    var interestRecommendListViewController: BMainRecommendListViewController!
+    var recentRecommendListViewController: BMainRecentRecommendListViewController!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //pageControl 환경//
+        // 총 몇 페이지인지 알려줘야함
+        bHomePageControl.numberOfPages = bannerImages.count
+        bHomePageControl.currentPage = 0 // 넘길때마다 바뀜 // 지금은 첫 화면 실행 시, pageControl은 첫번째 설정 // 2로 바꾸면 3번째에 pageControl가있음
+        
+        // 색 지정
+        bHomePageControl.pageIndicatorTintColor = UIColor.green // 선택 안된컬러
+        bHomePageControl.currentPageIndicatorTintColor = UIColor.red // 선택한 컬러
+        // pageControl 환경설정 끝 //
+        
+        // 이미지 띄워줌
+        bhomeBanner.image = UIImage(named: bannerImages[0])
+        
+        // 한 손가락 Gesture 초기값 설정
+               // 인식 : UISwipeGestureRecognizer // #selector 는 계속해서 뭘 받으려고 함
+               // 한 손가락 함수 responseToSwipeGesture 생성
+               
+               // LEFT
+               let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(BHomeViewController.responseToSwipeGesture(_ :)))
+               // 한 손가락 스와이프 기능 추가
+               swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+               self.view.addGestureRecognizer(swipeLeft)
 
-        // Do any additional setup after loading the view.
+               // RIGHT
+               let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(BHomeViewController.responseToSwipeGesture(_ :)))
+               // 한 손가락 스와이프 기능 추가
+               swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+               self.view.addGestureRecognizer(swipeRight)
+               // 한 손가락 GESTURE 초기값 설정 완료 //
         
-        //delegate 처리
-         self.listTableView.delegate = self
-         self.listTableView.dataSource = self
-         
-         let queryModel = BHomeQueryModel()
-         queryModel.delegate = self
-         queryModel.downloadItems()
-                
-                
-        // 열 높이 변경
-        listTableView.rowHeight = 240
-    }
-    
-    
-    func itemDownloaded(items: NSArray) {
-        feedItem = items
-        self.listTableView.reloadData()
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           return feedItem.count
+    // selector 함수 //
+    // 한손가락 Gesture
+    @objc func responseToSwipeGesture(_ gesture: UIGestureRecognizer){// nil값 정리: #selector 는 계속해서 뭘 받으려고 하기 때문에
+       if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+               
+           // 한 손가락으로 스와이프하기 ( 순환 )
+           switch swipeGesture.direction {
+               case UISwipeGestureRecognizer.Direction.left:
+                    if bHomePageControl.currentPage == bannerImages.count-1 {
+                        bHomePageControl.currentPage = 0 // 첫번째 페이지로
+                        bhomeBanner.image = UIImage(named: bannerImages[bHomePageControl.currentPage])
+                    }else{
+                        bhomeBanner.image = UIImage(named: bannerImages[bHomePageControl.currentPage+1])
+                        bHomePageControl.currentPage += 1
+                    }
+                  
+               case UISwipeGestureRecognizer.Direction.right:
+                    if bHomePageControl.currentPage == 0{ // 첫번째 페이지일 떄
+                        bHomePageControl.currentPage = bannerImages.count // 마지막 페이지로 순환
+                        bhomeBanner.image = UIImage(named: bannerImages[bannerImages.count-1]) // 이미지도 마지막꺼로
+                    }else{
+                        bhomeBanner.image = UIImage(named: bannerImages[bHomePageControl.currentPage-1])
+                        bHomePageControl.currentPage -= 1
+                    }
+               default:
+                    break
+               }
+           }
        }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bHomeCell", for: indexPath) as! BHomeTableViewCell
-        
-        let item: BHomeDBModel = feedItem[indexPath.row] as! BHomeDBModel //feedItem 있는 것 하나씩 가져와서 구성함
-        // set custom text
-        
-        cell.sellTitle?.text = "\(item.sbTitle!)"
-        cell.sellPrice?.text = "\(item.priceEA!)"
-        
-        let url = URL(string: "http://192.168.0.5:8080/ftp/\(item.sbImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-        
-        let task = defaultSession.dataTask(with: url){(data, response, error) in
-            if error != nil{
-                print("Failed to download data")
-            }else{
-                print("Data is downloaded")
-                DispatchQueue.main.async {
-                    cell.imgView.image = UIImage(data: data!)
-                    // jpg
-                    if let image = UIImage(data: data!){
-                        if let data = image.jpegData(compressionQuality: 0.8){// 일반적으로 80% 압축
-                            let filename = self.getDecumentDirectory().appendingPathComponent("copy.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
-                            try? data.write(to: filename)
-                            print("Data is writed")
-                            print(self.getDecumentDirectory()) // 저장 위치 확인
-                        }
-                    }
-                    
-                    // png 쓸 때 사용
-                    if let image = UIImage(data: data!){
-                        if let data = image.pngData() {//
-                            let filename = self.getDecumentDirectory().appendingPathComponent("copy.jpg") // // 다운받을때 이미지이름
-                            try? data.write(to: filename)
-                            print("Data is writed")
-                            print(self.getDecumentDirectory()) // 저장 위치
-                            
-                        }
-                    }
-                }
-            }
+    // 액션 //
+    @IBAction func bHomePageChange(_ sender: UIPageControl) {
+        bhomeBanner.image = UIImage(named: bannerImages[bHomePageControl.currentPage])
+    }
+    
+    // collectionview
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "interest" {
+            let destinationVC = segue.destination as? BMainRecommendListViewController
+            interestRecommendListViewController = destinationVC
+        }else if segue.identifier == "recent" {
+            let destinationVC = segue.destination as? BMainRecentRecommendListViewController
+            recentRecommendListViewController = destinationVC
         }
-        task.resume() // task 실행
-     
-        return cell
     }
-    
-    
-    
-    
-    
-    // write 위치 (스마트폰의)
-    func getDecumentDirectory() -> URL{
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0] // 첫번째 값 앱에 설정한 것의 위치
-    }
+   
     
     
     
@@ -125,25 +117,7 @@ class BHomeViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     */
 
-    // collectionview
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "recent" {
-            let destinationVC = segue.destination as? BMainRecommendListViewController
-            recentRecommendListViewController = destinationVC
-            //recentRecommendListViewController.viewModel.updateType(.recent)
-            //recentRecommendListViewController.viewModel.fetchItems()
-        } else if segue.identifier == "hot" {
-            let destinationVC = segue.destination as? BMainRecommendListViewController
-            hotRecommendListViewController = destinationVC
-            //hotRecommendListViewController.viewModel.updateType(.hot)
-            //hotRecommendListViewController.viewModel.fetchItems()
-        } else if segue.identifier == "interest" {
-            let destinationVC = segue.destination as? BMainRecommendListViewController
-            interestRecommendListViewController = destinationVC
-            //interestRecommendListViewController.viewModel.updateType(.interest)
-            //interestRecommendListViewController.viewModel.fetchItems()
-        }
-    }
+    
     
     
 }

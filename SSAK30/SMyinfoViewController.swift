@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseStorage
+import Firebase
 
 class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInfoReviewQueryModelProtocol, SMyInfoLikeQueryModelProtocol, SMyInfoSellQueryModelProtocol, SMyInfoSellListQueryModelProtocol, UITableViewDataSource, UITableViewDelegate {
 
@@ -57,6 +59,8 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         let queryModel5 = SMyInfoSellListQueryModel()
         queryModel5.delegate = self
         queryModel5.downloadItems(uSeqno: uSeqno ?? "4")
+        
+
     }
     
 
@@ -70,6 +74,18 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         lblPhone.text = (item.sPhone!)
         lblAddress.text = (item.sAddress!)
         lblServiceTime.text = (item.sServiceTime!)
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            print(item.sImage as Any)
+            let imgRef = storageRef.child("sImage").child(item.sImage!)
+            
+            imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+                if error != nil {
+                    self.imgStoreImage?.image = UIImage(named: "emptyImage.png")
+                } else {
+                    self.imgStoreImage?.image = UIImage(data: data!)
+                }
+            }
         }else{
             lblName.isHidden = true
             btnUpdateStoreInfo.isHidden = true
@@ -121,14 +137,21 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         let item: SMyInfoDBModel = feedItem[indexPath.row] as! SMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
         cell.lblSTitle.text = (item.sbTitle!)
         cell.lblSPrice.text = (item.priceEA!)
+//        //Firbase 이미지 불러오기
+//        let storage = Storage.storage()
+//        let storageRef = storage.reference()
+//        print(item.sbImage as Any)
+//        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+//
+//        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+//            if error != nil {
+//                cell.imgImage.image = UIImage(named: "emptyImage.png")
+//            } else {
+//                cell.imgImage.image = UIImage(data: data!)
+//            }
+//        }
 
         return cell
-    }
-    
-    
-    
-    @IBAction func btnUpdateStoreInfo(_ sender: UIButton) {
-
     }
     
     
