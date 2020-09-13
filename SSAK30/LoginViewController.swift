@@ -42,15 +42,33 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "sgDetail" {
+                    let cell = sender as! UITableViewCell
+                    let indexPath = self.listTableView.indexPath(for: cell)
+                    print("indexpath : \(String(describing: indexPath))")
+                    
+                    let detailView = segue.destination as! DetailViewController
+                    
+        //            let item: DBModel = studentList[(indexPath! as NSIndexPath).row]
+                    let item: DBModel = feedItem[(indexPath! as NSIndexPath).row] as! DBModel
+                    let scode = String(item.scode!)
+                    let sname = String(item.sname!)
+                    let sdept = String(item.sdept!)
+                    let sphone = String(item.sphone!)
+                    
+                    detailView.receiveItems(scode, sname, sdept, sphone)
+                }
+        
     }
-    */
+    
 
     
     
