@@ -85,6 +85,8 @@
 		EC1E3BD5250B2AA400F4ABDB /* BInterestDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */; };
 		EC1E3BD6250B2AA400F4ABDB /* BInterestStoreQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */; };
 		EC1E3BD8250B3E3F00F4ABDB /* InsertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */; };
+		EC921854250E0DFC00847939 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = EC921853250E0DFB00847939 /* playstore.png */; };
+		EC921856250E5C4800847939 /* BInterestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC921855250E5C4800847939 /* BInterestTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -185,6 +187,8 @@
 		EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BInterestDBModel.swift; sourceTree = "<group>"; };
 		EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BInterestStoreQueryModel.swift; sourceTree = "<group>"; };
 		EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertStoreViewController.swift; sourceTree = "<group>"; };
+		EC921853250E0DFB00847939 /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
+		EC921855250E5C4800847939 /* BInterestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BInterestTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +269,7 @@
 				308D362825024EC100B363B9 /* BInterestViewController.swift */,
 				EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */,
 				EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */,
+				EC921855250E5C4800847939 /* BInterestTableViewCell.swift */,
 				EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */,
 				EC1E3BD1250B2AA300F4ABDB /* StoreInsertModel.swift */,
 				308D362A25024ECE00B363B9 /* BMyinfoViewController.swift */,
@@ -277,6 +282,9 @@
 				9DCDB8282509E8E300A6F940 /* BMyInfoTableViewCell.swift */,
 				EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */,
 				6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */,
+				EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */,
+				EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */,
+				EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */,
 				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
 				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
 				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
@@ -294,8 +302,6 @@
 				30628B1C250208000037AB3B /* Info.plist */,
 				30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */,
 				300F98D92506055300411288 /* BSearchViewController.swift */,
-				EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */,
-				EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */,
 				6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */,
 				6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */,
 				6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */,
@@ -449,6 +455,7 @@
 			files = (
 				308D362D25024F6000B363B9 /* LoginViewController.swift in Sources */,
 				EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */,
+				EC921856250E5C4800847939 /* BInterestTableViewCell.swift in Sources */,
 				30D5B0B8250A0C5D002B66EB /* StoreMarketQueryModel.swift in Sources */,
 				9DCDB8292509E8E300A6F940 /* BMyInfoTableViewCell.swift in Sources */,
 				21D2D1B02508698600085E16 /* EmailChkModel.swift in Sources */,
