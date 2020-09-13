@@ -8,6 +8,7 @@ target 'SSAK30' do
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
+  pod 'KakaoSDKTalk'
 
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'

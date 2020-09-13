@@ -69,6 +69,12 @@ PODS:
     - KakaoSDKCommon (= 2.0.2)
   - KakaoSDKCommon (2.0.2):
     - Alamofire (~> 5.1)
+  - KakaoSDKTalk (2.0.2):
+    - KakaoSDKAuth (= 2.0.2)
+    - KakaoSDKCommon (= 2.0.2)
+    - KakaoSDKTemplate (= 2.0.2)
+  - KakaoSDKTemplate (2.0.2):
+    - KakaoSDKCommon (= 2.0.2)
   - KakaoSDKUser (2.0.2):
     - KakaoSDKAuth (= 2.0.2)
     - KakaoSDKCommon (= 2.0.2)
@@ -85,6 +91,7 @@ DEPENDENCIES:
   - KakaoAdSDK
   - KakaoSDKAuth
   - KakaoSDKCommon
+  - KakaoSDKTalk
   - KakaoSDKUser
 
 SPEC REPOS:
@@ -103,6 +110,8 @@ SPEC REPOS:
     - KakaoAdSDK
     - KakaoSDKAuth
     - KakaoSDKCommon
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
     - KakaoSDKUser
     - nanopb
     - PromisesObjC
@@ -122,10 +131,12 @@ SPEC CHECKSUMS:
   KakaoAdSDK: b184296e06a62e79e840db091032707c89f245eb
   KakaoSDKAuth: 69698a4a6726f2b43fb43246891a1a747343935e
   KakaoSDKCommon: 2226e13fbbd4a875826c7a348cf4f535392a4b8f
+  KakaoSDKTalk: af761ee90ff9bc732cc2e5515ad5e0b3cbf81480
+  KakaoSDKTemplate: c68a1c313211c7f925d297ff0aaae741b4b48c4f
   KakaoSDKUser: a4a82ba374e0b3478be3f66307943e85542149ee
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
 
-PODFILE CHECKSUM: 665c72099ac1f1e751c589bb65a24546b809c7dc
+PODFILE CHECKSUM: 0db431cde2cb808a5b81f12a8f66a0cae59e5fc8
 
 COCOAPODS: 1.9.3
