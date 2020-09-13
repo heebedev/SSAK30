@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInfoReviewQueryModelProtocol, SMyInfoLikeQueryModelProtocol, SMyInfoSellQueryModelProtocol, SMyInfoSellListQueryModelProtocol, UITableViewDataSource, UITableViewDelegate {
 
@@ -67,6 +68,21 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         if(feedItem2.count != 0){
         btnAddStore.isHidden = true
         let item: SMyInfoDBModel = feedItem2[0] as! SMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sImage").child(item.sImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                self.imgStoreImage.image = UIImage(named: "emptyImage.png")
+            } else {
+                self.imgStoreImage.image = UIImage(data: data!)
+            }
+        }
+            
+            
         lblName.text = (item.sName!)
         lblBusinessNo.text = (item.sBusinessNo!)
         lblPhone.text = (item.sPhone!)
@@ -121,6 +137,19 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         // Configure the cell...
 
         let item: SMyInfoDBModel = feedItem[indexPath.row] as! SMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.imgSImage.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.imgSImage.image = UIImage(data: data!)
+            }
+        }
+        
         cell.lblSTitle.text = (item.sbTitle!)
         cell.lblSPrice.text = (item.priceEA!)
 

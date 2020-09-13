@@ -22,7 +22,6 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
     var userPassword:String?
 
     @IBOutlet weak var kakaobutton: UIButton!
-    @IBOutlet weak var naverbutton: UIButton!
 
     @IBOutlet weak var lblId: UITextField!
     @IBOutlet weak var tfPw: UITextField!
@@ -38,7 +37,6 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
 
         // 버튼 모양
         kakaobutton.layer.cornerRadius = 20
-        naverbutton.layer.cornerRadius = 20
         self.reloadInputViews()
     }
     
@@ -93,13 +91,12 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
         if(self.uSeqno == "0"){
             
         }else{
+            UserDefaults.standard.set(Int(uSeqno), forKey:"uSeqno")
             if(uBuySell == "0"){
                 self.performSegue(withIdentifier: "sgBuyer", sender: nil)
             }else{
                 self.performSegue(withIdentifier: "sgSeller", sender: nil)
             }
-            let staticData = StaticData(uSeqno: uSeqno)
-            staticData.uSeqno = uSeqno
         }
     }
 

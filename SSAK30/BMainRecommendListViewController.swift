@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
  // 관심매장 최근
 class BMainRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BHomeInterestQueryModelProtocol {
@@ -92,6 +93,20 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         }
         
         let item: BHomeDBModel = feedItem[indexPath.item] as! BHomeDBModel
+        
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.thumbnailImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.thumbnailImage?.image = UIImage(data: data!)
+            }
+        }
+        
         cell.sellTitle?.text = "\(item.sbTitle!)"
         cell.sellPrice?.text = "\(item.priceEA!)"
         
@@ -237,6 +252,20 @@ class BMainRecentRecommendListViewController: UIViewController, UICollectionView
         }
         
         let item: BHomeDBModel = feedItem[indexPath.item] as! BHomeDBModel
+        
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.recentImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.recentImage?.image = UIImage(data: data!)
+            }
+        }
+        
         cell.recentTitle?.text = "\(item.sbTitle!)"
         cell.recentPrice?.text = "\(item.priceEA!)"
         

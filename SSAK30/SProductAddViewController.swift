@@ -36,6 +36,7 @@ class SProductAddViewController: UIViewController, UIImagePickerControllerDelega
 
         // Do any additional setup after loading the view.
         imagePickerController.delegate = self
+        imgView.image = UIImage(named: "emptyImage.png")
         
     }
     

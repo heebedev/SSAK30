@@ -56,17 +56,20 @@ class BInterestViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "interestCell", for: indexPath) as! BInterestTableViewCell
         // Configure the cell...
         let item: BInterestDBModel = feedItem[indexPath.row] as! BInterestDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
-//        let storage = Storage.storage()
-//        let storageRef = storage.reference()
-//        let imgRef = storageRef.child("sImage").child(item.sImage!)
-//
-//        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
-//            if error != nil {
-//                cell.imgView?.image = UIImage(named: "emptyImage.png")
-//            } else {
-//                cell.imgView?.image = UIImage(data: data!)
-//            }
-//        }
+        
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sImage").child(item.sImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.imgView?.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.imgView?.image = UIImage(data: data!)
+            }
+        }
+        
         cell.lblName.text = (item.sName!)
         
         return cell
