@@ -32,7 +32,9 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarItem.image = UIImage(named: "store.png")
         self.reloadInputViews()
+        
         //다 내가(tableViewController) 할거다 선언.
         self.tvSellList.delegate = self
         self.tvSellList.dataSource = self

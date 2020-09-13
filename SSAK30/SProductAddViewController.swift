@@ -31,6 +31,8 @@ class SProductAddViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarItem.image = UIImage(named: "plus.png")
 
         // Do any additional setup after loading the view.
         imagePickerController.delegate = self

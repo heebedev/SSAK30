@@ -25,7 +25,7 @@ class CheckFindIdPwModel: NSObject {
         } else {
             urlPath = "http://localhost:8080/test/findPw_query_ios.jsp?id=\(id)&name=\(name)&birth=\(birth)"
         }
-        
+
         if let encodedPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url:URL = URL(string: encodedPath) {
                 let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

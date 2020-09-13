@@ -17,6 +17,8 @@ class SHomeViewController: UIViewController {
 //    var DoneSellRecommendListViewController: SMainDoneSellRecommendListViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarItem.image = UIImage(named: "home.png")
 
         // Do any additional setup after loading the view.
     }

@@ -26,11 +26,15 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarItem.image = UIImage(named: "person.png")
+        
         self.reloadInputViews()
         // 다 내가(tableViewController) 할거다 선언.
         self.tvMyBuyList.delegate = self
         self.tvMyBuyList.dataSource = self
         self.tvMyBuyList.rowHeight = 115
+        
+        imgUserImage.image = UIImage(named: "emptyImage.png")
         
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
@@ -74,6 +78,11 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         let cell = tableView.dequeueReusableCell(withIdentifier: "buyCell", for: indexPath) as! BMyInfoTableViewCell
         // Configure the cell...
         let item: BMyInfoDBModel = feedItem2[indexPath.row] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        if !item.sellImage!.isEmpty {
+            
+        } else {
+            cell.imgImage.image = UIImage(named: "emptyImage.png")
+        }
         cell.lblTitle.text = (item.sellTitle)
         cell.lblPrice.text = (item.priceEA!)
         return cell
