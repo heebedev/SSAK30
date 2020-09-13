@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        KOSession.handleOpen(url)
 //    }
 //
-//    func sceneDidBecomeActive(_ scene: UIScene) {
+//    func sceneDidBecomeActive(_ scene: UISceFne) {
 //        KOSession.handleDidBecomeActive()
 //    }
 //

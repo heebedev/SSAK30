@@ -35,4 +35,12 @@ class SingUpDBModel: NSObject{
         self.uRegistDate = uRegistDate
         self.uValidation = uValidation
     }
+    
+    
+    init(uSeqno: String, uBuySell: String){
+        self.uSeqno = uSeqno
+        self.uBuySell = uBuySell
+    }
+    
+    
 }
