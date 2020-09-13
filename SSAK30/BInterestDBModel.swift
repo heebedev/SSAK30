@@ -11,6 +11,7 @@ import Foundation
 class BInterestDBModel: NSObject{
     
     var sName: String?
+    var sImage: String?
 //    var sImage: String?
     
     // 비어있는 init
@@ -18,8 +19,9 @@ class BInterestDBModel: NSObject{
         
     }
     
-    init(sName: String){
+    init(sName: String, sImage: String){
         self.sName = sName
+        self.sImage = sImage
 //        self.sImage = sImage
     }
     

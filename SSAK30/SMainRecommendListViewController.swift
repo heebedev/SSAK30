@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 var uSeqno: String? = "4" // uSeqno test //
 
 // 판매 중
 class SMainSellingRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SHomeSellingQueryModelProtocol {
-    
     
     @IBOutlet weak var sellingListCollectionView: UICollectionView!
     @IBOutlet weak var lblSellingProduct: UILabel!
@@ -67,7 +67,22 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
             return UICollectionViewCell()
         }
         
+        
         let item: BHomeDBModel = feedItem[indexPath.item] as! BHomeDBModel
+    
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.sellingImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.sellingImage?.image = UIImage(data: data!)
+            }
+        }
+        
         cell.sellingTitle?.text = "\(item.sbTitle!)" // 제목 수정
         cell.sellingPrice?.text = "\(item.priceEA!)" // 가격 수정
         
@@ -215,7 +230,22 @@ class SMainDoneSellRecommendListViewController: UIViewController, UICollectionVi
             return UICollectionViewCell()
         }
         
+        
         let item: BHomeDBModel = feedItem[indexPath.item] as! BHomeDBModel
+        
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.doneSellImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.doneSellImage?.image = UIImage(data: data!)
+            }
+        }
+        
+        
         cell.doneSellTitle?.text = "\(item.sbTitle!)"
         cell.doneSellPrice?.text = "\(item.priceEA!)"
         
