@@ -8,39 +8,62 @@
 
 import UIKit
 
-class AfterSearchTableViewController: UITableViewController {
-
+class AfterSearchTableViewController: UITableViewController, AfterSearchQueryModelProtocol {
+    
+    var searchItem: String = ""
+    var feedItem:NSArray = NSArray()
+    var afterSearchResultModel = [AfterSearchResultModel]()
+    
+    @IBOutlet var tvSearchResult: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //print(searchItem)
+        
+        self.tvSearchResult.delegate = self
+        self.tvSearchResult.dataSource = self
+        
+        let queryModel = AfterSearchQueryModel()
+        queryModel.delegate = self
+        queryModel.downloadItems(searchItem : searchItem)
+        
+        tvSearchResult.rowHeight = 90
+        
     }
 
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
+        self.tvSearchResult.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return feedItem.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "afterSearchCell", for: indexPath) as! AfterSearchTableViewCell
 
-        // Configure the cell...
+        let item: AfterSearchResultModel = feedItem[indexPath.row] as! AfterSearchResultModel
+        
+        cell.lbSerchResultsName?.text = "\(item.sName!) (\(item.mName!))"
+        cell.lbSearchResultsbTitle?.text = item.sbTitle!
 
         return cell
     }
-    */
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tvSearchResult.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.

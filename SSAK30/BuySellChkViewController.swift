@@ -9,7 +9,6 @@
 import UIKit
 
 class BuySellChkViewController: UIViewController {
-    var buySellNo = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +24,17 @@ class BuySellChkViewController: UIViewController {
     
     @IBAction func btnSell(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
-        buySellNo = 1
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "sgSell"){
+            let displayVC = segue.destination as! SignUpViewController
+            displayVC.buySellNo = 1
+        }
     }
-    */
+    
 
 }

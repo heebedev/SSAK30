@@ -11,7 +11,7 @@ import Foundation
 
 class SignUpModel: NSObject {
     
-    var urlPath = "http://localhost:8080/SSAK30/SignUp_ios.jsp"
+    var urlPath = "http://localhost:8080/ssak30/SignUp_ios.jsp"
     func SignUpInsertloadItems(uEmail: String, uPassword: String, uName: String, uBirth: String, uPhone: String, uBuySell: String) -> Bool{
         var result: Bool = true
         
@@ -19,7 +19,7 @@ class SignUpModel: NSObject {
         urlPath += urlAdd
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
+        print(urlPath)
         
         let url: URL = URL(string: urlPath)!
         let defaultSesstion = Foundation.URLSession(configuration: URLSessionConfiguration.default)
