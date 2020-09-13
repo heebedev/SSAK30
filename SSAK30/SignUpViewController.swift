@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, EmailChkModelProtocol{
     
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -17,14 +17,18 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var tfBirth: UITextField!
     @IBOutlet weak var tfPhone: UITextField!
     
-    
+    var emailCheckResult: Int = 1
+    var buySellNo = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tfPassword.isEnabled = false
+        tfChkPassword.isEnabled = false
+        tfName.isEnabled = false
+        tfBirth.isEnabled = false
+        tfPhone.isEnabled = false
         // Do any additional setup after loading the view.
-        
-        
         
     }
     
@@ -33,35 +37,59 @@ class SignUpViewController: UIViewController {
     @IBAction func btnChkEmail(_ sender: UIButton) {
         let email = tfEmail.text!
         
-//        let emailchk = EmailChkModel()
-//        let result = emailchk.EmailChkloadItems(uEmail: email!)
-        
-
         if isValidEmail(emailStr: email){
-            print("성공")
+            let emailchk = EmailChkModel()
+            emailchk.delegate = self
+            emailchk.EmailChkloadItems(uEmail: email)
+            
         }else{
-            myAlert(alertTitle: "실패", alertMessage: "이메일 형식으로 입력해주세요.", actionTitle: "OK", handler: nil)
-            print("실패")
+            myAlert(alertTitle: "오류", alertMessage: "이메일 형식으로 입력해주세요.", actionTitle: "OK", handler: nil)
         }
+        
         
     }
+    
+    func itemDownloaded(item: Int) {
+        emailCheckResult = item
+        
+        if emailCheckResult == 0 {
+            print("emailCheckResult \(emailCheckResult)")
+            myAlert(alertTitle: "확인", alertMessage: "사용가능한 이메일입니다.", actionTitle: "OK", handler: nil)
+            tfPassword.isEnabled = true
+            tfChkPassword.isEnabled = true
+            tfName.isEnabled = true
+            tfBirth.isEnabled = true
+            tfPhone.isEnabled = true
+        } else {
+            print("emailCheckResult \(emailCheckResult)")
+            myAlert(alertTitle: "이메일 중복", alertMessage: "이미 사용중인 이메일입니다.", actionTitle: "OK", handler: nil)
+        }
+    }
+    
+    
     //가입하기
     @IBAction func btnSignUp(_ sender: UIButton) {
-        let email = tfEmail.text
-        let password = tfPassword.text
-        let name = tfName.text
-        let birth = tfBirth.text
-        let phone = tfPhone.text
         
-        Check()
-        if isValidEmail(emailStr: email!){
-            print("성공")
-        }else{
+        let email = tfEmail.text!.trimmingCharacters(in: [" "]).replacingOccurrences(of: " ", with: "")
+        let password = tfPassword.text!.trimmingCharacters(in: [" "]).replacingOccurrences(of: " ", with: "")
+        let chkpassword = tfChkPassword.text!.trimmingCharacters(in: [" "]).replacingOccurrences(of: " ", with: "")
+        let name = tfName!.text!.trimmingCharacters(in: [" "]).replacingOccurrences(of: " ", with: "")
+        let birth = tfBirth!.text!.trimmingCharacters(in: [" "]).replacingOccurrences(of: " ", with: "")
+        let phone = tfPhone!.text!.trimmingCharacters(in: [" "]).replacingOccurrences(of: " ", with: "")
+        
+        
+        if email.isEmpty {
+            myAlert(alertTitle: "실패", alertMessage: "이메일을 입력해주세요.", actionTitle: "OK", handler: nil)
+        } else if !isValidEmail(emailStr: email) {
             myAlert(alertTitle: "실패", alertMessage: "이메일 형식으로 입력해주세요.", actionTitle: "OK", handler: nil)
-            print("실패")
+        } else if emailCheckResult == 1 {
+            myAlert(alertTitle: "실패", alertMessage: "이메일 중복확인을 해주세요.", actionTitle: "OK", handler: nil)
+        } else {
+            Check(password, chkpassword, name, birth, phone)
         }
+
         
-        if validatePassword(password: password!){
+        if validatePassword(password: password){
             print("성공")
         }else{
             myAlert(alertTitle: "실패", alertMessage: "최소 8글자이상, 대문자, 소문자, 숫자 조합으로 입력해주새요.", actionTitle: "OK", handler: nil)
@@ -75,7 +103,7 @@ class SignUpViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
                 
                 let singupModel = SignUpModel()
-                let result = singupModel.SignUpInsertloadItems(uEmail: email!, uPassword: password!, uName: name!, uBirth: birth!, uPhone: phone!, uBuySell: "1")
+                let result = singupModel.SignUpInsertloadItems(uEmail: email, uPassword: password, uName: name, uBirth: birth, uPhone: phone, uBuySell: "\(self.buySellNo)")
                 
                 if result {
                     print("성공")
@@ -88,7 +116,7 @@ class SignUpViewController: UIViewController {
             
             
             
-        }else{
+        } else {
             let resultAlert = UIAlertController(title: "실패", message: "비밀번호가 일치하지 않습니다.", preferredStyle: UIAlertController.Style.alert)
             let  onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             resultAlert.addAction(onAction)
@@ -99,47 +127,19 @@ class SignUpViewController: UIViewController {
         
     }
 
+    func Check(_ password:String, _ chkPassword:String,_ name:String, _ birth:String, _ phone:String){
+        if password.isEmpty {
+            myAlert(alertTitle: "확인", alertMessage: "비밀번호를 입력해주세요", actionTitle: "OK", handler: nil)
+        } else if chkPassword.isEmpty {
+            myAlert(alertTitle: "확인", alertMessage: "비밀번호를 재확인해주세요", actionTitle: "OK", handler: nil)
+        } else if name.isEmpty {
+            myAlert(alertTitle: "확인", alertMessage: "이름을 입력해주세요", actionTitle: "OK", handler: nil)
+        } else if birth.isEmpty {
+            myAlert(alertTitle: "확인", alertMessage: "생일을 입력해주세요", actionTitle: "OK", handler: nil)
+        } else if phone.isEmpty {
+            myAlert(alertTitle: "확인", alertMessage: "전화번호를 입력해주세요", actionTitle: "OK", handler: nil)
+        } else {
 
-    func Check(){
-        if let email = tfEmail.text {
-            if email.isEmpty {
-                myAlert(alertTitle: "실패", alertMessage: "이메일을 입력해주세요", actionTitle: "OK", handler: nil)
-                // 알림: 텍스트필드가 비어있습니다!
-            }else{
-                // 타이틀 String이 지금 래핑이 풀려있고, 비어있지도 않고, 사용할 준비가 되었습니다
-            }
-        }
-        if let name = tfName.text {
-            if name.isEmpty {
-                myAlert(alertTitle: "실패", alertMessage: "이름을 입력해주세요", actionTitle: "OK", handler: nil)
-                // 알림: 텍스트필드가 비어있습니다!
-            }else{
-                // 타이틀 String이 지금 래핑이 풀려있고, 비어있지도 않고, 사용할 준비가 되었습니다
-            }
-        }
-        if let password = tfPassword.text {
-            if password.isEmpty {
-                myAlert(alertTitle: "실패", alertMessage: "비밀번호를 입력해주세요", actionTitle: "OK", handler: nil)
-                // 알림: 텍스트필드가 비어있습니다!
-            }else{
-                // 타이틀 String이 지금 래핑이 풀려있고, 비어있지도 않고, 사용할 준비가 되었습니다
-            }
-        }
-        if let birth = tfBirth.text {
-            if birth.isEmpty {
-                myAlert(alertTitle: "실패", alertMessage: "생일을 입력해주세요", actionTitle: "OK", handler: nil)
-                // 알림: 텍스트필드가 비어있습니다!
-            }else{
-                // 타이틀 String이 지금 래핑이 풀려있고, 비어있지도 않고, 사용할 준비가 되었습니다
-            }
-        }
-        if let phone = tfPhone.text {
-            if phone.isEmpty {
-                myAlert(alertTitle: "실패", alertMessage: "전화번호를 입력해주세요", actionTitle: "OK", handler: nil)
-                // 알림: 텍스트필드가 비어있습니다!
-            }else{
-                // 타이틀 String이 지금 래핑이 풀려있고, 비어있지도 않고, 사용할 준비가 되었습니다
-            }
         }
     }
     

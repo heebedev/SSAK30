@@ -8,14 +8,25 @@
 
 import UIKit
 import CoreData
-import KakaoAdSDK
 import KakaoSDKAuth
 import KakaoSDKCommon
-
+import Firebase
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    //Firebase
+    var window: UIWindow?
+
+    func application(_ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      FirebaseApp.configure()
+        
+      //KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
+      return true
+    }
 
     //kakaoLogin
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -24,15 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         return false
-    }
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-       
-        KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
-        
-        return true
     }
 
     // MARK: UISceneSession Lifecycle
