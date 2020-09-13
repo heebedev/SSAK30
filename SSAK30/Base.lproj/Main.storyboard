@@ -96,34 +96,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpA-wS-hls">
-                                <rect key="frame" x="19" y="535" width="73" height="74"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="KJW-J0-USp" id="b0w-ce-sRq"/>
-                                </connections>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1IU-83-YHi">
-                                <rect key="frame" x="100" y="535" width="73" height="74"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="KJW-J0-USp" id="lmz-am-IHa"/>
-                                </connections>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaD-rf-xS4">
-                                <rect key="frame" x="316" y="535" width="73" height="74"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="KJW-J0-USp" id="tHt-8N-Fdg"/>
-                                </connections>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67Q-n7-cgJ">
-                                <rect key="frame" x="235" y="535" width="73" height="74"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="KJW-J0-USp" id="kJc-qY-CvD"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="영업 시작 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHU-uH-jIk">
                                 <rect key="frame" x="48" y="506" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -138,17 +110,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="T4p-lr-XXm">
+                                <rect key="frame" x="4" y="559" width="187" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="openDatePicker:" destination="KJW-J0-USp" eventType="valueChanged" id="yzS-t4-Ugp"/>
+                                </connections>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-av-NFp">
+                                <rect key="frame" x="199" y="559" width="187" height="80"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="closeDatePicker:" destination="KJW-J0-USp" eventType="valueChanged" id="Yac-A9-Ri1"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gat-bh-Oz1"/>
                     </view>
                     <navigationItem key="navigationItem" id="Plc-Oo-GeG"/>
                     <connections>
-                        <outlet property="closePickerHour" destination="67Q-n7-cgJ" id="XGH-wB-cK1"/>
-                        <outlet property="closePickerMinute" destination="XaD-rf-xS4" id="4cZ-ue-QpU"/>
                         <outlet property="imgView" destination="iPp-aL-yHz" id="tdS-2U-5KO"/>
-                        <outlet property="openPickerHour" destination="cpA-wS-hls" id="0Zg-XN-Vr6"/>
-                        <outlet property="openPickerMinute" destination="1IU-83-YHi" id="I89-kU-95j"/>
                         <outlet property="tfAddress" destination="MbP-SS-Upy" id="OsU-6g-00N"/>
                         <outlet property="tfBusinessNo" destination="VUA-zT-hko" id="cAN-l7-Yte"/>
                         <outlet property="tfPhone" destination="uMR-RR-K8o" id="Qqz-o6-R3h"/>
@@ -1762,6 +1744,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Like" id="JXd-KD-2yu"/>
                     <navigationItem key="navigationItem" id="IO7-Ze-pZY"/>
+                    <connections>
+                        <outlet property="listTableView" destination="6xe-2U-1bd" id="H4Q-t7-dkb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAL-kF-Svu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@ import UIKit
 
 class BInterestViewController: UIViewController {
 
+    @IBOutlet weak var listTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

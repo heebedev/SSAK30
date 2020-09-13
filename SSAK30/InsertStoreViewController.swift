@@ -10,24 +10,19 @@ import UIKit
 
 class InsertStoreViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    
+    
     @IBOutlet weak var tfStoreName: UITextField!
     @IBOutlet weak var tfBusinessNo: UITextField!
     @IBOutlet weak var tfPhone: UITextField!
     @IBOutlet weak var tfAddress: UITextField!
     @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var openPickerHour: UIPickerView!
-    @IBOutlet weak var openPickerMinute: UIPickerView!
-    @IBOutlet weak var closePickerHour: UIPickerView!
-    @IBOutlet weak var closePickerMinute: UIPickerView!
+    
     
     let imagePickerController = UIImagePickerController()
-    let MAX_ARRAY_NUM = 24
-    let PICKER_VIEW_COLUMN = 1
-    var openHour = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
-    var openMinute = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60"]
-    var closeHour = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
-    var closeMinute = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60"]
-
+    var openTime: String = ""
+    var closeTime: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,9 +42,10 @@ class InsertStoreViewController: UIViewController, UIImagePickerControllerDelega
         let businessNo = tfBusinessNo.text
         let phone = tfPhone.text
         let address = tfAddress.text
+        let serviceTime = openTime + " ~ " + closeTime
         
         let storeInsertModel = StoreInsertModel()
-        let result = storeInsertModel.storeInsertItems(storeName: storeName!, businessNo: businessNo!, phone: phone!, address: address!)
+        let result = storeInsertModel.storeInsertItems(storeName: storeName!, businessNo: businessNo!, phone: phone!, address: address!, serviceTime: serviceTime)
         
         if result{
             let resultAlert = UIAlertController(title: "완료", message: "매장이 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
@@ -77,6 +73,19 @@ class InsertStoreViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func openDatePicker(_ sender: UIDatePicker) {
+        let datePickerView = sender
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        openTime = formatter.string(from: datePickerView.date)
+    }
+    
+    @IBAction func closeDatePicker(_ sender: UIDatePicker) {
+        let datePickerView = sender
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        closeTime = formatter.string(from: datePickerView.date)
+    }
     
     
     /*
