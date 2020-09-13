@@ -75,7 +75,6 @@ class StoreMarketQueryModel: NSObject{
         case "nearMarket":
             for i in 0..<jsonResult.count {
                 jsonElement = jsonResult[i] as! NSDictionary
-                
                 let query = MarketModel()
                 
                 if let mName = jsonElement["mName"] as? String,

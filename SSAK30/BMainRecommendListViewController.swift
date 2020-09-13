@@ -17,7 +17,7 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
     
     let viewModel = RecommentListViewModel()
     var feedItem: NSArray = NSArray()
-    var uSeqno: String? = "1" // test /////////////////////////////////
+    var uSeqno: String? = "1" // test
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +55,24 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         let item: BHomeDBModel = feedItem[(indexPath as NSIndexPath).item] as! BHomeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
         // sellSeqno 넘겨줌
         let sellSeqno = String(item.sellSeqno!)
+        let sSeqno = String(item.sSeqno!)
+        
+        // 구매갯수 체크
+        //let remainBuyCount = Int(item.tatalEA!)! - Int(item.sum_buyEA!)!
+        let remainBuyCount = Int(item.tatalEA!)!
+        print("전달팀전체갯수", String(item.tatalEA!))
+        //print("전달팀팔린갯수", item.sum_buyEA ?? 0)
+        //print("언제넘어가는지테스트", item.sName)
+        var canBuyMaxNum : Int?
+        if remainBuyCount < Int(item.minimumEA!)! {
+            return canBuyMaxNum = remainBuyCount
+        }else{
+            canBuyMaxNum = Int(item.minimumEA!)!
+        }
+
+        
         // 디테일뷰에 넣어줌
-        detailVC.receiveItems(sellSeqno)
+        detailVC.receiveItems(sellSeqno, canBuyMaxNum: canBuyMaxNum!, sSeqno: sSeqno)
         // 이동
         self.present(detailVC, animated: true, completion: nil)
         
