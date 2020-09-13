@@ -20,7 +20,6 @@ class LoginModel: NSObject {
         let urlAdd = "?uEmail=\(uEmail)&uPassword=\(uPassword)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         
         urlPath += urlAdd
-        print(urlPath + urlAdd)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error) in
@@ -33,8 +32,6 @@ class LoginModel: NSObject {
     }
     
     func parseJAON(_ data: Data){
-        print("Parse Json")
-        print(urlPath)
         var jsonResult = NSArray()
         
         do{

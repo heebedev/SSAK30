@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//var BuySeller = 0
 class BuySellChkViewController: UIViewController {
     
     override func viewDidLoad() {

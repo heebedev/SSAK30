@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
     
     var feedItems: NSArray = NSArray()
     var userPassword:String?
-    var userSeqno: String = ""
+    
     
     @IBOutlet weak var kakaobutton: UIButton!
     @IBOutlet weak var naverbutton: UIButton!
@@ -39,10 +39,12 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
         kakaobutton.layer.cornerRadius = 20
         naverbutton.layer.cornerRadius = 20
         self.reloadInputViews()
+        
+        
     }
     
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -68,7 +70,7 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
                 }
         
     }
-    
+    */
 
     
     
@@ -103,6 +105,9 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
         let queryModel = LoginModel()
             queryModel.delegate = self
             queryModel.downloadItems(uEmail: userEmail!, uPassword: userPassword!)
+            
+            
+            
         }
     }
     
@@ -121,6 +126,9 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
             }else{
                 self.performSegue(withIdentifier: "sgSeller", sender: nil)
             }
+            let staticData = StaticData(uSeqno: uSeqno)
+            staticData.uSeqno = uSeqno
+            print(uSeqno)
             
         }
         

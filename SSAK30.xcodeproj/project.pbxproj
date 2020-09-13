@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		211A041A250E7CB30064725F /* StaticInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A0419250E7CB30064725F /* StaticInfo.swift */; };
+		211A041E250E84330064725F /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211A041D250E84330064725F /* StaticData.swift */; };
 		21D2D1A8250726DE00085E16 /* SignUpDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */; };
 		21D2D1AA250728B300085E16 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D2D1A9250728B300085E16 /* SignUpModel.swift */; };
 		21D2D1AC2507535B00085E16 /* readmeD.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 21D2D1AB2507535B00085E16 /* readmeD.rtf */; };
@@ -96,7 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		211A0419250E7CB30064725F /* StaticInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticInfo.swift; sourceTree = "<group>"; };
+		211A041D250E84330064725F /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
 		21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDBModel.swift; sourceTree = "<group>"; };
 		21D2D1A9250728B300085E16 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		21D2D1AB2507535B00085E16 /* readmeD.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = readmeD.rtf; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 				30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */,
 				30328DB0250DEDB000C42F16 /* CheckFindIdPwModel.swift */,
 				6BC590A8250CFB09001A7FAD /* BDetailQueryModel.swift */,
-				211A0419250E7CB30064725F /* StaticInfo.swift */,
+				211A041D250E84330064725F /* StaticData.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -459,7 +459,6 @@
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
 				6BE3EE10250A21D000323294 /* SHomeQueryModel.swift in Sources */,
 				9DCDB8132507594B00A6F940 /* BMyInfoQueryModel.swift in Sources */,
-				211A041A250E7CB30064725F /* StaticInfo.swift in Sources */,
 				9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */,
 				9DCDB833250A3FBA00A6F940 /* SUpdateInfoViewController.swift in Sources */,
 				EC1E3BD4250B2AA400F4ABDB /* StoreInsertModel.swift in Sources */,
@@ -488,6 +487,7 @@
 				306561F12508CD85004DA1E2 /* AfterSearchTableViewController.swift in Sources */,
 				EC1E3BB22507613700F4ABDB /* ProductInsertModel.swift in Sources */,
 				308D362925024EC100B363B9 /* BInterestViewController.swift in Sources */,
+				211A041E250E84330064725F /* StaticData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
