@@ -11,7 +11,7 @@ import KakaoAdSDK
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
-
+    
 class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, LoginModelProtocol {
     
 
