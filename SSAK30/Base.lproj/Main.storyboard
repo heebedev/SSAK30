@@ -2392,6 +2392,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="fpv-r8-Wy9"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="fdF-ol-1dD" id="Jyf-SO-rUc"/>
+                                                            <outlet property="delegate" destination="fdF-ol-1dD" id="udN-7y-d6S"/>
+                                                        </connections>
                                                     </pickerView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방문 시간을 선택하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9R-xP-rWT">
                                                         <rect key="frame" x="20" y="155" width="374" height="20"/>
@@ -2402,11 +2406,15 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-1a-mXa">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-1a-mXa">
                                                         <rect key="frame" x="20" y="180" width="374" height="130"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="130" id="AmK-bg-ZZi"/>
                                                         </constraints>
+                                                        <locale key="locale" localeIdentifier="ko_KR"/>
+                                                        <connections>
+                                                            <action selector="changeDatePicker:" destination="fdF-ol-1dD" eventType="valueChanged" id="pFD-5s-O8V"/>
+                                                        </connections>
                                                     </datePicker>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrw-X5-kw9">
                                                         <rect key="frame" x="50" y="325" width="314" height="40"/>
@@ -2417,6 +2425,9 @@
                                                         <state key="normal" title="구매하기">
                                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="insertBuylist:" destination="fdF-ol-1dD" eventType="touchUpInside" id="4BH-He-XZ9"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -2583,6 +2594,7 @@
                         <outlet property="lbl_sbTitle" destination="icH-WS-gxK" id="MFx-QE-zyP"/>
                         <outlet property="lbl_sum_buyEA" destination="WE1-1p-Sp9" id="wma-J7-WP7"/>
                         <outlet property="lbl_totalEA" destination="YLb-4a-rGv" id="JBq-uo-mpj"/>
+                        <outlet property="picker_buyCount" destination="nr7-uC-rMM" id="byB-8T-sCY"/>
                         <outlet property="tv_sbContent" destination="Aob-z3-bi7" id="5gp-bG-0Qi"/>
                     </connections>
                 </viewController>
@@ -2975,6 +2987,8 @@
         <segue reference="je8-ac-3s9"/>
         <segue reference="9QY-fT-3dG"/>
         <segue reference="kvd-FK-cPG"/>
+        <segue reference="OqO-TL-hNZ"/>
+        <segue reference="1tP-Ax-I66"/>
         <segue reference="6DT-Ke-DJo"/>
     </inferredMetricsTieBreakers>
     <resources>
