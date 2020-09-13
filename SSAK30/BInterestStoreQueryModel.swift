@@ -18,6 +18,7 @@ class BInterestStoreQueryModel: NSObject{
     var urlPath = "http://localhost:8080/test/ssak30_interest_storename_query.jsp"
     
     func downloadItems(){
+        print("1111")
 //        let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
 //        urlPath += urlAdd
         let url: URL = URL(string: urlPath)!

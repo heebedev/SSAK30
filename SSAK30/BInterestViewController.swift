@@ -7,17 +7,68 @@
 //
 
 import UIKit
+import Firebase
 
-class BInterestViewController: UIViewController {
+class BInterestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BInterestStoreQueryModelProtocol {
+    
 
     @IBOutlet weak var listTableView: UITableView!
+    
+    
+    var feedItem: NSArray = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let queryModel = BInterestStoreQueryModel()
+        // query 사용을 위한 delegate
+        queryModel.delegate = self
+        queryModel.downloadItems()
+        // tableView 사용
+        listTableView.delegate = self
+        listTableView.dataSource = self
+        listTableView.rowHeight = 115
+        
+        
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func storeItemDownloaded(items: NSArray) {
+        feedItem = items
+        self.listTableView.reloadData()
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return feedItem.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "interestCell", for: indexPath) as! BInterestTableViewCell
+        // Configure the cell...
+        let item: BInterestDBModel = feedItem[indexPath.row] as! BInterestDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+//        let storage = Storage.storage()
+//        let storageRef = storage.reference()
+//        let imgRef = storageRef.child("sImage").child(item.sImage!)
+//
+//        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+//            if error != nil {
+//                cell.imgView?.image = UIImage(named: "emptyImage.png")
+//            } else {
+//                cell.imgView?.image = UIImage(data: data!)
+//            }
+//        }
+        cell.lblName.text = (item.sName!)
+        
+        return cell
+    }
 
     /*
     // MARK: - Navigation
