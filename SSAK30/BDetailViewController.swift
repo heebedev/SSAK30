@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit // *** 추가
 
-class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPickerViewDelegate, UIPickerViewDataSource {
+class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     
     // 아웃렛 연결 // // picker 구매갯수, 방문시간 제외
     @IBOutlet weak var iv_sbImage: UIImageView!
@@ -29,6 +30,9 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
     
     // 피커뷰 구매 갯수
     @IBOutlet weak var picker_buyCount: UIPickerView!
+    
+    // 맵
+    @IBOutlet weak var map_store: MKMapView!
     
     
     // 변수 //
@@ -109,15 +113,15 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
     // 구매버튼
     @IBAction func insertBuylist(_ sender: UIButton) {
         let getSellSeqno = receiveSellSeqno
-        print("receiveSellSeqno: ",receiveSellSeqno)
+        //print("receiveSellSeqno: ",receiveSellSeqno)
         let getStoreSeqno = receiveStoreSeqno
-        print("receiveStoreSeqno:", receiveStoreSeqno)
+        //print("receiveStoreSeqno:", receiveStoreSeqno)
         let getUSeqno = uSeqno
-        print("uSeqno: ",uSeqno)
+        //print("uSeqno: ",uSeqno)
         let getBuyCount = String(selectedProductCount)
-        print("selectedProductCount: ", selectedProductCount)
+        //print("selectedProductCount: ", selectedProductCount)
         let getPickupDate = pickupDateTime
-        print(" pickupDateTime", pickupDateTime)
+        //print(" pickupDateTime", pickupDateTime)
         
         
         let insertModel = InsertBuylistModel() // 인스턴스 생성
@@ -126,7 +130,7 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
         
         if result{
             // 알럿 //
-            let resultAlert = UIAlertController(title: "완료", message: "입력 되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            let resultAlert = UIAlertController(title: "구매완료", message: "구매가 완료 되었습니다.", preferredStyle: UIAlertController.Style.alert)
             let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
                 self.navigationController?.popViewController(animated: true)
             })
@@ -135,7 +139,7 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
 
         }else{
             // 알럿 //
-            let resultAlert = UIAlertController(title: "실패", message: "에러가 발생 되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            let resultAlert = UIAlertController(title: "구매실패", message: "구매 중 에러가 발생 되었습니다.", preferredStyle: UIAlertController.Style.alert)
             let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)

@@ -2598,6 +2598,7 @@
                         <outlet property="lbl_sbTitle" destination="icH-WS-gxK" id="MFx-QE-zyP"/>
                         <outlet property="lbl_sum_buyEA" destination="WE1-1p-Sp9" id="wma-J7-WP7"/>
                         <outlet property="lbl_totalEA" destination="YLb-4a-rGv" id="JBq-uo-mpj"/>
+                        <outlet property="map_store" destination="gLo-6G-mUl" id="qN1-el-Nju"/>
                         <outlet property="picker_buyCount" destination="nr7-uC-rMM" id="byB-8T-sCY"/>
                         <outlet property="tv_sbContent" destination="Aob-z3-bi7" id="5gp-bG-0Qi"/>
                     </connections>
