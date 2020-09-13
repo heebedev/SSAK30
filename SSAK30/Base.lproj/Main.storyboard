@@ -350,7 +350,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="회원가입"/>
                                 <connections>
-                                    <segue destination="3Ig-GZ-hP1" kind="show" id="j4C-cC-dGF"/>
+                                    <segue destination="3Ig-GZ-hP1" kind="show" identifier="" id="j4C-cC-dGF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-KR-GsL">
@@ -376,11 +376,12 @@
                         <outlet property="tfPw" destination="IBK-p3-mfs" id="H2c-fI-pSJ"/>
                         <segue destination="L0H-ib-c7E" kind="presentation" identifier="sgBuyer" modalPresentationStyle="fullScreen" id="vWr-jv-zKY"/>
                         <segue destination="eZi-2f-QXP" kind="presentation" identifier="sgSeller" modalPresentationStyle="fullScreen" id="WwY-Rx-AiO"/>
+                        <segue destination="3Ig-GZ-hP1" kind="show" identifier="sgSignUp" id="6DT-Ke-DJo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhH-Nk-yFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-539.13043478260875" y="-252.45535714285714"/>
+            <point key="canvasLocation" x="-539" y="-252"/>
         </scene>
         <!--Find Id Pw View Controller-->
         <scene sceneID="Dng-Yi-wU0">
@@ -2408,10 +2409,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gcq-O4-f4Z"/>
         <segue reference="Cjz-ej-RMZ"/>
         <segue reference="OqO-TL-hNZ"/>
         <segue reference="1tP-Ax-I66"/>
+        <segue reference="6DT-Ke-DJo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>

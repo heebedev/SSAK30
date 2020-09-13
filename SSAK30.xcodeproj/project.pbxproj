@@ -39,6 +39,7 @@
 		6BE3EE10250A21D000323294 /* SHomeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3EE0F250A21D000323294 /* SHomeQueryModel.swift */; };
 		9D55203D250B53CF004DE325 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D55203C250B53CF004DE325 /* KakaoOpenSDK.framework */; };
 		9D55203E250B53CF004DE325 /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D55203C250B53CF004DE325 /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D552096250CE3AD004DE325 /* KakaoLoginQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D552095250CE3AD004DE325 /* KakaoLoginQueryModel.swift */; };
 		9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */; };
 		9DCDB80D2506080D00A6F940 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */; };
 		9DCDB80F2506252800A6F940 /* FindIdPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */; };
@@ -116,6 +117,7 @@
 		985EEA9F59368F579D9282D1 /* Pods-SSAK30.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAK30.release.xcconfig"; path = "Target Support Files/Pods-SSAK30/Pods-SSAK30.release.xcconfig"; sourceTree = "<group>"; };
 		9D552039250B52A3004DE325 /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D55203C250B53CF004DE325 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Pods/KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		9D552095250CE3AD004DE325 /* KakaoLoginQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginQueryModel.swift; sourceTree = "<group>"; };
 		9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellChkViewController.swift; sourceTree = "<group>"; };
 		9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */,
 				9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */,
 				308D362C25024F6000B363B9 /* LoginViewController.swift */,
+				9D552095250CE3AD004DE325 /* KakaoLoginQueryModel.swift */,
 				308D362425024EAB00B363B9 /* BHomeViewController.swift */,
 				6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */,
 				308D362625024EB600B363B9 /* BNoticeViewController.swift */,
@@ -384,6 +387,7 @@
 				30628B0C250207FD0037AB3B /* AppDelegate.swift in Sources */,
 				30D5B0B4250A0959002B66EB /* MarketModel.swift in Sources */,
 				EC1E3BAC250216C000F4ABDB /* SMyinfoViewController.swift in Sources */,
+				9D552096250CE3AD004DE325 /* KakaoLoginQueryModel.swift in Sources */,
 				9DCDB8212509CDC200A6F940 /* SMyInfoLikeQueryModel.swift in Sources */,
 				EC1E3BAE2506244C00F4ABDB /* BDetailViewController.swift in Sources */,
 				30628B0E250207FD0037AB3B /* SceneDelegate.swift in Sources */,
