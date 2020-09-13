@@ -23,6 +23,8 @@
 		30328DCE250E64FC00C42F16 /* store.png in Resources */ = {isa = PBXBuildFile; fileRef = 30328DCD250E64FC00C42F16 /* store.png */; };
 		30328DD3250E69A800C42F16 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 30328DD2250E69A800C42F16 /* search.png */; };
 		30328DD5250E6BA400C42F16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 30328DD4250E6BA400C42F16 /* heart.png */; };
+		30328DD7250EA33A00C42F16 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30328DD6250EA33A00C42F16 /* StaticData.swift */; };
+		30328DD9250EA36700C42F16 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30328DD8250EA36700C42F16 /* LoginModel.swift */; };
 		30602983250B56DB00E3FCFF /* AfterSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */; };
 		30602985250B58CC00E3FCFF /* AfterSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */; };
 		30602987250B5AC900E3FCFF /* AfterSearchQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */; };
@@ -42,7 +44,6 @@
 		30D5B0B4250A0959002B66EB /* MarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B0B3250A0959002B66EB /* MarketModel.swift */; };
 		30D5B0B6250A0A76002B66EB /* NearStoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B0B5250A0A76002B66EB /* NearStoreModel.swift */; };
 		30D5B0B8250A0C5D002B66EB /* StoreMarketQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D5B0B7250A0C5D002B66EB /* StoreMarketQueryModel.swift */; };
-		6B4C6D98250E099D00583101 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4C6D97250E099D00583101 /* playstore.png */; };
 		6B4C6D9A250E68E900583101 /* InsertBuylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */; };
 		6B895EC82508CD18008E4D3D /* BHomeDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */; };
 		6B895ECA2508CD31008E4D3D /* BHomeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */; };
@@ -85,7 +86,6 @@
 		EC1E3BD5250B2AA400F4ABDB /* BInterestDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */; };
 		EC1E3BD6250B2AA400F4ABDB /* BInterestStoreQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */; };
 		EC1E3BD8250B3E3F00F4ABDB /* InsertStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */; };
-		EC921854250E0DFC00847939 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = EC921853250E0DFB00847939 /* playstore.png */; };
 		EC921856250E5C4800847939 /* BInterestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC921855250E5C4800847939 /* BInterestTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +120,8 @@
 		30328DCD250E64FC00C42F16 /* store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = store.png; sourceTree = "<group>"; };
 		30328DD2250E69A800C42F16 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = ../../SSAK30PJT/search.png; sourceTree = "<group>"; };
 		30328DD4250E6BA400C42F16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		30328DD6250EA33A00C42F16 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
+		30328DD8250EA36700C42F16 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchTableViewCell.swift; sourceTree = "<group>"; };
 		30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchResultModel.swift; sourceTree = "<group>"; };
 		30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchQueryModel.swift; sourceTree = "<group>"; };
@@ -141,7 +143,6 @@
 		30D5B0B3250A0959002B66EB /* MarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketModel.swift; sourceTree = "<group>"; };
 		30D5B0B5250A0A76002B66EB /* NearStoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearStoreModel.swift; sourceTree = "<group>"; };
 		30D5B0B7250A0C5D002B66EB /* StoreMarketQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMarketQueryModel.swift; sourceTree = "<group>"; };
-		6B4C6D97250E099D00583101 /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
 		6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertBuylistModel.swift; sourceTree = "<group>"; };
 		6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeDBModel.swift; sourceTree = "<group>"; };
 		6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeQueryModel.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 		EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BInterestDBModel.swift; sourceTree = "<group>"; };
 		EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BInterestStoreQueryModel.swift; sourceTree = "<group>"; };
 		EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertStoreViewController.swift; sourceTree = "<group>"; };
-		EC921853250E0DFB00847939 /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
 		EC921855250E5C4800847939 /* BInterestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BInterestTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,7 +282,6 @@
 				9DCDB8282509E8E300A6F940 /* BMyInfoTableViewCell.swift */,
 				EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */,
 				6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */,
-				EC1E3BA72502169A00F4ABDB /* SNoticeViewController.swift */,
 				EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */,
 				EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */,
 				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
@@ -322,6 +321,8 @@
 				30328DB6250E22A100C42F16 /* passwordChangeModel.swift */,
 				30328DB8250E2DB000C42F16 /* ChangePwViewController.swift */,
 				6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */,
+				30328DD6250EA33A00C42F16 /* StaticData.swift */,
+				30328DD8250EA36700C42F16 /* LoginModel.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -453,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30328DD7250EA33A00C42F16 /* StaticData.swift in Sources */,
 				308D362D25024F6000B363B9 /* LoginViewController.swift in Sources */,
 				EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */,
 				EC921856250E5C4800847939 /* BInterestTableViewCell.swift in Sources */,
@@ -477,6 +479,7 @@
 				9DCDB82B250A134400A6F940 /* BChargeCashQueryModel.swift in Sources */,
 				EC1E3BA62502167200F4ABDB /* SHomeViewController.swift in Sources */,
 				30328DB9250E2DB000C42F16 /* ChangePwViewController.swift in Sources */,
+				30328DD9250EA36700C42F16 /* LoginModel.swift in Sources */,
 				9DCDB80D2506080D00A6F940 /* SignUpViewController.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
 				6B895ECA2508CD31008E4D3D /* BHomeQueryModel.swift in Sources */,
