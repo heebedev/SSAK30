@@ -10,6 +10,8 @@ import Foundation
 
 class BMyInfoDBModel:NSObject {
     
+    var uSeqno: String?
+    var uBuySell: String?
     var uImage: String?
     var uName: String?
     var uPassword:String?
@@ -37,7 +39,7 @@ class BMyInfoDBModel:NSObject {
         self.uEmail = uEmail
     }
 
-    init(sellSeqno: String?, sellImage: String, sellTitle: String, priceEA: String){
+    init(sellSeqno: String, sellImage: String, sellTitle: String, priceEA: String){
         self.sellSeqno = sellSeqno
         self.sellImage = sellImage
         self.sellTitle = sellTitle
@@ -50,4 +52,8 @@ class BMyInfoDBModel:NSObject {
         self.reviewListTitle = reviewListTitle
     }
 
+    init(uSeqno: String, uBuySell: String){
+        self.uSeqno = uSeqno
+        self.uBuySell = uBuySell
+    }
 }

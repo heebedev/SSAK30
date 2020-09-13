@@ -15,9 +15,11 @@ protocol BHomeInterestQueryModelProtocol: class{
 class BHomeInterestQueryModel: NSObject{
     
     var delegate: BHomeInterestQueryModelProtocol!
-    let urlPath = "http://localhost:8080/ssak30/bHomeInterestQuery_ios.jsp"
+    var urlPath = "http://localhost:8080/ssak30/bHomeInterestQuery_ios.jsp"
     
-    func downloadItems(){
+    func downloadItems(uSeqno: String?){
+        let urlAdd = "?uSeqno=\(String(uSeqno!))"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
+        urlPath += urlAdd
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         

@@ -25,7 +25,7 @@ class BHomeQueryModel: NSObject{
             if error != nil { // 에러코드가 없을 때 실행
                 print("Failed to download data")
             }else{
-                print("Data is downloaded")
+                print("recent Data is downloaded")
                 
                 //parse JSON
                 self.parseJSON(data!)

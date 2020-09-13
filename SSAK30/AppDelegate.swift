@@ -8,15 +8,42 @@
 
 import UIKit
 import CoreData
-import KakaoAdSDK
 import KakaoSDKAuth
 import KakaoSDKCommon
+import Firebase
+import KakaoOpenSDK
 
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    //Firebase
+    var window: UIWindow?
 
+    func application(_ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions:
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      FirebaseApp.configure()
+        
+      //KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
+      return true
+    }
+
+//
+//    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+//        guard let url = URLContexts.first?.url else {return}
+//        KOSession.handleOpen(url)
+//    }
+//
+//    func sceneDidBecomeActive(_ scene: UIScene) {
+//        KOSession.handleDidBecomeActive()
+//    }
+//
+//    func sceneDidEnterBackground(_ scene: UIScene) {
+//        KOSession.handleDidEnterBackground()
+//    }
+    
     //kakaoLogin
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (AuthApi.isKakaoTalkLoginUrl(url)) {
@@ -30,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
-        KakaoSDKCommon.initSDK(appKey: "NATIVE_APP_KEY")
+        KakaoSDKCommon.initSDK(appKey: "e17503aed21ba4ae5c4d500d070fe2b9")
         
         return true
     }
