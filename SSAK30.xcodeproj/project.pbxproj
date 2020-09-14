@@ -25,6 +25,9 @@
 		30328DD9250EA36700C42F16 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30328DD8250EA36700C42F16 /* LoginModel.swift */; };
 		303B78E4250F1F03004AE072 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */; };
 		303B78E6250F4A2E004AE072 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 303B78E5250F4A2E004AE072 /* search.png */; };
+		303B78E9250F711B004AE072 /* SInterestDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78E8250F711B004AE072 /* SInterestDBModel.swift */; };
+		303B78EB250F7130004AE072 /* SInterestQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78EA250F7130004AE072 /* SInterestQueryModel.swift */; };
+		303B78ED250F7161004AE072 /* SInterestVIPQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */; };
 		30602983250B56DB00E3FCFF /* AfterSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */; };
 		30602985250B58CC00E3FCFF /* AfterSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */; };
 		30602987250B5AC900E3FCFF /* AfterSearchQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */; };
@@ -122,6 +125,9 @@
 		30328DD8250EA36700C42F16 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		303B78E5250F4A2E004AE072 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = ../../SSAK30PJT/search.png; sourceTree = "<group>"; };
+		303B78E8250F711B004AE072 /* SInterestDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestDBModel.swift; sourceTree = "<group>"; };
+		303B78EA250F7130004AE072 /* SInterestQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestQueryModel.swift; sourceTree = "<group>"; };
+		303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestVIPQueryModel.swift; sourceTree = "<group>"; };
 		30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchTableViewCell.swift; sourceTree = "<group>"; };
 		30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchResultModel.swift; sourceTree = "<group>"; };
 		30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchQueryModel.swift; sourceTree = "<group>"; };
@@ -323,6 +329,9 @@
 				6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */,
 				30328DD8250EA36700C42F16 /* LoginModel.swift */,
 				303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */,
+				303B78E8250F711B004AE072 /* SInterestDBModel.swift */,
+				303B78EA250F7130004AE072 /* SInterestQueryModel.swift */,
+				303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -456,8 +465,10 @@
 			files = (
 				308D362D25024F6000B363B9 /* LoginViewController.swift in Sources */,
 				EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */,
+				303B78ED250F7161004AE072 /* SInterestVIPQueryModel.swift in Sources */,
 				EC921856250E5C4800847939 /* BInterestTableViewCell.swift in Sources */,
 				30D5B0B8250A0C5D002B66EB /* StoreMarketQueryModel.swift in Sources */,
+				303B78E9250F711B004AE072 /* SInterestDBModel.swift in Sources */,
 				9DCDB8292509E8E300A6F940 /* BMyInfoTableViewCell.swift in Sources */,
 				21D2D1B02508698600085E16 /* EmailChkModel.swift in Sources */,
 				30628B16250207FD0037AB3B /* SSAK30.xcdatamodeld in Sources */,
@@ -489,6 +500,7 @@
 				9DCDB82D250A223800A6F940 /* BUpdateInfoViewController.swift in Sources */,
 				EC1E3BA62502167200F4ABDB /* SHomeViewController.swift in Sources */,
 				9DCDB80D2506080D00A6F940 /* SignUpViewController.swift in Sources */,
+				303B78EB250F7130004AE072 /* SInterestQueryModel.swift in Sources */,
 				6BC590A9250CFB09001A7FAD /* BDetailQueryModel.swift in Sources */,
 				9DCDB8232509D27200A6F940 /* SMyInfoSellQueryModel.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
