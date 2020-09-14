@@ -192,6 +192,15 @@ class BSearchViewController: UIViewController, CLLocationManagerDelegate, MKMapV
             let displayVC = segue.destination as! AfterSearchTableViewController
             displayVC.searchItem = searchItem
         }
+        if(segue.identifier == "sgStoreDetail") {
+            let cell = sender as! UITableViewCell
+            let indexPath = self.tvPopularList.indexPath(for: cell)
+            let storeDetailView = segue.destination as! StoreDetailViewController
+            
+           
+            
+            storeDetailView.receiveItems(nearStoreModel[(indexPath! as NSIndexPath).row].uSeqno!)
+        }
         
     }
     

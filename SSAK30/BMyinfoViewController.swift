@@ -14,9 +14,11 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
 
     var feedItem: NSArray = NSArray()
     var feedItem2: NSArray = NSArray()
-    var uSeqno: String?
+    var uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
     var thiryCash:String?
     var myCash:Int = 0
+    var totalCash:Int = 0
+    var usePrice:Int = 0
     
     @IBOutlet weak var imgUserImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
@@ -36,27 +38,31 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         self.tvMyBuyList.rowHeight = 115
         
         imgUserImage.image = UIImage(named: "emptyImage.png")
+        self.imgUserImage.layer.cornerRadius = self.imgUserImage.frame.height/2
+        self.imgUserImage.layer.borderWidth = 1
+        self.imgUserImage.layer.borderColor = UIColor.clear.cgColor
+        self.imgUserImage.clipsToBounds = true
         
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(uSeqno: uSeqno ?? "1")
+        queryModel.downloadItems(uSeqno: uSeqno)
         
         let queryModel2 = BMyInfoBuyListQueryModel()
         queryModel2.delegate = self
-        queryModel2.downloadItems(uSeqno: uSeqno ?? "1")
+        queryModel2.downloadItems(uSeqno: uSeqno)
 
     }
     func itemDownloaded(items: NSArray) {
         feedItem = items
         let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
         
-        if item.sellImage!.isEmpty {
+        if item.uImage!.isEmpty {
             self.imgUserImage.image = UIImage(named: "emptyImage.png")
         } else {
             //Firbase 이미지 불러오기
             let storage = Storage.storage()
             let storageRef = storage.reference()
-            let imgRef = storageRef.child("uImage").child(item.sellImage!)
+            let imgRef = storageRef.child("uImage").child(item.uImage!)
             
             imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
                 if error != nil {
@@ -80,7 +86,7 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
     override func viewWillAppear(_ animated: Bool) { // 입력 후 DB 에서 다시 읽어들이기
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(uSeqno: uSeqno ?? "1")
+        queryModel.downloadItems(uSeqno: uSeqno)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -99,7 +105,7 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         let item: BMyInfoDBModel = feedItem2[indexPath.row] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        let imgRef = storageRef.child("uImage").child(item.sellImage!)
+        let imgRef = storageRef.child("sbImage").child(item.sellImage!)
         
         if !item.sellImage!.isEmpty {
             imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
@@ -145,10 +151,11 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         let resultAlert = UIAlertController(title: "충전", message: "충전하실 금액을 입력하세요.", preferredStyle: UIAlertController.Style.alert)
         let onAction = UIAlertAction(title: "충전하기", style: UIAlertAction.Style.default, handler: {ACTION in
             self.myCash = Int(self.lblCash.text!)!
-            self.myCash = self.myCash + Int(resultAlert.textFields![0].text!)!
-            self.lblCash.text = String(self.myCash)
+            self.usePrice = Int(resultAlert.textFields![0].text!)!
+            self.totalCash = self.myCash + self.usePrice
+            self.lblCash.text = String(self.totalCash)
             let queryModel = BChargeCashQueryModel()
-            queryModel.updateItem(uSeqno: self.uSeqno ?? "1", thiryCash: String(self.myCash))
+            queryModel.updateItem(uSeqno: self.uSeqno, thiryCash: String(self.totalCash), usePrice: String(self.usePrice))
             })
         let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
         resultAlert.addAction(onAction)
@@ -172,7 +179,7 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
                 let uPhone = String(item.uPhone!)
                 let uEmail = String(item.uEmail!)
                 
-                detailView.receiveItems(uSeqno ?? "1", uName, uImage, uPassword, uPhone, uEmail)
+                detailView.receiveItems(uSeqno, uName, uImage, uPassword, uPhone, uEmail)
             }
         }
     

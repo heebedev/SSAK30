@@ -1,27 +1,24 @@
 //
-//  BInterestStoreQueryModel.swift
+//  SInteredtVIPQueryModel.swift
 //  SSAK30
 //
-//  Created by taeheum on 2020/09/10.
+//  Created by taeheum on 2020/09/14.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import Foundation
 
-protocol BInterestStoreQueryModelProtocol: class {
-    func storeItemDownloaded(items:NSArray)
+protocol SInterestVIPQueryModelProtocol: class {
+    func vipItemDownloaded(bName: String, bPrice: String)
 }
 
-class BInterestStoreQueryModel: NSObject{
+class SInterestVIPQueryModel: NSObject{
     
-    var delegate: BInterestStoreQueryModelProtocol!
-    var urlPath = "http://localhost:8080/test/ssak30_interest_store_query.jsp?uSeqno="
+    var delegate: SInterestVIPQueryModelProtocol!
     
-    func downloadItems(){
-        let uSeqno:Int = UserDefaults.standard.integer(forKey: "uSeqno")
-//        let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
-//        urlPath += urlAdd
-        urlPath += String(uSeqno)
+    func vipDownloadItems(){
+        let uSeqno:String = UserDefaults.standard.string(forKey: "uSeqno")!
+        let urlPath = "http://localhost:8080/test/ssak30_interest_vip_query.jsp?uSeqno=\(uSeqno)"
         print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
@@ -44,28 +41,24 @@ class BInterestStoreQueryModel: NSObject{
             print(error)
         }
         var jsonElement = NSDictionary()
-        let locations = NSMutableArray()
+        var name:String?
+        var price:String?
         
         for i in 0..<jsonResult.count{
             jsonElement = jsonResult[i] as! NSDictionary
-            let query = BInterestDBModel()
             
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
-            if let sName = jsonElement["sName"] as? String,
-                let sImage = jsonElement["sImage"] as? String
-//               let sImage = jsonElement["sImage"] as? String
+            if let bName = jsonElement["bName"] as? String,
+                let bPrice = jsonElement["bPrice"] as? String
                 {
                
-                    query.sName = sName
-                    query.sImage = sImage
-//                query.sImage = sImage
-                
+                    name = bName
+                    price = bPrice
             }
             
-            locations.add(query)
         }
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.storeItemDownloaded(items: locations)
+            self.delegate.vipItemDownloaded(bName: name!, bPrice: price!)
         })
     }
-}// ------------
+}// ——————

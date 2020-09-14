@@ -43,15 +43,6 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
     func receiveItems(_ uSeqno:String) {
         receiveuSeqno = uSeqno
     }
-    
-    func loginWithStaticDatas(user_seq: Int) {
-//       self.performSegue(withIdentifier: "sgLogin", sender: self)
-        if lblId.text! == "Seller" {
-            self.performSegue(withIdentifier: "sgSeller", sender: nil)
-        } else {
-            self.performSegue(withIdentifier: "sgBuyer", sender: nil)
-        }
-    }
 
 
     /*
@@ -74,14 +65,32 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
         self.userPassword = tfPw.text!
         if(self.userEmail == nil || self.userEmail == ""){
             myAlert(alertTitle: "오류", alertMessage: "아이디 비밀번호를 확인해주세요.", actionTitle: "OK", handler: nil)
+            LoginChkDownloaded(item: userEmail!, items: userPassword!, Buyitem: "1")
         } else {
         let queryModel = LoginModel()
             queryModel.delegate = self
-            queryModel.downloadItems(uEmail: userEmail!, uPassword: userPassword!)
+            queryModel.EmailloadItems(uEmail: userEmail!, uValidation: "1")
             
         }
     }
 
+    
+    func LoginChkDownloaded(item: String, items: String, Buyitem: String) {
+        if items == "false" {
+            myAlert(alertTitle: "확인", alertMessage: "등록되지 않은 정보입니다.", actionTitle: "OK", handler: nil)
+        } else if items != tfPw.text! {
+            myAlert(alertTitle: "비밀번호 오류", alertMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "OK", handler: nil)
+        } else {
+            if Buyitem == "0" {
+                self.performSegue(withIdentifier: "sgBuyer", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "sgSeller", sender: nil)
+            }
+        }
+    }
+    
+    
+    
     
     func LoginitemDownloaded(items: NSArray) {
         feedItems = items
@@ -105,6 +114,7 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
         feedItem = items
         let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
         uSeqno = item.uSeqno!
+        UserDefaults.standard.set(Int(uSeqno), forKey: "uSeqno")
         let uBuySell = item.uBuySell
         if(self.uSeqno == "0"){
             self.performSegue(withIdentifier: "sgSignUp", sender: nil)

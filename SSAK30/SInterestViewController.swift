@@ -8,12 +8,74 @@
 
 import UIKit
 
-class SInterestViewController: UIViewController {
-
+class SInterestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SInterestQueryModelProtocol, SInterestVIPQueryModelProtocol {
+    
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var listTableView: UITableView!
+    
+    var feedItem: NSArray = NSArray()
+    var bName:String?
+    var bPrice:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarItem.image = UIImage(named: "heart.png")
         // Do any additional setup after loading the view.
+        
+        let queryModel = SInterestQueryModel()
+        let queryModel2 = SInterestVIPQueryModel()
+        // query 사용을 위한 delegate
+        queryModel.delegate = self
+        queryModel.downloadItems()
+        
+        queryModel2.delegate = self
+        queryModel2.vipDownloadItems()
+        // tableView 사용
+        listTableView.delegate = self
+        listTableView.dataSource = self
+        
+        
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func reviewItemDownloaded(items: NSArray) {
+        feedItem = items
+        self.listTableView.reloadData()
+    }
+    
+    func vipItemDownloaded(bName: String, bPrice: String) {
+        self.bName = bName
+        self.bPrice = bPrice
+        
+        lblName.text = bName
+        lblPrice.text = bPrice
+        
+        self.listTableView.reloadData()
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return feedItem.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SinterestCell", for: indexPath)
+
+        // Configure the cell...
+        let item: SInterestDBModel = feedItem[indexPath.row] as! SInterestDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        
+        cell.textLabel?.text = "제목 : \(item.rTitle!)"
+        cell.detailTextLabel?.text = "내용 : \(item.rContent!)"
+        
+        return cell
     }
     
 

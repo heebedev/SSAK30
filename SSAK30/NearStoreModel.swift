@@ -10,15 +10,15 @@ import Foundation
 
 class NearStoreModel: NSObject {
     
-    var sSeqno: Int?
+    var uSeqno: Int?
     var sName: String?
     var rctSellNameofStore:String?
     var sLiked: Int?
     var sImage: String?
     
-    func inti(sSeqno:Int, sName:String, rctSellNameofStore:String, sLiked:Int, sImage:String) {
+    func inti(uSeqno:Int, sName:String, rctSellNameofStore:String, sLiked:Int, sImage:String) {
         
-        self.sSeqno = sSeqno
+        self.uSeqno = uSeqno
         self.sName = sName
         self.rctSellNameofStore = rctSellNameofStore
         self.sLiked = sLiked

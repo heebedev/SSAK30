@@ -22,6 +22,8 @@ class BMyInfoDBModel:NSObject {
     var sellImage: String?
     var sellTitle: String?
     var priceEA: String?
+    var totalEA: String?
+    var sSeqno: String?
     var reviewSeq: String?
     var reviewListImage: String?
     var reviewListTitle: String?
@@ -39,11 +41,13 @@ class BMyInfoDBModel:NSObject {
         self.uEmail = uEmail
     }
 
-    init(sellSeqno: String, sellImage: String, sellTitle: String, priceEA: String){
+    init(sellSeqno: String, sellImage: String, sellTitle: String, priceEA: String, totalEA: String, sSeqno: String){
         self.sellSeqno = sellSeqno
         self.sellImage = sellImage
         self.sellTitle = sellTitle
         self.priceEA = priceEA
+        self.totalEA = totalEA
+        self.sSeqno = sSeqno
     }
     
     init(reviewSeq: String, reviewListImage: String, reviewListTitle: String){

@@ -58,13 +58,13 @@ class StoreMarketQueryModel: NSObject{
                 jsonElement = jsonResult[i] as! NSDictionary
                 let query = NearStoreModel()
                 
-                if let sSeqno = jsonElement["sSeqno"] as? String,
+                if let uSeqno = jsonElement["uSeqno"] as? String,
                     let sName = jsonElement["sName"] as? String,
                     let rctSellNameofStore = jsonElement["rctSellNameofStore"] as? String,
                     let sLiked = jsonElement["sLiked"] as? String,
                     let sImage = jsonElement["sImage"] as? String {
                     
-                    query.sSeqno = Int(sSeqno)
+                    query.uSeqno = Int(uSeqno)
                     query.sName = sName
                     query.rctSellNameofStore = rctSellNameofStore
                     query.sLiked = Int(sLiked)

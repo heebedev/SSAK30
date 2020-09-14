@@ -24,6 +24,7 @@ class BInterestViewController: UIViewController, UITableViewDataSource, UITableV
 
         // Do any additional setup after loading the view.
         
+        
         let queryModel = BInterestStoreQueryModel()
         // query 사용을 위한 delegate
         queryModel.delegate = self
@@ -31,7 +32,7 @@ class BInterestViewController: UIViewController, UITableViewDataSource, UITableV
         // tableView 사용
         listTableView.delegate = self
         listTableView.dataSource = self
-        listTableView.rowHeight = 115
+        listTableView.rowHeight = 146
         
         
     }
@@ -56,6 +57,10 @@ class BInterestViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "interestCell", for: indexPath) as! BInterestTableViewCell
         // Configure the cell...
         let item: BInterestDBModel = feedItem[indexPath.row] as! BInterestDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        cell.imgView.layer.cornerRadius = cell.imgView.frame.height/2
+        cell.imgView.layer.borderWidth = 1
+        cell.imgView.layer.borderColor = UIColor.clear.cgColor
+        cell.imgView.clipsToBounds = true
         
         //Firbase 이미지 불러오기
         let storage = Storage.storage()

@@ -1,27 +1,24 @@
 //
-//  BInterestStoreQueryModel.swift
+//  SInterestQueryModel.swift
 //  SSAK30
 //
-//  Created by taeheum on 2020/09/10.
+//  Created by taeheum on 2020/09/14.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import Foundation
 
-protocol BInterestStoreQueryModelProtocol: class {
-    func storeItemDownloaded(items:NSArray)
+protocol SInterestQueryModelProtocol: class {
+    func reviewItemDownloaded(items:NSArray)
 }
 
-class BInterestStoreQueryModel: NSObject{
+class SInterestQueryModel: NSObject{
     
-    var delegate: BInterestStoreQueryModelProtocol!
-    var urlPath = "http://localhost:8080/test/ssak30_interest_store_query.jsp?uSeqno="
+    var delegate: SInterestQueryModelProtocol!
     
     func downloadItems(){
-        let uSeqno:Int = UserDefaults.standard.integer(forKey: "uSeqno")
-//        let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
-//        urlPath += urlAdd
-        urlPath += String(uSeqno)
+        let uSeqno:String = UserDefaults.standard.string(forKey: "uSeqno")!
+        let urlPath = "http://localhost:8080/test/ssak30_interest_review_query.jsp?uSeqno=\(uSeqno)"
         print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
@@ -48,24 +45,22 @@ class BInterestStoreQueryModel: NSObject{
         
         for i in 0..<jsonResult.count{
             jsonElement = jsonResult[i] as! NSDictionary
-            let query = BInterestDBModel()
+            let query = SInterestDBModel()
             
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
-            if let sName = jsonElement["sName"] as? String,
-                let sImage = jsonElement["sImage"] as? String
-//               let sImage = jsonElement["sImage"] as? String
+            if let rTitle = jsonElement["rTitle"] as? String,
+                let rContent = jsonElement["rContent"] as? String
                 {
                
-                    query.sName = sName
-                    query.sImage = sImage
-//                query.sImage = sImage
+                    query.rTitle = rTitle
+                    query.rContent = rContent
                 
             }
             
             locations.add(query)
         }
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.storeItemDownloaded(items: locations)
+            self.delegate.reviewItemDownloaded(items: locations)
         })
     }
-}// ------------
+}// ——————
