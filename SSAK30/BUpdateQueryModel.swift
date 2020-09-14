@@ -16,6 +16,7 @@ class BUpdateQueryModel: NSObject{
         var result = true
         let urlAdd = "?uSeqno=\(uSeqno)&uName=\(uName)&uPassword=\(uPassword)&uPhone=\(uPhone)&uImage=\(uImage)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         urlPath += urlAdd
+        print(urlPath)
         // 한글 url encoding: url 타입은 한글들어가면 에러나기 때문에 addingPercentEncoding 퍼센트 들어가는걸로 바꿔줘야 함
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let url: URL = URL(string: urlPath)!

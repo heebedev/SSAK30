@@ -16,6 +16,8 @@ class FindIdPwViewController: UIViewController, CheckFindIdPwModelProtocol {
     @IBOutlet weak var tfFindPwName: UITextField!
     @IBOutlet weak var tfFindPwBirth: UITextField!
     
+    var userSeqno:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,24 +54,34 @@ class FindIdPwViewController: UIViewController, CheckFindIdPwModelProtocol {
     }
     
     func itemDownloaded(code: String, item: String) {
-        if code == "findId" {
-            
-        } else {
-            
+        switch code {
+        case "findId":
+            if item == "false" {
+                myAlert(alertTitle: "확인", alertMessage: "가입된 정보가 없습니다.", actionTitle: "OK", handler: nil)
+            } else {
+                myAlert(alertTitle: "확인", alertMessage: "아이디는 \(item)입니다.", actionTitle: "OK", handler: nil)
+            }
+        default:
+            if item == "false" {
+                myAlert(alertTitle: "확인", alertMessage: "회원정보가 일치하지 않습니다.", actionTitle: "OK", handler: nil)
+            } else {
+                userSeqno = Int(item)
+                self.performSegue(withIdentifier: "sgChangePw", sender: self)
+            }
         }
     }
     
-    
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "sgChangePw"){
+            let displayVC = segue.destination as! ChangePwViewController
+            displayVC.uSeqno = userSeqno!
+        }
     }
-    */
+    
+    
     
     func myAlert(alertTitle: String, alertMessage: String, actionTitle: String, handler:((UIAlertAction) -> Void)?) {
         let resultAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)

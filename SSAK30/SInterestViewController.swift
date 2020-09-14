@@ -12,7 +12,7 @@ class SInterestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarItem.image = UIImage(named: "heart.png")
         // Do any additional setup after loading the view.
     }
     

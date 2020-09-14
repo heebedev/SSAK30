@@ -109,16 +109,16 @@ class BUpdateInfoViewController: UIViewController, UIImagePickerControllerDelega
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyyMMddHHmmssEEE"
             let dateNow = dateFormatter.string(from: now as Date)
-            print(dateNow)
             
             //이미지 데이터화
             let imgData = rstImage?.jpegData(compressionQuality: 0.5)
+            uImage = dateNow + uImage!
             let queryModel = BUpdateQueryModel()
             let result = queryModel.updateItem(uSeqno: receiveuSeqno , uName: uName!, uPassword: uPassword!, uPhone: uPhone!, uImage: uImage!)
             if result{
                 //DB에 들어가고 나면 FTP 이미지 업로드
                 let storageRef = storage.reference()
-                let uImageRef = storageRef.child("uImage/" + dateNow + uImage!)
+                let uImageRef = storageRef.child("uImage/" + uImage!)
                 
                 uImageRef.putData(imgData!, metadata: nil)
                 
@@ -127,7 +127,8 @@ class BUpdateInfoViewController: UIViewController, UIImagePickerControllerDelega
                 
                 let resultAlert = UIAlertController(title: "완료", message: "개인정보가 수정되었습니다.", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
-                      self.navigationController?.popViewController(animated: true)
+                    self.performSegue(withIdentifier: "sgOkuUpdate", sender: self)
+//                      self.navigationController?.popViewController(animated: true)
                 })
                 resultAlert.addAction(onAction)
                 present(resultAlert, animated: true, completion: nil)

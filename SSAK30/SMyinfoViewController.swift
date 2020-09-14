@@ -16,7 +16,7 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
     var feedItem: NSArray = NSArray()
     var feedItem2: NSArray = NSArray()
 
-    var uSeqno: String?
+    var uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
     
     @IBOutlet weak var imgStoreImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
@@ -34,7 +34,10 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarItem.image = UIImage(named: "store.png")
         self.reloadInputViews()
+        
         //다 내가(tableViewController) 할거다 선언.
         self.tvSellList.delegate = self
         self.tvSellList.dataSource = self
@@ -42,23 +45,23 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         
         let queryModel = SMyInfoQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(uSeqno: uSeqno ?? "4")
+        queryModel.downloadItems(uSeqno: uSeqno)
         
         let queryModel2 = SMyInfoReviewQueryModel()
         queryModel2.delegate = self
-        queryModel2.downloadItems(uSeqno: uSeqno ?? "4")
+        queryModel2.downloadItems(uSeqno: uSeqno)
 
         let queryModel3 = SMyInfoLikeQueryModel()
         queryModel3.delegate = self
-        queryModel3.downloadItems(uSeqno: uSeqno ?? "4")
+        queryModel3.downloadItems(uSeqno: uSeqno)
         
         let queryModel4 = SMyInfoSellQueryModel()
         queryModel4.delegate = self
-        queryModel4.downloadItems(uSeqno: uSeqno ?? "4")
+        queryModel4.downloadItems(uSeqno: uSeqno)
         
         let queryModel5 = SMyInfoSellListQueryModel()
         queryModel5.delegate = self
-        queryModel5.downloadItems(uSeqno: uSeqno ?? "4")
+        queryModel5.downloadItems(uSeqno: uSeqno)
         
 
     }
@@ -69,23 +72,38 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         if(feedItem2.count != 0){
         btnAddStore.isHidden = true
         let item: SMyInfoDBModel = feedItem2[0] as! SMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sImage").child(item.sImage!)
+
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                self.imgStoreImage.image = UIImage(named: "emptyImage.png")
+            } else {
+                self.imgStoreImage.image = UIImage(data: data!)
+            }
+        }
+            
+            
         lblName.text = (item.sName!)
         lblBusinessNo.text = (item.sBusinessNo!)
         lblPhone.text = (item.sPhone!)
         lblAddress.text = (item.sAddress!)
         lblServiceTime.text = (item.sServiceTime!)
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            print(item.sImage as Any)
-            let imgRef = storageRef.child("sImage").child(item.sImage!)
-            
-            imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
-                if error != nil {
-                    self.imgStoreImage?.image = UIImage(named: "emptyImage.png")
-                } else {
-                    self.imgStoreImage?.image = UIImage(data: data!)
-                }
-            }
+//            let storage = Storage.storage()
+//            let storageRef = storage.reference()
+//            print(item.sImage as Any)
+//            let imgRef = storageRef.child("sImage").child(item.sImage!)
+//            
+//            imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+//                if error != nil {
+//                    self.imgStoreImage?.image = UIImage(named: "emptyImage.png")
+//                } else {
+//                    self.imgStoreImage?.image = UIImage(data: data!)
+//                }
+//            }
         }else{
             lblName.isHidden = true
             btnUpdateStoreInfo.isHidden = true
@@ -135,21 +153,34 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
         // Configure the cell...
 
         let item: SMyInfoDBModel = feedItem[indexPath.row] as! SMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
-        cell.lblSTitle.text = (item.sbTitle!)
-        cell.lblSPrice.text = (item.priceEA!)
-//        //Firbase 이미지 불러오기
+        //Firbase 이미지 불러오기
 //        let storage = Storage.storage()
 //        let storageRef = storage.reference()
-//        print(item.sbImage as Any)
 //        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
-//
+//        
 //        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
 //            if error != nil {
-//                cell.imgImage.image = UIImage(named: "emptyImage.png")
+//                cell.imgSImage.image = UIImage(named: "emptyImage.png")
 //            } else {
-//                cell.imgImage.image = UIImage(data: data!)
+//                cell.imgSImage.image = UIImage(data: data!)
 //            }
 //        }
+        
+        cell.lblSTitle.text = (item.sbTitle!)
+        cell.lblSPrice.text = (item.priceEA!)
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        print(item.sbImage as Any)
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.imgImage.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.imgImage.image = UIImage(data: data!)
+            }
+        }
 
         return cell
     }
@@ -171,7 +202,7 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
                 let sAddress = String(item.sAddress!)
                 let sServiceTime = String(item.sServiceTime!)
                 
-                detailView.receiveItems(uSeqno ?? "4", sName, sImage, sBusinessNo, sPhone, sAddress, sServiceTime)
+                detailView.receiveItems(uSeqno, sName, sImage, sBusinessNo, sPhone, sAddress, sServiceTime)
             }
         }
 

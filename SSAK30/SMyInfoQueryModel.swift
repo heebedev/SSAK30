@@ -61,6 +61,7 @@ class SMyInfoQueryModel: NSObject{
                 query.sPhone = sPhone
                 query.sAddress = sAddress
                 query.sServiceTime = sServiceTime
+                print(sImage)
             }
             
             locations.add(query)

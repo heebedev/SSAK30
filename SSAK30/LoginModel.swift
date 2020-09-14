@@ -1,41 +1,38 @@
 //
-//  BInterestStoreQueryModel.swift
+//  LoginModel.swift
 //  SSAK30
 //
-//  Created by taeheum on 2020/09/10.
+//  Created by 김승희 on 2020/09/14.
 //  Copyright © 2020 김승희. All rights reserved.
 //
 
 import Foundation
 
-protocol BInterestStoreQueryModelProtocol: class {
-    func storeItemDownloaded(items:NSArray)
+protocol LoginModelProtocol: class {
+    func LoginitemDownloaded(items: NSArray)
 }
+class LoginModel: NSObject {
+    
 
-class BInterestStoreQueryModel: NSObject{
+    var delegate: LoginModelProtocol!
+    var urlPath = "http://localhost:8080/test/Login_ios.jsp"
     
-    var delegate: BInterestStoreQueryModelProtocol!
-    var urlPath = "http://localhost:8080/test/ssak30_interest_store_query.jsp?uSeqno="
-    
-    func downloadItems(){
-        let uSeqno:String = UserDefaults.standard.string(forKey: "uSeqno")!
-//        let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
-//        urlPath += urlAdd
-        urlPath += uSeqno
-        print(urlPath)
+    func downloadItems(uEmail:String, uPassword: String){
+        let urlAdd = "?uEmail=\(uEmail)&uPassword=\(uPassword)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
+        urlPath += urlAdd
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{
-                print("Failed to download data")
             }else{
-                print("Data is downloaded")
                 self.parseJAON(data!)
             }
         }
         task.resume()
     }
+    
     func parseJAON(_ data: Data){
+        
         var jsonResult = NSArray()
         
         do{
@@ -48,24 +45,24 @@ class BInterestStoreQueryModel: NSObject{
         
         for i in 0..<jsonResult.count{
             jsonElement = jsonResult[i] as! NSDictionary
-            let query = BInterestDBModel()
+            let query = SingUpDBModel()
             
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
-            if let sName = jsonElement["sName"] as? String,
-                let sImage = jsonElement["sImage"] as? String
-//               let sImage = jsonElement["sImage"] as? String
-                {
+            if let uSeqno = jsonElement["uSeqno"] as? String,
+               let uBuySell = jsonElement["uBuySell"] as? String{
                
-                    query.sName = sName
-                    query.sImage = sImage
-//                query.sImage = sImage
+                query.uSeqno = uSeqno
+                query.uBuySell = uBuySell
                 
+                print(uSeqno)
+                print(uBuySell)
             }
             
             locations.add(query)
         }
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.storeItemDownloaded(items: locations)
+            self.delegate.LoginitemDownloaded(items: locations)
         })
     }
-}// ------------
+    
+}

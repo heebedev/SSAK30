@@ -118,7 +118,7 @@ class SUpdateInfoViewController: UIViewController, UIImagePickerControllerDelega
                 
                 //이미지 데이터화
                 let imgData = rstImage?.jpegData(compressionQuality: 0.5)
-                
+                sImage = dateNow + sImage!
                 let queryModel = SUpdateQueryModel()
                 let result: Bool = queryModel.updateItem(uSeqno:receiveuSeqno, sName:sName!, sBusinessNo:sBusinessNo!, sServiceTime:sServiceTime!, sAddress:sAddress!, sPhone:sPhone!, sImage:sImage!)
 
@@ -126,7 +126,7 @@ class SUpdateInfoViewController: UIViewController, UIImagePickerControllerDelega
                 if result{
                     //DB에 들어가고 나면 FTP 이미지 업로드
                     let storageRef = storage.reference()
-                    let sImageRef = storageRef.child("sImage/" + dateNow + sImage!)
+                    let sImageRef = storageRef.child("sImage/" + sImage!)
                     
                     sImageRef.putData(imgData!, metadata: nil)
                     
@@ -135,7 +135,9 @@ class SUpdateInfoViewController: UIViewController, UIImagePickerControllerDelega
                     
                     let resultAlert = UIAlertController(title: "완료", message: "스토어정보가 수정되었습니다.", preferredStyle: UIAlertController.Style.alert)
                     let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
-                        self.navigationController?.popViewController(animated: true)
+
+                        self.performSegue(withIdentifier: "sgOkUpdate", sender: self)
+//                        self.navigationController?.popViewController(animated: true)
                     })
                     resultAlert.addAction(onAction)
                     present(resultAlert, animated: true, completion: nil)
