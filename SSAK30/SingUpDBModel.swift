@@ -1,15 +1,18 @@
 //
-//  SignUpDBModel.swift
+//  SingUpDBModel.swift
 //  SSAK30
 //
-//  Created by 문단비 on 2020/09/11.
+//  Created by 문단비 on 2020/09/14.
 //  Copyright © 2020 김승희. All rights reserved.
 //
-
 // 회원가입
+
 import Foundation
 
-class SignUpDBModel: NSObject{
+ 
+
+class SingUpDBModel: NSObject{
+
     var uSeqno: String?
     var uEmail: String?
     var uPassword: String?
@@ -19,11 +22,15 @@ class SignUpDBModel: NSObject{
     var uBuySell: String?
     var uRegistDate: String?
     var uValidation: String?
+
     
+
     override init() {
-        
+
     }
+
     
+
     init(uSeqno: String, uEmail: String, uPassword: String, uName: String, uBirth: String, uPhone: String, uBuySell:String, uRegistDate:String, uValidation: String){
         self.uSeqno = uSeqno
         self.uEmail = uEmail
@@ -35,27 +42,5 @@ class SignUpDBModel: NSObject{
         self.uRegistDate = uRegistDate
         self.uValidation = uValidation
     }
-    
-<<<<<<< HEAD
-    
-    init(uSeqno: String, uBuySell: String){
-        self.uSeqno = uSeqno
-        self.uBuySell = uBuySell
-    }
-    
-=======
-    // 이메일 중복
-    init(uSeqno: String, uEmail: String){
-        self.uSeqno = uSeqno
-        self.uEmail = uEmail
-    }
-    
-    // 로그인
-    init(uSeqno: String, uEmail:String, uPassword:String){
-        self.uSeqno = uSeqno
-        self.uEmail = uEmail
-        self.uPassword = uPassword
-    }
->>>>>>> 1b538b3851f35a39f8ecc309844128cd2a81b36f
-    
+
 }

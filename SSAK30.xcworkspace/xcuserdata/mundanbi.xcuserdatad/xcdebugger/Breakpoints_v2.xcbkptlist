@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+<<<<<<< HEAD
    uuid = "98D170CC-B2E3-4B8C-B212-88F9FB06EBF5"
    type = "0"
    version = "2.0">
@@ -21,4 +22,9 @@
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
+=======
+   uuid = "903F9B70-DFFB-417B-8CD9-984DBDD1256F"
+   type = "0"
+   version = "2.0">
+>>>>>>> 1b538b3851f35a39f8ecc309844128cd2a81b36f
 </Bucket>

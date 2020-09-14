@@ -7,24 +7,28 @@
 //
 
 import UIKit
-//var BuySeller = 0
+var buySellNo = 0
 class BuySellChkViewController: UIViewController {
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        buySellNo = 0
+        buySellNo = 0
     }
     
     
     @IBAction func btnBuy(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+        print(buySellNo, "btnBuy")
     }
     
     
     @IBAction func btnSell(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+        buySellNo = 1
+        print(buySellNo, "btnsell")
     }
     
     // MARK: - Navigation

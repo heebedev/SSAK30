@@ -8,14 +8,12 @@
 
 import Foundation
 
-
 class StaticData: NSObject{
     
     var uSeqno = ""
     
     init(uSeqno: String) {
         self.uSeqno = uSeqno
-        print(uSeqno, "asdsdasd")
     }
     
 }

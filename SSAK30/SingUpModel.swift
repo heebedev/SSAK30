@@ -1,0 +1,65 @@
+//
+//  SingUpModel.swift
+//  SSAK30
+//
+//  Created by 문단비 on 2020/09/14.
+//  Copyright © 2020 김승희. All rights reserved.
+//
+
+import Foundation
+
+
+class SingUpModel: NSObject {
+    
+
+    var urlPath = "http://localhost:8080/ssak30/SignUp_ios.jsp"
+
+    func SignUpInsertloadItems(uEmail: String, uPassword: String, uName: String, uBirth: String, uPhone: String, uBuySell: String) -> Bool{
+
+        var result: Bool = true
+
+        
+
+        let urlAdd = "?uEmail=\(uEmail)&uPassword=\(uPassword)&uName=\(uName)&uBirth=\(uBirth)&uPhone=\(uPhone)&uBuySell=\(uBuySell)"
+
+        urlPath += urlAdd
+
+        
+
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+
+        print(urlPath)
+
+        
+
+        let url: URL = URL(string: urlPath)!
+
+        let defaultSesstion = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+
+        let task = defaultSesstion.dataTask(with: url){(data, response, error) in
+
+            if error != nil{
+
+                print("Failed to insert data")
+
+                result = false
+
+            }else{
+
+                print("Data is inserted")
+
+                result = true
+
+            }
+
+        }
+
+        task.resume()
+
+        
+
+        return result
+
+    }
+
+}//-------------------------
