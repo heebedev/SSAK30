@@ -54,6 +54,7 @@
 		6B895ECA2508CD31008E4D3D /* BHomeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */; };
 		6B895ECC2508CE2F008E4D3D /* BHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */; };
 		6BC590A9250CFB09001A7FAD /* BDetailQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC590A8250CFB09001A7FAD /* BDetailQueryModel.swift */; };
+		6BCEF9DE250F5009000CBD88 /* ThirycashDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCEF9DD250F5009000CBD88 /* ThirycashDBModel.swift */; };
 		6BE3EE082509DB8900323294 /* BMainRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */; };
 		6BE3EE0A2509F34900323294 /* BHomeInterstQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */; };
 		6BE3EE0E250A1A6200323294 /* SMainRecommendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */; };
@@ -158,6 +159,7 @@
 		6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeQueryModel.swift; sourceTree = "<group>"; };
 		6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeTableViewCell.swift; sourceTree = "<group>"; };
 		6BC590A8250CFB09001A7FAD /* BDetailQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDetailQueryModel.swift; sourceTree = "<group>"; };
+		6BCEF9DD250F5009000CBD88 /* ThirycashDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirycashDBModel.swift; sourceTree = "<group>"; };
 		6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMainRecommendListViewController.swift; sourceTree = "<group>"; };
 		6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeInterstQueryModel.swift; sourceTree = "<group>"; };
 		6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMainRecommendListViewController.swift; sourceTree = "<group>"; };
@@ -334,10 +336,14 @@
 				30328DB8250E2DB000C42F16 /* ChangePwViewController.swift */,
 				6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */,
 				30328DD8250EA36700C42F16 /* LoginModel.swift */,
+<<<<<<< HEAD
+				6BCEF9DD250F5009000CBD88 /* ThirycashDBModel.swift */,
+=======
 				303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */,
 				303B78E8250F711B004AE072 /* SInterestDBModel.swift */,
 				303B78EA250F7130004AE072 /* SInterestQueryModel.swift */,
 				303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */,
+>>>>>>> bca15b079b78d64ebf9662b742fc90776a4dd6d8
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				EC1E3BAA250216AF00F4ABDB /* SInterestViewController.swift in Sources */,
 				303B78ED250F7161004AE072 /* SInterestVIPQueryModel.swift in Sources */,
 				EC921856250E5C4800847939 /* BInterestTableViewCell.swift in Sources */,
+				6BCEF9DE250F5009000CBD88 /* ThirycashDBModel.swift in Sources */,
 				30D5B0B8250A0C5D002B66EB /* StoreMarketQueryModel.swift in Sources */,
 				303B78E9250F711B004AE072 /* SInterestDBModel.swift in Sources */,
 				9DCDB8292509E8E300A6F940 /* BMyInfoTableViewCell.swift in Sources */,
