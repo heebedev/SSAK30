@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-var uSeqno: String? = "4" // uSeqno test //
+var uSeqno: String? // uSeqno test //
 
 // 판매 중
 class SMainSellingRecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SHomeSellingQueryModelProtocol {
@@ -24,6 +24,11 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
 
         // Do any additional setup after loading the view.
         
+        
+        // uSeqno
+        uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+        print(uSeqno)
+        
         //delegate 처리
         self.sellingListCollectionView?.delegate = self
         self.sellingListCollectionView?.dataSource = self
@@ -32,6 +37,8 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
         let queryModel = SHomeSellingQueryModel() // 프로토콜
         queryModel.delegate = self
         queryModel.downloadItems(uSeqno: uSeqno!)
+        
+        
 
     }
     
@@ -50,10 +57,34 @@ class SMainSellingRecommendListViewController: UIViewController, UICollectionVie
     }
 
     // UICollectionViewDelegate
-    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 연결해야함!! //////////
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
-    }
+  // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 sellSeqno 넘겨줌
+       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           let board = UIStoryboard.init(name: "Main", bundle: nil)
+           guard let detailVC = board.instantiateViewController(withIdentifier: "BDetailViewController") as? BDetailViewController else {return}
+           
+           let item: BHomeDBModel = feedItem[(indexPath as NSIndexPath).item] as! BHomeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
+           // 필요한 값 넘겨줌
+           let sellSeqno = String(item.sellSeqno!)
+           let sSeqno = String(item.sSeqno!)
+           // 구매갯수 체크
+           //let remainBuyCount = Int(item.tatalEA!)! - Int(item.sum_buyEA!)!
+           let remainBuyCount = Int(item.tatalEA!)!
+           print("전달팀전체갯수", String(item.tatalEA!))
+           //print("전달팀팔린갯수", item.sum_buyEA ?? 0)
+           //print("언제넘어가는지테스트", item.sName)
+           var canBuyMaxNum : Int?
+           if remainBuyCount < Int(item.minimumEA!)! {
+               canBuyMaxNum = remainBuyCount
+           }else{
+               canBuyMaxNum = Int(item.minimumEA!)!
+           }
+
+           // 디테일뷰에 넣어줌
+           detailVC.receiveItems(sellSeqno, canBuyMaxNum: canBuyMaxNum!, sSeqno: sSeqno)
+           // 이동
+           self.present(detailVC, animated: true, completion: nil)
+           
+       }
     
     // UICollectionViewDataSource
     // 몇개 보여줄까요?
@@ -213,10 +244,35 @@ class SMainDoneSellRecommendListViewController: UIViewController, UICollectionVi
     }
 
     // UICollectionViewDelegate
-    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 연결해야함!! //////////
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: indexPath.item)
-    }
+     // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 sellSeqno 넘겨줌
+       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           let board = UIStoryboard.init(name: "Main", bundle: nil)
+           guard let detailVC = board.instantiateViewController(withIdentifier: "BDetailViewController") as? BDetailViewController else {return}
+           
+           let item: BHomeDBModel = feedItem[(indexPath as NSIndexPath).item] as! BHomeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
+           // 필요한 값 넘겨줌
+           let sellSeqno = String(item.sellSeqno!)
+           let sSeqno = String(item.sSeqno!)
+          
+           // 구매갯수 체크
+           //let remainBuyCount = Int(item.tatalEA!)! - Int(item.sum_buyEA!)!
+           let remainBuyCount = Int(item.tatalEA!)!
+           print("전달팀전체갯수", String(item.tatalEA!))
+           //print("전달팀팔린갯수", item.sum_buyEA ?? 0)
+           //print("언제넘어가는지테스트", item.sName)
+           var canBuyMaxNum : Int?
+           if remainBuyCount < Int(item.minimumEA!)! {
+               canBuyMaxNum = remainBuyCount
+           }else{
+               canBuyMaxNum = Int(item.minimumEA!)!
+           }
+
+           // 디테일뷰에 넣어줌
+           detailVC.receiveItems(sellSeqno, canBuyMaxNum: canBuyMaxNum!, sSeqno: sSeqno)
+           // 이동
+           self.present(detailVC, animated: true, completion: nil)
+           
+       }
     
     // UICollectionViewDataSource
     // 몇개 보여줄까요?

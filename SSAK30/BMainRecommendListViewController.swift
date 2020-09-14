@@ -16,13 +16,17 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
     @IBOutlet weak var listCollectionView: UICollectionView!
     @IBOutlet weak var lblrecentSellProduct: UILabel!
     
-    let viewModel = RecommentListViewModel()
+    //let viewModel = RecommentListViewModel()
     var feedItem: NSArray = NSArray()
-    var uSeqno: String? = "1" // test
+    var uSeqno: String? // test
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // uSeqno
+        uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+        print(uSeqno)
+
         // Do any additional setup after loading the view.
         
         //delegate 처리
@@ -32,6 +36,8 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         let queryModel = BHomeInterestQueryModel()
         queryModel.delegate = self
         queryModel.downloadItems(uSeqno: uSeqno!)
+        
+        
     }
     
     
@@ -54,10 +60,9 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         guard let detailVC = board.instantiateViewController(withIdentifier: "BDetailViewController") as? BDetailViewController else {return}
         
         let item: BHomeDBModel = feedItem[(indexPath as NSIndexPath).item] as! BHomeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
-        // sellSeqno 넘겨줌
+        // 필요한 값 넘겨줌
         let sellSeqno = String(item.sellSeqno!)
         let sSeqno = String(item.sSeqno!)
-        
         // 구매갯수 체크
         //let remainBuyCount = Int(item.tatalEA!)! - Int(item.sum_buyEA!)!
         let remainBuyCount = Int(item.tatalEA!)!
@@ -66,17 +71,15 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         //print("언제넘어가는지테스트", item.sName)
         var canBuyMaxNum : Int?
         if remainBuyCount < Int(item.minimumEA!)! {
-            return canBuyMaxNum = remainBuyCount
+            canBuyMaxNum = remainBuyCount
         }else{
             canBuyMaxNum = Int(item.minimumEA!)!
         }
 
-        
         // 디테일뷰에 넣어줌
         detailVC.receiveItems(sellSeqno, canBuyMaxNum: canBuyMaxNum!, sSeqno: sSeqno)
         // 이동
         self.present(detailVC, animated: true, completion: nil)
-        
         
     }
     
@@ -111,40 +114,40 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         cell.sellPrice?.text = "\(item.priceEA!)"
         
         
-        let url = URL(string: "http://localhost:8080/ftp/\(item.sbImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-        
-        let task = defaultSession.dataTask(with: url){(data, response, error) in
-            if error != nil{
-                print("Failed to download data")
-            }else{
-                print("Data is downloaded")
-                DispatchQueue.main.async {
-                    cell.thumbnailImage?.image = UIImage(data: data!)
-                    // jpg
-                    if let image = UIImage(data: data!){
-                        if let data = image.jpegData(compressionQuality: 0.8){// 일반적으로 80% 압축
-                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
-                            try? data.write(to: filename)
-                            print("Data is writed")
-                       
-                        }
-                    }
-                    
-                    // png 쓸 때 사용
-                    if let image = UIImage(data: data!){
-                        if let data = image.pngData() {//
-                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // // 다운받을때 이미지이름
-                            try? data.write(to: filename)
-                            print("Data is writed")
-                          
-                            
-                        }
-                    }
-                }
-            }
-        }
-        task.resume() // task 실행
+//        let url = URL(string: "http://localhost:8080/ftp/\(item.sbImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
+//        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+//
+//        let task = defaultSession.dataTask(with: url){(data, response, error) in
+//            if error != nil{
+//                print("Failed to download data")
+//            }else{
+//                print("Data is downloaded")
+//                DispatchQueue.main.async {
+//                    cell.thumbnailImage?.image = UIImage(data: data!)
+//                    // jpg
+//                    if let image = UIImage(data: data!){
+//                        if let data = image.jpegData(compressionQuality: 0.8){// 일반적으로 80% 압축
+//                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
+//                            try? data.write(to: filename)
+//                            print("Data is writed")
+//
+//                        }
+//                    }
+//
+//                    // png 쓸 때 사용
+//                    if let image = UIImage(data: data!){
+//                        if let data = image.pngData() {//
+//                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // // 다운받을때 이미지이름
+//                            try? data.write(to: filename)
+//                            print("Data is writed")
+//
+//
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        task.resume() // task 실행
         return cell
     }
     
@@ -232,12 +235,34 @@ class BMainRecentRecommendListViewController: UIViewController, UICollectionView
     }
     
     // UICollectionViewDelegate
-    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 연결해야함!! //////////
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let board = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = board.instantiateViewController(withIdentifier: "BDetailViewController")
-        self.present(vc, animated: true, completion: nil)
-    }
+    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 sellSeqno 넘겨줌
+       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           let board = UIStoryboard.init(name: "Main", bundle: nil)
+           guard let detailVC = board.instantiateViewController(withIdentifier: "BDetailViewController") as? BDetailViewController else {return}
+           
+           let item: BHomeDBModel = feedItem[(indexPath as NSIndexPath).item] as! BHomeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
+           // 필요한 값 넘겨줌
+           let sellSeqno = String(item.sellSeqno!)
+           let sSeqno = String(item.sSeqno!)
+           // 구매갯수 체크
+           //let remainBuyCount = Int(item.tatalEA!)! - Int(item.sum_buyEA!)!
+           let remainBuyCount = Int(item.tatalEA!)!
+           print("전달팀전체갯수", String(item.tatalEA!))
+           //print("전달팀팔린갯수", item.sum_buyEA ?? 0)
+           //print("언제넘어가는지테스트", item.sName)
+           var canBuyMaxNum : Int?
+           if remainBuyCount < Int(item.minimumEA!)! {
+               canBuyMaxNum = remainBuyCount
+           }else{
+               canBuyMaxNum = Int(item.minimumEA!)!
+           }
+
+           // 디테일뷰에 넣어줌
+           detailVC.receiveItems(sellSeqno, canBuyMaxNum: canBuyMaxNum!, sSeqno: sSeqno)
+           // 이동
+           self.present(detailVC, animated: true, completion: nil)
+           
+       }
     
     // UICollectionViewDataSource
     // 몇개 보여줄까요?

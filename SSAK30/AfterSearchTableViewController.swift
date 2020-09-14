@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AfterSearchTableViewController: UITableViewController, AfterSearchQueryModelProtocol {
     
@@ -15,8 +16,6 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
     var afterSearchResultModel = [AfterSearchResultModel]()
     
     @IBOutlet var tvSearchResult: UITableView!
-    @IBOutlet weak var noResultView: UIView!
-    @IBOutlet weak var noResultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +25,6 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
         self.tvSearchResult.delegate = self
         self.tvSearchResult.dataSource = self
         
-        noResultView.isHidden = true
-        noResultLabel.isHidden = true
         
         let queryModel = AfterSearchQueryModel()
         queryModel.delegate = self
@@ -59,13 +56,24 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
         let cell = tableView.dequeueReusableCell(withIdentifier: "afterSearchCell", for: indexPath) as! AfterSearchTableViewCell
 
         let item: AfterSearchResultModel = feedItem[indexPath.row] as! AfterSearchResultModel
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
         
-        if feedItem.count == 0 {
-            cell.lbSerchResultsName?.text = "검색 결과가 없습니다."
-        } else {
-            cell.lbSerchResultsName?.text = "\(item.sName!) (\(item.mName!))"
-            cell.lbSearchResultsbTitle?.text = item.sbTitle!
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.ivSearchResultsbImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.ivSearchResultsbImage?.image = UIImage(data: data!)
+            }
         }
+        
+        cell.lbSerchResultsName?.text = "\(item.sName!) (\(item.mName!))"
+        cell.lbSearchResultsbTitle?.text = item.sbTitle!
+        
+        
+        
         return cell
     }
     
