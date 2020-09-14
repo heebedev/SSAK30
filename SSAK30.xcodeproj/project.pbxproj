@@ -24,6 +24,7 @@
 		30328DD5250E6BA400C42F16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 30328DD4250E6BA400C42F16 /* heart.png */; };
 		30328DD9250EA36700C42F16 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30328DD8250EA36700C42F16 /* LoginModel.swift */; };
 		30328DDE250EAE0E00C42F16 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 30328DDD250EAE0E00C42F16 /* search.png */; };
+		303B78E4250F1F03004AE072 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */; };
 		30602983250B56DB00E3FCFF /* AfterSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */; };
 		30602985250B58CC00E3FCFF /* AfterSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */; };
 		30602987250B5AC900E3FCFF /* AfterSearchQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */; };
@@ -120,6 +121,7 @@
 		30328DD4250E6BA400C42F16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		30328DD8250EA36700C42F16 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		30328DDD250EAE0E00C42F16 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = ../../SSAK30PJT/search.png; sourceTree = "<group>"; };
+		303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchTableViewCell.swift; sourceTree = "<group>"; };
 		30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchResultModel.swift; sourceTree = "<group>"; };
 		30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchQueryModel.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				30328DB8250E2DB000C42F16 /* ChangePwViewController.swift */,
 				6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */,
 				30328DD8250EA36700C42F16 /* LoginModel.swift */,
+				303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */,
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				9DCDB80B2505FBEE00A6F940 /* BuySellChkViewController.swift in Sources */,
 				30602987250B5AC900E3FCFF /* AfterSearchQueryModel.swift in Sources */,
 				30602983250B56DB00E3FCFF /* AfterSearchTableViewCell.swift in Sources */,
+				303B78E4250F1F03004AE072 /* StoreDetailViewController.swift in Sources */,
 				21D2D1AA250728B300085E16 /* SignUpModel.swift in Sources */,
 				308D362525024EAB00B363B9 /* BHomeViewController.swift in Sources */,
 				300F98DA2506055300411288 /* BSearchViewController.swift in Sources */,

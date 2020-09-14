@@ -15,6 +15,8 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
     var afterSearchResultModel = [AfterSearchResultModel]()
     
     @IBOutlet var tvSearchResult: UITableView!
+    @IBOutlet weak var noResultView: UIView!
+    @IBOutlet weak var noResultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,9 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
         
         self.tvSearchResult.delegate = self
         self.tvSearchResult.dataSource = self
+        
+        noResultView.isHidden = true
+        noResultLabel.isHidden = true
         
         let queryModel = AfterSearchQueryModel()
         queryModel.delegate = self

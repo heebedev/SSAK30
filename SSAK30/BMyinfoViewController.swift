@@ -36,6 +36,10 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         self.tvMyBuyList.rowHeight = 115
         
         imgUserImage.image = UIImage(named: "emptyImage.png")
+        self.imgUserImage.layer.cornerRadius = self.imgUserImage.frame.height/2
+        self.imgUserImage.layer.borderWidth = 1
+        self.imgUserImage.layer.borderColor = UIColor.clear.cgColor
+        self.imgUserImage.clipsToBounds = true
         
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
@@ -50,13 +54,13 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         feedItem = items
         let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
         
-        if item.sellImage!.isEmpty {
+        if item.uImage!.isEmpty {
             self.imgUserImage.image = UIImage(named: "emptyImage.png")
         } else {
             //Firbase 이미지 불러오기
             let storage = Storage.storage()
             let storageRef = storage.reference()
-            let imgRef = storageRef.child("uImage").child(item.sellImage!)
+            let imgRef = storageRef.child("uImage").child(item.uImage!)
             
             imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
                 if error != nil {
@@ -99,7 +103,7 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         let item: BMyInfoDBModel = feedItem2[indexPath.row] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        let imgRef = storageRef.child("uImage").child(item.sellImage!)
+        let imgRef = storageRef.child("sbImage").child(item.sellImage!)
         
         if !item.sellImage!.isEmpty {
             imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in

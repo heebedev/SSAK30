@@ -18,10 +18,10 @@ class BInterestStoreQueryModel: NSObject{
     var urlPath = "http://localhost:8080/test/ssak30_interest_store_query.jsp?uSeqno="
     
     func downloadItems(){
-        let uSeqno:String = UserDefaults.standard.string(forKey: "uSeqno")!
+        let uSeqno:Int = UserDefaults.standard.integer(forKey: "uSeqno")
 //        let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
 //        urlPath += urlAdd
-        urlPath += uSeqno
+        urlPath += String(uSeqno)
         print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

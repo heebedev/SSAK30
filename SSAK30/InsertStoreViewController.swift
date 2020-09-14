@@ -68,6 +68,8 @@ class InsertStoreViewController: UIViewController, UIImagePickerControllerDelega
     
     // 매장 등록 버튼
     @IBAction func btnStoreInsert(_ sender: UIButton) {
+        
+        activityIndicator.startAnimating()
         let storeName = tfStoreName.text
         let businessNo = tfBusinessNo.text
         let phone = tfPhone.text
@@ -84,14 +86,14 @@ class InsertStoreViewController: UIViewController, UIImagePickerControllerDelega
         let imgData = rstImage?.jpegData(compressionQuality: 0.5)
         
         let storeInsertModel = StoreInsertModel()
-        let result = storeInsertModel.storeInsertItems(storeName: storeName!, businessNo: businessNo!, phone: phone!, address: address!, serviceTime: serviceTime, image: imgName!)
+        let result = storeInsertModel.storeInsertItems(storeName: storeName!, businessNo: businessNo!, phone: phone!, address: address!, serviceTime: serviceTime, image: (dateNow + imgName!))
         
         if result{
             //DB에 들어가고 나면 FTP 이미지 업로드
             let storageRef = storage.reference()
-            let sbImageRef = storageRef.child("sbImage/" + dateNow + imgName!)
+            let sImageRef = storageRef.child("sImage/" + dateNow + imgName!)
             
-            sbImageRef.putData(imgData!, metadata: nil)
+            sImageRef.putData(imgData!, metadata: nil)
             
             //끝나면 인디케이터 숨기기
             activityIndicator.stopAnimating()
@@ -106,6 +108,7 @@ class InsertStoreViewController: UIViewController, UIImagePickerControllerDelega
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)
         }
+        activityIndicator.stopAnimating()
     }
     
     // 취소 버튼
