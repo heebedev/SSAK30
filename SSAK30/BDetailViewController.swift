@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit // *** 추가
+import Firebase // *** 추가
 
 class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     
@@ -39,6 +40,7 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
     var receiveSellSeqno : String!  // test
     var receiveCanBuyMaxNum : Int!
     var receiveStoreSeqno : String?
+    var receiveImageName : String?
     
     var feedItem: NSArray = NSArray()
     
@@ -53,9 +55,20 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
     var selectedProductCount = ""
     var pickupDateTime: String = ""
     
+    
+    // 지도
+    let locationManager = CLLocationManager() // GPS 의 현재 위치 알려줌
+    
+    // 지도 위도경도 변환한거 받는 변수
+    var getLatituteValue: Double?
+    var getLongitudeValue: Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // uSeqno
+        uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+        //print(uSeqno)
         // Do any additional setup after loading the view.
         
         let queryModel = BDetailQueryModel()
@@ -71,6 +84,15 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
             selectBuyCount.append(count)
         }
         print("구매가능갯수배열:", selectBuyCount)
+        
+        // 구매하기 기본값
+        selectedProductCount = "1"
+        
+        
+        // 매장 지도
+        map_store.showsUserLocation = true
+        
+        
 
         
     }
@@ -98,6 +120,49 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
         lbl_sAddress.text = item.sAddress
         
         // 이미지 ///////////////////////
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+        let imgStore = storageRef.child("sbImage").child(item.sImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                self.iv_sbImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                self.iv_sbImage?.image = UIImage(data: data!)
+            }
+        }
+        
+        imgStore.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                self.iv_sImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                self.iv_sImage?.image = UIImage(data: data!)
+            }
+        }
+        
+        
+        // 지도
+        
+        // 주소를 위도/경도로 변환
+        let geocoder = CLGeocoder()
+        let address = "\(item.sAddress!)"
+        print("받은주소: ",address)
+                geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+                    if((error) != nil){
+                        print("주소 Error", error ?? "")
+                    }
+                    if let placemark = placemarks?.first {
+                        let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                        self.getLatituteValue = Double(coordinates.latitude)
+                        self.getLongitudeValue = Double(coordinates.longitude)
+                        print("Lat: \(self.getLatituteValue!) -- Long: \(self.getLongitudeValue!)")
+                        self.setAnnotation(latituteValue: self.getLatituteValue!, longitudeValue: self.getLongitudeValue!, delta: 0.01, title: "\(item.sName!)", subTitle: "")
+                        
+                    }
+                })
+        
       
     }
 
@@ -146,6 +211,67 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
         }
     
     }
+    
+    
+    // 지도 //
+    // 함수 //
+    // 위도와 경도에 대한 함수: 원하는 위도, 경도의 지도 띄우기
+    //              latitudeValue 위도,                longituedValue: 경도,               delta : 확대/축소
+    func goLocation(latitudeValue: CLLocationDegrees, longituedValue: CLLocationDegrees, delta span: Double) -> CLLocationCoordinate2D{
+        // GPS 로부터 좌표값을 받아옴
+        let pLocation = CLLocationCoordinate2DMake(latitudeValue, longituedValue) //핀
+        let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span) //확대
+        let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
+        map_store.setRegion(pRegion, animated: true)
+        
+        return pLocation
+    }
+    
+    
+    // 위치가 업데이트 되었을 때 지도의 위치를 표시해 주는 함수
+       func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+           let pLocation = locations.last
+           _ = goLocation(latitudeValue: (pLocation?.coordinate.latitude)!, longituedValue: (pLocation?.coordinate.longitude)!, delta: 0.01) // delta 0.01: 기존 지도의 100배 확대
+           
+           // 주소값 가져오기
+           // CLGeocode:지역 코드 / reverseGeocodeLocation : 우리나라주소 미국과 거꾸로라서
+//           CLGeocoder().reverseGeocodeLocation(pLocation!, completionHandler: {(placemarks, error) -> Void in
+//               let pm = placemarks!.first
+//               let country = pm!.country
+//               var address: String = country!
+//               if pm!.locality != nil{ // 지역주소 : 옛날주소
+//                   address += " "
+//                   address += pm!.locality!
+//               }
+//
+//               if pm!.thoroughfare != nil{ // 도로명 주소
+//                   address += " "
+//                   address += pm!.thoroughfare!
+//               }
+//
+//           })
+          
+        
+           locationManager.stopUpdatingLocation() // 끝
+           
+       }
+    
+    
+    
+    // Pin 설치 함수
+    func setAnnotation(latituteValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double, title strTitle: String, subTitle strSubTitle: String){
+        
+        let annotation  = MKPointAnnotation() // Pin 찍어줌
+        annotation.coordinate = goLocation(latitudeValue: latituteValue, longituedValue: longitudeValue, delta: span)
+        annotation.title = strTitle
+        annotation.subtitle = strSubTitle
+        map_store.addAnnotation(annotation)
+    }
+    
+   
+    // // /// /////////////////////////
+    
+    
     
     
     
