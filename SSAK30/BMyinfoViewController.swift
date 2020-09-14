@@ -14,9 +14,11 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
 
     var feedItem: NSArray = NSArray()
     var feedItem2: NSArray = NSArray()
-    var uSeqno: String?
+    var uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
     var thiryCash:String?
     var myCash:Int = 0
+    var totalCash:Int = 0
+    var usePrice:Int = 0
     
     @IBOutlet weak var imgUserImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
@@ -43,11 +45,11 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(uSeqno: uSeqno ?? "1")
+        queryModel.downloadItems(uSeqno: uSeqno)
         
         let queryModel2 = BMyInfoBuyListQueryModel()
         queryModel2.delegate = self
-        queryModel2.downloadItems(uSeqno: uSeqno ?? "1")
+        queryModel2.downloadItems(uSeqno: uSeqno)
 
     }
     func itemDownloaded(items: NSArray) {
@@ -84,7 +86,7 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
     override func viewWillAppear(_ animated: Bool) { // 입력 후 DB 에서 다시 읽어들이기
         let queryModel = BMyInfoQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(uSeqno: uSeqno ?? "1")
+        queryModel.downloadItems(uSeqno: uSeqno)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -149,10 +151,11 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
         let resultAlert = UIAlertController(title: "충전", message: "충전하실 금액을 입력하세요.", preferredStyle: UIAlertController.Style.alert)
         let onAction = UIAlertAction(title: "충전하기", style: UIAlertAction.Style.default, handler: {ACTION in
             self.myCash = Int(self.lblCash.text!)!
-            self.myCash = self.myCash + Int(resultAlert.textFields![0].text!)!
-            self.lblCash.text = String(self.myCash)
+            self.usePrice = Int(resultAlert.textFields![0].text!)!
+            self.totalCash = self.myCash + self.usePrice
+            self.lblCash.text = String(self.totalCash)
             let queryModel = BChargeCashQueryModel()
-            queryModel.updateItem(uSeqno: self.uSeqno ?? "1", thiryCash: String(self.myCash))
+            queryModel.updateItem(uSeqno: self.uSeqno, thiryCash: String(self.totalCash), usePrice: String(self.usePrice))
             })
         let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
         resultAlert.addAction(onAction)
@@ -176,7 +179,7 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
                 let uPhone = String(item.uPhone!)
                 let uEmail = String(item.uEmail!)
                 
-                detailView.receiveItems(uSeqno ?? "1", uName, uImage, uPassword, uPhone, uEmail)
+                detailView.receiveItems(uSeqno, uName, uImage, uPassword, uPhone, uEmail)
             }
         }
     

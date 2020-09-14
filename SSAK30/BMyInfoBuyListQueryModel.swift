@@ -13,11 +13,11 @@ protocol BMyInfoBuyListQueryModelProtocol: class {
 }
 
 class BMyInfoBuyListQueryModel: NSObject{
-    
     var delegate: BMyInfoBuyListQueryModelProtocol!
     var urlPath = "http://localhost:8080/test/ssak30_myInfo_buylist_query.jsp"
     
     func downloadItems(uSeqno:String){
+        print("1111")
         let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         urlPath += urlAdd
         let url: URL = URL(string: urlPath)!
@@ -44,17 +44,22 @@ class BMyInfoBuyListQueryModel: NSObject{
         for i in 0..<jsonResult.count{
             jsonElement = jsonResult[i] as! NSDictionary
             let query = BMyInfoDBModel()
-            
+            print("3333")
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
             if let sellSeqno = jsonElement["sellSeqno"] as? String,
                let sellTitle = jsonElement["sellTitle"] as? String,
                let sellImage = jsonElement["sellImage"] as? String,
-               let priceEA = jsonElement["priceEA"] as? String{
-               
+               let priceEA = jsonElement["priceEA"] as? String,
+               let totalEA = jsonElement["totalEA"] as? String,
+               let sSeqno = jsonElement["sSeqno"] as? String{
+               print("4444")
                 query.sellSeqno = sellSeqno
                 query.sellTitle = sellTitle
                 query.sellImage = sellImage
                 query.priceEA = priceEA
+                query.totalEA = totalEA
+                query.sSeqno = sSeqno
+                print(sellSeqno)
                 
             }
             

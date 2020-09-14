@@ -426,17 +426,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuQ-QP-gXD">
-                                <rect key="frame" x="194" y="495" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="로그인">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnLogin:" destination="nsI-hE-EcC" eventType="touchUpInside" id="osf-9r-its"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfM-KR-GsL">
                                 <rect key="frame" x="71" y="558" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -472,6 +461,17 @@
                                 </state>
                                 <connections>
                                     <segue destination="3Ig-GZ-hP1" kind="show" identifier="" id="j4C-cC-dGF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuQ-QP-gXD">
+                                <rect key="frame" x="188" y="501" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="로그인">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLogin:" destination="nsI-hE-EcC" eventType="touchUpInside" id="osf-9r-its"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1170,12 +1170,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gRX-eh-mKb">
+                                <rect key="frame" x="197" y="388" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="GOB-M4-AuX"/>
                     </view>
                     <navigationItem key="navigationItem" id="NtA-DJ-exn"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="gRX-eh-mKb" id="bA9-Fw-HQO"/>
                         <outlet property="imgImage" destination="8iJ-Ip-MhU" id="oZH-Sr-Yge"/>
                         <outlet property="tfAddress" destination="5Sy-dp-hqc" id="WZe-g3-3EF"/>
                         <outlet property="tfBusinessNo" destination="Fyi-PV-KAU" id="NSo-oD-w4R"/>
@@ -1845,7 +1850,7 @@
             <objects>
                 <viewController id="uah-Hd-8wA" customClass="BUpdateInfoViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ekd-LW-g5a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKT-uW-CCi">
@@ -1927,12 +1932,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ham-qZ-O9f">
+                                <rect key="frame" x="198" y="404" width="35" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ILH-kf-Itv"/>
                     </view>
                     <navigationItem key="navigationItem" id="5NT-v0-x0G"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Ham-qZ-O9f" id="EGu-AE-h5y"/>
                         <outlet property="imgMyImage" destination="DKT-uW-CCi" id="kpe-Vi-3ZT"/>
                         <outlet property="tfEmail" destination="a4h-PY-4BI" id="91N-zl-2ws"/>
                         <outlet property="tfNAme" destination="hlC-Yf-t9I" id="hTQ-Pu-2OH"/>
@@ -3126,7 +3136,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Cjz-ej-RMZ"/>
-        <segue reference="9QY-fT-3dG"/>
+        <segue reference="OqO-TL-hNZ"/>
         <segue reference="1tP-Ax-I66"/>
         <segue reference="6DT-Ke-DJo"/>
     </inferredMetricsTieBreakers>
