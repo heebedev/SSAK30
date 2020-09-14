@@ -23,7 +23,7 @@ class AfterSearchQueryModel: NSObject {
         if let encodedPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url:URL = URL(string: encodedPath) {
                 let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-                
+                print(url)
                 let task = defaultSession.dataTask(with: url) {(data, response, error) in
                     if error != nil {
                         print("Failed to download data")

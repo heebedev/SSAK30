@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class BSearchViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, StoreMarketQueryModelProtocol, UITableViewDelegate, UITableViewDataSource {
     
@@ -30,6 +31,8 @@ class BSearchViewController: UIViewController, CLLocationManagerDelegate, MKMapV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarItem.image = UIImage(named: "search.png")
         
         // 맵 작동을 감지하기 위한 delegate
         searchMap.delegate = self
@@ -99,9 +102,27 @@ class BSearchViewController: UIViewController, CLLocationManagerDelegate, MKMapV
         //withIdentifier: "myCell" 은 cell 선택하고 설정해놓은 identifier,            indexPath(내용 index)
         let cell = tableView.dequeueReusableCell(withIdentifier: "popStoreCell", for: indexPath) as! popStoreTableViewCell
         
+        //Firbase 이미지 불러오기
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("sImage").child(nearStoreModel[indexPath.row].sImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.ivPopStoreImage.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.ivPopStoreImage.image = UIImage(data: data!)
+            }
+        }
+        
         cell.lbPopStoreName.text = nearStoreModel[indexPath.row].sName!
-        cell.lbPopStoreLike.text = String(nearStoreModel[indexPath.row].sLiked!)
-        cell.lbPopStoreRctSell.text = nearStoreModel[indexPath.row].rctSellNameofStore!
+        cell.lbPopStoreLike.text = String("♥︎ \(nearStoreModel[indexPath.row].sLiked!)")
+        if nearStoreModel[indexPath.row].rctSellNameofStore != "null" {
+            cell.lbPopStoreRctSell.text = nearStoreModel[indexPath.row].rctSellNameofStore!
+        } else {
+            cell.lbPopStoreRctSell.text = "현재 구매가능한 상품이 없습니다."
+        }
+        
         
         return cell
     }

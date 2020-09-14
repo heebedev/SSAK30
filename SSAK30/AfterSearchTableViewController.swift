@@ -29,7 +29,7 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
         queryModel.downloadItems(searchItem : searchItem)
         
         tvSearchResult.rowHeight = 90
-        
+        print(searchItem)
     }
 
     func itemDownloaded(items: NSArray) {
@@ -55,9 +55,12 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
 
         let item: AfterSearchResultModel = feedItem[indexPath.row] as! AfterSearchResultModel
         
-        cell.lbSerchResultsName?.text = "\(item.sName!) (\(item.mName!))"
-        cell.lbSearchResultsbTitle?.text = item.sbTitle!
-
+        if feedItem.count == 0 {
+            cell.lbSerchResultsName?.text = "검색 결과가 없습니다."
+        } else {
+            cell.lbSerchResultsName?.text = "\(item.sName!) (\(item.mName!))"
+            cell.lbSearchResultsbTitle?.text = item.sbTitle!
+        }
         return cell
     }
     
@@ -109,5 +112,7 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

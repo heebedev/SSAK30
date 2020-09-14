@@ -15,11 +15,14 @@ protocol BInterestStoreQueryModelProtocol: class {
 class BInterestStoreQueryModel: NSObject{
     
     var delegate: BInterestStoreQueryModelProtocol!
-    var urlPath = "http://localhost:8080/test/ssak30_interest_storename_query.jsp"
+    var urlPath = "http://localhost:8080/test/ssak30_interest_store_query.jsp?uSeqno="
     
     func downloadItems(){
+        let uSeqno:String = UserDefaults.standard.string(forKey: "uSeqno")!
 //        let urlAdd = "?uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
 //        urlPath += urlAdd
+        urlPath += uSeqno
+        print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url){(data, response, error) in
@@ -48,11 +51,13 @@ class BInterestStoreQueryModel: NSObject{
             let query = BInterestDBModel()
             
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
-            if let sName = jsonElement["sName"] as? String
+            if let sName = jsonElement["sName"] as? String,
+                let sImage = jsonElement["sImage"] as? String
 //               let sImage = jsonElement["sImage"] as? String
                 {
                
-                query.sName = sName
+                    query.sName = sName
+                    query.sImage = sImage
 //                query.sImage = sImage
                 
             }
