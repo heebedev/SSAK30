@@ -56,24 +56,29 @@ class AfterSearchTableViewController: UITableViewController, AfterSearchQueryMod
         let cell = tableView.dequeueReusableCell(withIdentifier: "afterSearchCell", for: indexPath) as! AfterSearchTableViewCell
 
         let item: AfterSearchResultModel = feedItem[indexPath.row] as! AfterSearchResultModel
-        //Firbase 이미지 불러오기
+        
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        let imgRef = storageRef.child("sbImage").child(item.sbImage!)
         
-        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
-            if error != nil {
-                cell.ivSearchResultsbImage?.image = UIImage(named: "emptyImage.png")
-            } else {
-                cell.ivSearchResultsbImage?.image = UIImage(data: data!)
+        if feedItem.count == 0 {
+            self.navigationController?.navigationBar.topItem?.title = "검색 결과가 없습니다."
+        } else {
+            //Firbase 이미지 불러오기
+            
+            let imgRef = storageRef.child("sbImage").child(item.sbImage!)
+            
+            imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+                if error != nil {
+                    cell.ivSearchResultsbImage?.image = UIImage(named: "emptyImage.png")
+                } else {
+                    cell.ivSearchResultsbImage?.image = UIImage(data: data!)
+                }
             }
+            
+            
         }
-        
         cell.lbSerchResultsName?.text = "\(item.sName!) (\(item.mName!))"
         cell.lbSearchResultsbTitle?.text = item.sbTitle!
-        
-        
-        
         return cell
     }
     

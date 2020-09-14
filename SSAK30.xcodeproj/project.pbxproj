@@ -336,14 +336,11 @@
 				30328DB8250E2DB000C42F16 /* ChangePwViewController.swift */,
 				6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */,
 				30328DD8250EA36700C42F16 /* LoginModel.swift */,
-<<<<<<< HEAD
 				6BCEF9DD250F5009000CBD88 /* ThirycashDBModel.swift */,
-=======
 				303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */,
 				303B78E8250F711B004AE072 /* SInterestDBModel.swift */,
 				303B78EA250F7130004AE072 /* SInterestQueryModel.swift */,
 				303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */,
->>>>>>> bca15b079b78d64ebf9662b742fc90776a4dd6d8
 			);
 			path = SSAK30;
 			sourceTree = "<group>";
