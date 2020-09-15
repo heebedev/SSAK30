@@ -27,6 +27,8 @@
 		303B78E9250F711B004AE072 /* SInterestDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78E8250F711B004AE072 /* SInterestDBModel.swift */; };
 		303B78EB250F7130004AE072 /* SInterestQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78EA250F7130004AE072 /* SInterestQueryModel.swift */; };
 		303B78ED250F7161004AE072 /* SInterestVIPQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */; };
+		303B78EF250FBE97004AE072 /* commentskyblue.png in Resources */ = {isa = PBXBuildFile; fileRef = 303B78EE250FBE97004AE072 /* commentskyblue.png */; };
+		303B78F3250FBF3B004AE072 /* commentgreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 303B78F2250FBF3A004AE072 /* commentgreen.png */; };
 		30602983250B56DB00E3FCFF /* AfterSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */; };
 		30602985250B58CC00E3FCFF /* AfterSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */; };
 		30602987250B5AC900E3FCFF /* AfterSearchQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */; };
@@ -128,6 +130,8 @@
 		303B78E8250F711B004AE072 /* SInterestDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestDBModel.swift; sourceTree = "<group>"; };
 		303B78EA250F7130004AE072 /* SInterestQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestQueryModel.swift; sourceTree = "<group>"; };
 		303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SInterestVIPQueryModel.swift; sourceTree = "<group>"; };
+		303B78EE250FBE97004AE072 /* commentskyblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentskyblue.png; sourceTree = "<group>"; };
+		303B78F2250FBF3A004AE072 /* commentgreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commentgreen.png; sourceTree = "<group>"; };
 		30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchTableViewCell.swift; sourceTree = "<group>"; };
 		30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchResultModel.swift; sourceTree = "<group>"; };
 		30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSearchQueryModel.swift; sourceTree = "<group>"; };
@@ -252,7 +256,13 @@
 		30628B0A250207FD0037AB3B /* SSAK30 */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				6BCEF9DF250FC122000CBD88 /* search.png */,
+=======
+				303B78EE250FBE97004AE072 /* commentskyblue.png */,
+				303B78F2250FBF3A004AE072 /* commentgreen.png */,
+				303B78E5250F4A2E004AE072 /* search.png */,
+>>>>>>> fccc721daff90f35eb0a1994cdb32f3de1224bde
 				30328DCD250E64FC00C42F16 /* store.png */,
 				30328DC7250E64F600C42F16 /* home.png */,
 				30328DD4250E6BA400C42F16 /* heart.png */,
@@ -407,9 +417,11 @@
 				30328DD5250E6BA400C42F16 /* heart.png in Resources */,
 				30328DCE250E64FC00C42F16 /* store.png in Resources */,
 				30328DC9250E64F700C42F16 /* plus.png in Resources */,
+				303B78EF250FBE97004AE072 /* commentskyblue.png in Resources */,
 				30628B18250208000037AB3B /* Assets.xcassets in Resources */,
 				30328DCA250E64F700C42F16 /* person.png in Resources */,
 				30328DB5250E0A1200C42F16 /* playstore.png in Resources */,
+				303B78F3250FBF3B004AE072 /* commentgreen.png in Resources */,
 				21D2D1AC2507535B00085E16 /* readmeD.rtf in Resources */,
 				30628B13250207FD0037AB3B /* Main.storyboard in Resources */,
 				3060298D250C7BE900E3FCFF /* GoogleService-Info.plist in Resources */,

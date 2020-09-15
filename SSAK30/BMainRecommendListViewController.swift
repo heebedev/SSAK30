@@ -25,7 +25,7 @@ class BMainRecommendListViewController: UIViewController, UICollectionViewDelega
         
         // uSeqno
         uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
-        print(uSeqno)
+        print(uSeqno!)
 
         // Do any additional setup after loading the view.
         

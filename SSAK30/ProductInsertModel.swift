@@ -15,19 +15,11 @@ class ProductInsertModel: NSObject{
     
     func productInsertItems(title: String, totalEA: String, minimumEA: String, priceEA: String, openDate: String, closeDate: String, context: String, image: String) -> Bool{ // 괄호에 매개변수 값을 적어줌, 에러가 날 수도 있으니 리턴값을 하나 받음(-> Bool 이거)
         var result: Bool = true
-        let urlAdd = "?title=\(title)&totalEA=\(totalEA)&minimumEA=\(minimumEA)&priceEA=\(priceEA)&openDate=\(openDate)&closeDate=\(closeDate)&context=\(context)&image=\(image)" // jsp뒤에 ?쓰고 변수이름 넣고 = & 변수 = 해야 하니까 만들어놓음
-        print(title)
-        print(totalEA)
-        print(minimumEA)
-        print(priceEA)
-        print(openDate)
-        print(closeDate)
-        print(context)
-        print(image)
+        let uSeqno = UserDefaults.standard.integer(forKey: "uSeqno")
+        let urlAdd = "?title=\(title)&totalEA=\(totalEA)&minimumEA=\(minimumEA)&priceEA=\(priceEA)&openDate=\(openDate)&closeDate=\(closeDate)&context=\(context)&image=\(image)&uSeqno=\(uSeqno)" // jsp뒤에 ?쓰고 변수이름 넣고 = & 변수 = 해야 하니까 만들어놓음
         urlPath += urlAdd
         // 한글 인코딩
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         

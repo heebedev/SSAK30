@@ -16,8 +16,6 @@ class SInterestViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var listTableView: UITableView!
     
     var feedItem: NSArray = NSArray()
-    var bName:String?
-    var bPrice:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +49,6 @@ class SInterestViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func vipItemDownloaded(bName: String, bPrice: String) {
-        self.bName = bName
-        self.bPrice = bPrice
         
         lblName.text = bName
         lblPrice.text = bPrice
