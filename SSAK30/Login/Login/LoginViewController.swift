@@ -13,6 +13,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, LoginModelProtocol{
+    
 
     var userEmail:String?
     var uSeqno:String = ""
@@ -32,10 +33,11 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //******************* 혹시 uSeqno 정보가 남아있을 때 삭제.
+        UserDefaults.standard.removeObject(forKey: "uSeqno")
 
-        // Do any additional setup after loading the view.
-
-        // 버튼 모양
+        //******************* 버튼 모양
         kakaobutton.layer.cornerRadius = 20
         self.reloadInputViews()
     }
@@ -65,23 +67,23 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
         self.userPassword = tfPw.text!
         if(self.userEmail == nil || self.userEmail == ""){
             myAlert(alertTitle: "오류", alertMessage: "아이디 비밀번호를 확인해주세요.", actionTitle: "OK", handler: nil)
-            LoginChkDownloaded(item: userEmail!, items: userPassword!, Buyitem: "1")
         } else {
         let queryModel = LoginModel()
             queryModel.delegate = self
-            queryModel.EmailloadItems(uEmail: userEmail!, uValidation: "1")
+            queryModel.EmailloadItems(uEmail: userEmail!)
             
         }
     }
 
     
-    func LoginChkDownloaded(item: String, items: String, Buyitem: String) {
-        if items == "false" {
+    func LoginChkDownloaded(uSeqno: String, uResult: String, uBuySellCode: String) {
+        if uResult == "false" {
             myAlert(alertTitle: "확인", alertMessage: "등록되지 않은 정보입니다.", actionTitle: "OK", handler: nil)
-        } else if items != tfPw.text! {
+        } else if uResult != tfPw.text! {
             myAlert(alertTitle: "비밀번호 오류", alertMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "OK", handler: nil)
         } else {
-            if Buyitem == "0" {
+            UserDefaults.standard.set(Int(uSeqno), forKey: "uSeqno")
+            if uBuySellCode == "0" {
                 self.performSegue(withIdentifier: "sgBuyer", sender: nil)
             } else {
                 self.performSegue(withIdentifier: "sgSeller", sender: nil)
@@ -89,27 +91,7 @@ class LoginViewController: UIViewController, KakaoLoginQueryModelProtocol, Login
         }
     }
     
-    
-    
-    
-    func LoginitemDownloaded(items: NSArray) {
-        feedItems = items
-        let item: SingUpDBModel = feedItems[0] as! SingUpDBModel
-        uSeqno = item.uSeqno!
-        let uBuySell = item.uBuySell
-        if(self.uSeqno == "0"){
-            
-        }else{
-            UserDefaults.standard.set(Int(uSeqno), forKey:"uSeqno")
-            if(uBuySell == "0"){
-                self.performSegue(withIdentifier: "sgBuyer", sender: nil)
-            }else{
-                self.performSegue(withIdentifier: "sgSeller", sender: nil)
-            }
-        }
-    }
 
-    
     func itemDownloaded(items: NSArray) {
         feedItem = items
         let item: BMyInfoDBModel = feedItem[0] as! BMyInfoDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.

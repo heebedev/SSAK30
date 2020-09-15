@@ -103,20 +103,25 @@ class SProductAddViewController: UIViewController, UIImagePickerControllerDelega
         let imgData = rstImage?.jpegData(compressionQuality: 0.5)
         
         let productInsertModel = ProductInsertModel()
-        let result = productInsertModel.productInsertItems(title: title!, totalEA: totalEA!, minimumEA: minimumEA!, priceEA: priceEA!, openDate: openDate, closeDate: closeDate, context: context!, image: imgName!)
+        let result = productInsertModel.productInsertItems(title: title!, totalEA: totalEA!, minimumEA: minimumEA!, priceEA: priceEA!, openDate: openDate, closeDate: closeDate, context: context!, image: dateNow+imgName!)
         
         if result{
             //DB에 들어가고 나면 FTP 이미지 업로드
             let storageRef = storage.reference()
             let sbImageRef = storageRef.child("sbImage/" + dateNow + imgName!)
             
-            sbImageRef.putData(imgData!, metadata: nil)
-            
-            //끝나면 인디케이터 숨기기
-            activityIndicator.stopAnimating()
+            self.activityIndicator.stopAnimating()
             
             let resultAlert = UIAlertController(title: "완료", message: "상품이 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
-            let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            let onAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {ACTION in
+                sbImageRef.putData(imgData!, metadata: nil)
+                self.imgView.image = UIImage(named: "emptyImage.png")
+                self.tfSellTitle.text = ""
+                self.tfSellPriceEA.text = ""
+                self.tfSellTotalEA.text = ""
+                self.tfSellMinimumEA.text = ""
+                self.tvContext.text = ""
+            })
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)
         } else {
@@ -137,8 +142,6 @@ class SProductAddViewController: UIViewController, UIImagePickerControllerDelega
         if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
             imgUrl = url
             imgName = imgUrl?.lastPathComponent
-            print(imgUrl!)
-            print(imgUrl!.path)
         }
             
         // 켜놓은 앨범 화면 없애기

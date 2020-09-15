@@ -53,12 +53,10 @@ class BInterestStoreQueryModel: NSObject{
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
             if let sName = jsonElement["sName"] as? String,
                 let sImage = jsonElement["sImage"] as? String
-//               let sImage = jsonElement["sImage"] as? String
                 {
                
                     query.sName = sName
                     query.sImage = sImage
-//                query.sImage = sImage
                 
             }
             
