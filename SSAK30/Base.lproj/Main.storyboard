@@ -1034,7 +1034,7 @@
             <objects>
                 <viewController id="dIk-g0-iQm" customClass="SUpdateInfoViewController" customModule="SSAK30" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwP-lu-ji3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="8iJ-Ip-MhU">
@@ -3080,6 +3080,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="504-92-z1f"/>
         <segue reference="Cjz-ej-RMZ"/>
         <segue reference="OqO-TL-hNZ"/>
         <segue reference="1tP-Ax-I66"/>
