@@ -175,9 +175,9 @@ class SMyinfoViewController: UIViewController, SMyInfoQueryModelProtocol, SMyInf
 
             imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
                 if error != nil {
-                    cell.imgImage.image = UIImage(named: "emptyImage.png")
+                    cell.imgSImage.image = UIImage(named: "emptyImage.png")
                 } else {
-                    cell.imgImage.image = UIImage(data: data!)
+                    cell.imgSImage.image = UIImage(data: data!)
                 }
             }
 

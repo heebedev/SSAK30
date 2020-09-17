@@ -109,7 +109,7 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
         thirycashFeedItem = items
         let itemThirycash: ThirycashDBModel = thirycashFeedItem[0] as! ThirycashDBModel
         
-        // 나의 떠리캐시
+        //나의 떠리캐시
         lbl_totalCash.text = itemThirycash.totalCash ?? "0"
         print("나의 떠리캐시:", itemThirycash.totalCash!)
     }
@@ -154,13 +154,50 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
             }
         }
         
-        imgStore.getData(maxSize: 1 * 1024 * 1024) {data, error in
-            if error != nil {
-                self.iv_sImage?.image = UIImage(named: "emptyImage.png")
-            } else {
-                self.iv_sImage?.image = UIImage(data: data!)
+//        imgStore.getData(maxSize: 1 * 1024 * 1024) {data, error in
+//            if error != nil {
+//                self.iv_sImage?.image = UIImage(named: "emptyImage.png")
+//            } else {
+//                self.iv_sImage?.image = UIImage(data: data!)
+//            }
+//        }
+        
+        let url = URL(string: "http://localhost:8080/ftp/\(item.sImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
+        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+
+        let task = defaultSession.dataTask(with: url){(data, response, error) in
+            if error != nil{
+                print("Failed to download data")
+            }else{
+                print("Data is downloaded")
+                DispatchQueue.main.async {
+                    self.iv_sImage?.image = UIImage(data: data!)
+                    // jpg
+                    if let image = UIImage(data: data!){
+                        if let data = image.jpegData(compressionQuality: 0.8){// 일반적으로 80% 압축
+                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
+                            try? data.write(to: filename)
+                            print("Data is writed")
+
+                        }
+                    }
+
+                    // png 쓸 때 사용
+                    if let image = UIImage(data: data!){
+                        if let data = image.pngData() {//
+                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // // 다운받을때 이미지이름
+                            try? data.write(to: filename)
+                            print("Data is writed")
+
+
+                        }
+                    }
+                }
             }
         }
+        task.resume() // task 실행
+        
+        
         
         
         // 지도
@@ -188,7 +225,11 @@ class BDetailViewController: UIViewController, BDetailQueryModelProtocol, UIPick
         
     }
     
-    
+    // write 위치 (스마트폰의)
+    func getDecumentDirectory() -> URL{
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0] // 첫번째 값 앱에 설정한 것의 위치
+    }
     
 
     // 액션 //
