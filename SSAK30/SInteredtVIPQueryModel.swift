@@ -1,5 +1,5 @@
 //
-//  SInterestVIPQueryModel.swift
+//  SInteredtVIPQueryModel.swift
 //  SSAK30
 //
 //  Created by taeheum on 2020/09/14.
@@ -9,20 +9,19 @@
 import Foundation
 
 protocol SInterestVIPQueryModelProtocol: class {
-    func vipItemDownloaded(bName:String, bPrice:String)
+    func vipItemDownloaded(bName: String, bPrice: String)
 }
 
 class SInterestVIPQueryModel: NSObject{
     
-    var delegate : SInterestVIPQueryModelProtocol!
+    var delegate: SInterestVIPQueryModelProtocol!
     
     func vipDownloadItems(){
         let uSeqno:String = UserDefaults.standard.string(forKey: "uSeqno")!
         let urlPath = "http://localhost:8080/test/ssak30_interest_vip_query.jsp?uSeqno=\(uSeqno)"
-    
+        print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-        
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{
                 print("Failed to download data")
@@ -33,11 +32,8 @@ class SInterestVIPQueryModel: NSObject{
         }
         task.resume()
     }
-    
     func parseJAON(_ data: Data){
         var jsonResult = NSArray()
-        var name:String?
-        var price:String?
         
         do{
             jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
@@ -45,7 +41,8 @@ class SInterestVIPQueryModel: NSObject{
             print(error)
         }
         var jsonElement = NSDictionary()
-        
+        var name:String?
+        var price:String?
         
         for i in 0..<jsonResult.count{
             jsonElement = jsonResult[i] as! NSDictionary
@@ -60,7 +57,6 @@ class SInterestVIPQueryModel: NSObject{
             }
             
         }
-        
         DispatchQueue.main.async(execute: {() -> Void in
             self.delegate.vipItemDownloaded(bName: name!, bPrice: price!)
         })

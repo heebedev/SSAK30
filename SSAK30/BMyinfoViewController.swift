@@ -73,6 +73,7 @@ class BMyinfoViewController: UIViewController, BMyInfoQueryModelProtocol, BMyInf
             }
         }
         
+        
         lblName.text = item.uName
         lblCash.text = item.totalCash
     }

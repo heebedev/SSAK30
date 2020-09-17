@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SInterestViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SInterestQueryModelProtocol, SInterestVIPQueryModelProtocol {
     
@@ -16,6 +17,8 @@ class SInterestViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var listTableView: UITableView!
     
     var feedItem: NSArray = NSArray()
+    var bName:String?
+    var bPrice:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,8 @@ class SInterestViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func vipItemDownloaded(bName: String, bPrice: String) {
+        self.bName = bName
+        self.bPrice = bPrice
         
         lblName.text = bName
         lblPrice.text = bPrice
@@ -67,6 +72,17 @@ class SInterestViewController: UIViewController, UITableViewDataSource, UITableV
 
         // Configure the cell...
         let item: SInterestDBModel = feedItem[indexPath.row] as! SInterestDBModel // 배열로 되어있는 것을 class(DBModel) 타입으로 바꾼다.
+        
+//        let storage = Storage.storage()
+//        let storageRef = storage.reference()
+//        let imgRef = storageRef.child("uImage").child(item.!)
+//
+//        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+//            if error != nil {
+//                self.imgUserImage.image = UIImage(named: "emptyImage.png")
+//            } else {
+//                self.imgUserImage.image = UIImage(data: data!)
+//            }
         
         cell.textLabel?.text = "제목 : \(item.rTitle!)"
         cell.detailTextLabel?.text = "내용 : \(item.rContent!)"
