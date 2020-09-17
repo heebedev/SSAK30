@@ -159,7 +159,7 @@
 		6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeTableViewCell.swift; sourceTree = "<group>"; };
 		6BC590A8250CFB09001A7FAD /* BDetailQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDetailQueryModel.swift; sourceTree = "<group>"; };
 		6BCEF9DD250F5009000CBD88 /* ThirycashDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirycashDBModel.swift; sourceTree = "<group>"; };
-		6BCEF9DF250FC122000CBD88 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = ../../../Downloads/search.png; sourceTree = "<group>"; };
+		6BCEF9DF250FC122000CBD88 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = ../search.png; sourceTree = "<group>"; };
 		6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMainRecommendListViewController.swift; sourceTree = "<group>"; };
 		6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BHomeInterstQueryModel.swift; sourceTree = "<group>"; };
 		6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMainRecommendListViewController.swift; sourceTree = "<group>"; };
@@ -256,13 +256,9 @@
 		30628B0A250207FD0037AB3B /* SSAK30 */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				6BCEF9DF250FC122000CBD88 /* search.png */,
-=======
 				303B78EE250FBE97004AE072 /* commentskyblue.png */,
 				303B78F2250FBF3A004AE072 /* commentgreen.png */,
-				303B78E5250F4A2E004AE072 /* search.png */,
->>>>>>> fccc721daff90f35eb0a1994cdb32f3de1224bde
 				30328DCD250E64FC00C42F16 /* store.png */,
 				30328DC7250E64F600C42F16 /* home.png */,
 				30328DD4250E6BA400C42F16 /* heart.png */,
