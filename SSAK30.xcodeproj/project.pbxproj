@@ -260,6 +260,7 @@
 				303B78EE250FBE97004AE072 /* commentskyblue.png */,
 				303B78F2250FBF3A004AE072 /* commentgreen.png */,
 				30328DCD250E64FC00C42F16 /* store.png */,
+				6BCEF9E7250FCC8B000CBD88 /* search.png */,
 				30328DC7250E64F600C42F16 /* home.png */,
 				30328DD4250E6BA400C42F16 /* heart.png */,
 				30328DC6250E64F600C42F16 /* person.png */,
@@ -272,20 +273,103 @@
 				30628B0B250207FD0037AB3B /* AppDelegate.swift */,
 				30628B0D250207FD0037AB3B /* SceneDelegate.swift */,
 				30628B11250207FD0037AB3B /* Main.storyboard */,
-				9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */,
-				9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */,
-				9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */,
-				308D362C25024F6000B363B9 /* LoginViewController.swift */,
-				9D552095250CE3AD004DE325 /* KakaoLoginQueryModel.swift */,
+				6BCEF9EB250FCDFF000CBD88 /* Login */,
+				6BCEF9E6250FCC5B000CBD88 /* Main */,
+				6BCEF9EA250FCD38000CBD88 /* DetailProduct */,
+				6BCEF9ED25103D48000CBD88 /* AddStore */,
+				6BCEF9F125104037000CBD88 /* SearchStore */,
+				6BCEF9EC25103BA6000CBD88 /* BInterest */,
+				6BCEF9EE25103E33000CBD88 /* BMyInfo */,
+				6BCEF9EF25103E9E000CBD88 /* SMyInfo */,
+				6BCEF9F025103FD6000CBD88 /* AddProduct */,
+				30628B17250208000037AB3B /* Assets.xcassets */,
+				30628B19250208000037AB3B /* LaunchScreen.storyboard */,
+				30628B1C250208000037AB3B /* Info.plist */,
+				30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */,
+				21D2D1AB2507535B00085E16 /* readmeD.rtf */,
+			);
+			path = SSAK30;
+			sourceTree = "<group>";
+		};
+		6BCEF9E2250FCAB4000CBD88 /* BMain */ = {
+			isa = PBXGroup;
+			children = (
 				308D362425024EAB00B363B9 /* BHomeViewController.swift */,
 				6BE3EE072509DB8900323294 /* BMainRecommendListViewController.swift */,
+				6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */,
+				6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */,
+				6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */,
+				6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */,
+			);
+			path = BMain;
+			sourceTree = "<group>";
+		};
+		6BCEF9E5250FCC00000CBD88 /* SMain */ = {
+			isa = PBXGroup;
+			children = (
+				EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */,
+				6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */,
+				6BE3EE0F250A21D000323294 /* SHomeQueryModel.swift */,
+			);
+			path = SMain;
+			sourceTree = "<group>";
+		};
+		6BCEF9E6250FCC5B000CBD88 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6BCEF9E2250FCAB4000CBD88 /* BMain */,
+				6BCEF9E5250FCC00000CBD88 /* SMain */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6BCEF9EA250FCD38000CBD88 /* DetailProduct */ = {
+			isa = PBXGroup;
+			children = (
 				EC1E3BAD2506244C00F4ABDB /* BDetailViewController.swift */,
+				6BC590A8250CFB09001A7FAD /* BDetailQueryModel.swift */,
+				6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */,
+				6BCEF9DD250F5009000CBD88 /* ThirycashDBModel.swift */,
+			);
+			path = DetailProduct;
+			sourceTree = "<group>";
+		};
+		6BCEF9EB250FCDFF000CBD88 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6BCEF9F3251040DA000CBD88 /* Login */,
+				6BCEF9F42510414B000CBD88 /* SignUp */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6BCEF9EC25103BA6000CBD88 /* BInterest */ = {
+			isa = PBXGroup;
+			children = (
 				308D362825024EC100B363B9 /* BInterestViewController.swift */,
 				EC1E3BD2250B2AA300F4ABDB /* BInterestDBModel.swift */,
 				EC1E3BD3250B2AA300F4ABDB /* BInterestStoreQueryModel.swift */,
 				EC921855250E5C4800847939 /* BInterestTableViewCell.swift */,
+				303B78E8250F711B004AE072 /* SInterestDBModel.swift */,
+				303B78EA250F7130004AE072 /* SInterestQueryModel.swift */,
+				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
+				303B78EC250F7161004AE072 /* SInterestVIPQueryModel.swift */,
+			);
+			path = BInterest;
+			sourceTree = "<group>";
+		};
+		6BCEF9ED25103D48000CBD88 /* AddStore */ = {
+			isa = PBXGroup;
+			children = (
 				EC1E3BD7250B3E3F00F4ABDB /* InsertStoreViewController.swift */,
 				EC1E3BD1250B2AA300F4ABDB /* StoreInsertModel.swift */,
+			);
+			path = AddStore;
+			sourceTree = "<group>";
+		};
+		6BCEF9EE25103E33000CBD88 /* BMyInfo */ = {
+			isa = PBXGroup;
+			children = (
 				308D362A25024ECE00B363B9 /* BMyinfoViewController.swift */,
 				9DCDB82C250A223800A6F940 /* BUpdateInfoViewController.swift */,
 				9DCDB8102507485000A6F940 /* BMyInfoDBModel.swift */,
@@ -294,13 +378,13 @@
 				9DCDB82A250A134400A6F940 /* BChargeCashQueryModel.swift */,
 				9DCDB82E250A29BD00A6F940 /* BUpdateQueryModel.swift */,
 				9DCDB8282509E8E300A6F940 /* BMyInfoTableViewCell.swift */,
-				EC1E3BA52502167200F4ABDB /* SHomeViewController.swift */,
-				6BE3EE0D250A1A6200323294 /* SMainRecommendListViewController.swift */,
-				EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */,
-				EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */,
-				EC1E3BA9250216AF00F4ABDB /* SInterestViewController.swift */,
-				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
-				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
+			);
+			path = BMyInfo;
+			sourceTree = "<group>";
+		};
+		6BCEF9EF25103E9E000CBD88 /* SMyInfo */ = {
+			isa = PBXGroup;
+			children = (
 				EC1E3BAB250216C000F4ABDB /* SMyinfoViewController.swift */,
 				9DCDB832250A3FBA00A6F940 /* SUpdateInfoViewController.swift */,
 				9DCDB81A25087C1800A6F940 /* SMyInfoDBModel.swift */,
@@ -310,39 +394,65 @@
 				9DCDB8222509D27200A6F940 /* SMyInfoSellQueryModel.swift */,
 				9DCDB8242509D44B00A6F940 /* SMyInfoSellListQueryModel.swift */,
 				9DCDB830250A3E7900A6F940 /* SUpdateQueryModel.swift */,
-				30628B17250208000037AB3B /* Assets.xcassets */,
-				30628B19250208000037AB3B /* LaunchScreen.storyboard */,
-				30628B1C250208000037AB3B /* Info.plist */,
-				30628B14250207FD0037AB3B /* SSAK30.xcdatamodeld */,
+			);
+			path = SMyInfo;
+			sourceTree = "<group>";
+		};
+		6BCEF9F025103FD6000CBD88 /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				EC1E3BB12507613700F4ABDB /* ProductInsertModel.swift */,
+				EC1E3BAF2507513900F4ABDB /* SProductAddViewController.swift */,
+			);
+			path = AddProduct;
+			sourceTree = "<group>";
+		};
+		6BCEF9F125104037000CBD88 /* SearchStore */ = {
+			isa = PBXGroup;
+			children = (
 				300F98D92506055300411288 /* BSearchViewController.swift */,
-				6B895EC72508CD18008E4D3D /* BHomeDBModel.swift */,
-				6B895EC92508CD31008E4D3D /* BHomeQueryModel.swift */,
-				6B895ECB2508CE2F008E4D3D /* BHomeTableViewCell.swift */,
+				306561EE2508C11B004DA1E2 /* popStoreTableViewCell.swift */,
+				306561F02508CD85004DA1E2 /* AfterSearchTableViewController.swift */,
+				30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */,
+				303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */,
 				30D5B0B3250A0959002B66EB /* MarketModel.swift */,
 				30D5B0B5250A0A76002B66EB /* NearStoreModel.swift */,
-				30D5B0B7250A0C5D002B66EB /* StoreMarketQueryModel.swift */,
-				6BE3EE092509F34900323294 /* BHomeInterstQueryModel.swift */,
-				6BE3EE0F250A21D000323294 /* SHomeQueryModel.swift */,
-				21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */,
-				21D2D1A9250728B300085E16 /* SignUpModel.swift */,
-				21D2D1AF2508698600085E16 /* EmailChkModel.swift */,
-				21D2D1AB2507535B00085E16 /* readmeD.rtf */,
-				30602982250B56DB00E3FCFF /* AfterSearchTableViewCell.swift */,
 				30602984250B58CC00E3FCFF /* AfterSearchResultModel.swift */,
+				30D5B0B7250A0C5D002B66EB /* StoreMarketQueryModel.swift */,
 				30602986250B5AC900E3FCFF /* AfterSearchQueryModel.swift */,
-				30328DB0250DEDB000C42F16 /* CheckFindIdPwModel.swift */,
-				6BC590A8250CFB09001A7FAD /* BDetailQueryModel.swift */,
-				30328DB6250E22A100C42F16 /* passwordChangeModel.swift */,
+			);
+			path = SearchStore;
+			sourceTree = "<group>";
+		};
+		6BCEF9F3251040DA000CBD88 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				308D362C25024F6000B363B9 /* LoginViewController.swift */,
+				9DCDB80A2505FBEE00A6F940 /* BuySellChkViewController.swift */,
+				9DCDB80E2506252800A6F940 /* FindIdPwViewController.swift */,
 				30328DB8250E2DB000C42F16 /* ChangePwViewController.swift */,
-				6B4C6D99250E68E900583101 /* InsertBuylistModel.swift */,
+				9D552095250CE3AD004DE325 /* KakaoLoginQueryModel.swift */,
 				30328DD8250EA36700C42F16 /* LoginModel.swift */,
 				6BCEF9DD250F5009000CBD88 /* ThirycashDBModel.swift */,
 				303B78E3250F1F03004AE072 /* StoreDetailViewController.swift */,
 				303B78E8250F711B004AE072 /* SInterestDBModel.swift */,
 				303B78EA250F7130004AE072 /* SInterestQueryModel.swift */,
 				303B78F425105BBA004AE072 /* SInteredtVIPQueryModel.swift */,
+				21D2D1AF2508698600085E16 /* EmailChkModel.swift */,
+				30328DB0250DEDB000C42F16 /* CheckFindIdPwModel.swift */,
+				30328DB6250E22A100C42F16 /* passwordChangeModel.swift */,
 			);
-			path = SSAK30;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6BCEF9F42510414B000CBD88 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				9DCDB80C2506080D00A6F940 /* SignUpViewController.swift */,
+				21D2D1A7250726DE00085E16 /* SignUpDBModel.swift */,
+				21D2D1A9250728B300085E16 /* SignUpModel.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
